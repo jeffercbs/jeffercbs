@@ -5,6 +5,8 @@
     Jefferson Barrero
     </a>
   </p>
+  
+[![Metrics](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml/badge.svg?branch=main)](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml)
   ------------------------------------------
 </div>
 
