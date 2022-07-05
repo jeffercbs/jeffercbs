@@ -1,8 +1,6 @@
 <div align="center">
-😎 Hello I'm
- <a href="https://github.com/jeffercbs" alt="jeffercbs in github">
-  Jefferson Barrero
- </a>
+ 
+ ## 😎 Hello, welcome to the repo of  [Jeffercbs](https://github.com/jeffercbs/jeffercbs)
   
 [![Metrics](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml/badge.svg?branch=main)](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml)
 <a href="https://github.com/janleigh/dotfiles/stargazers">
@@ -18,7 +16,7 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 </div>
 
-<img src="./github-metrics.svg" alt="metrics" width="400" align="right"/>
+<img src="./github-metrics.svg" alt="metrics" width="440" align="right"/>
 
 # ❓ who am I?
 
