@@ -1,10 +1,8 @@
 <div align="center">
-  <p style="font-size: 24px; font-weight: 700;">
-    😎 Hello I'm
-    <a href="https://github.com/jeffercbs" alt="jeffercbs in github">
-    Jefferson Barrero
-    </a>
-  </p>
+😎 Hello I'm
+ <a href="https://github.com/jeffercbs" alt="jeffercbs in github">
+  Jefferson Barrero
+ </a>
   
 [![Metrics](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml/badge.svg?branch=main)](https://github.com/jeffercbs/jeffercbs/actions/workflows/metrics.yaml)
 <a href="https://github.com/janleigh/dotfiles/stargazers">
@@ -20,7 +18,7 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 </div>
 
-<img src="./github-metrics.svg" alt="metrics" width="500" align="right"/>
+<img src="./github-metrics.svg" alt="metrics" width="400" align="right"/>
 
 # ❓ who am I?
 
