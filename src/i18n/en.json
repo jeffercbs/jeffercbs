@@ -1,0 +1,143 @@
+{
+  "TITLE_SEO": "Jeferson Barrero @jeffercbs - Frontend, JavaScript, React, CSS, Performance",
+  "DESCRIPTION_SEO": "Software Enginer | Young web developer | Technology enthusiast | @platzi student | content creator | occasional writer.",
+  "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
+
+  "HEADER": [
+    {
+      "LABEL": "Home",
+      "LINK": "/#"
+    },
+    {
+      "LABEL": "About",
+      "LINK": "/#about"
+    },
+    {
+      "LABEL": "Experience",
+      "LINK": "/#experience"
+    },
+    {
+      "LABEL": "Projects",
+      "LINK": "/#projects"
+    },
+    {
+      "LABEL": "Blog",
+      "LINK": "/blog"
+    }
+  ],
+
+  "INTRO_TITLE": "Hey, I'm Jeffecbs",
+  "INTRO_BADGE": "Available to work",
+  "INTRO_DESCRIPTION": {
+    "FIRST": "Web develoment and Content creator",
+    "SECOND": "From Ibagué, Colombia",
+    "THIRD": "Specialized in creating unique applications."
+  },
+
+  "ABOUT_TITLE": "About me",
+  "ABOUT_DESC": "<p><strong>My name is Jeferson Barrero</strong>, but my friends call me Jef. My journey into programming began at the age of 14, self-taught and inspired by figures like <strong>Freddy Vegas</strong> while exploring the web. This early immersion into the fascinating world of programming was my first window into digital creativity.</p><p>As a student at <strong>PLATZI</strong> and participant in the project '<strong>MisiónTIC2022</strong>', backed by the Colombian government and <strong>MINTIC</strong>, I have gained solid knowledge in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been crucial to strengthening my skills, not only as a <strong>programmer</strong> but also in creating unique applications.</p><p>Complementing this journey with additional virtual courses from <strong>SENA</strong> and currently studying <strong>3D modeling</strong> for the industry, I aspire to excel in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As an active collaborator on <strong>GitHub</strong>, I participate in projects aimed at promoting <strong>free</strong> and <strong>open</strong> programming education.</p>",
+
+  "EXPERIENCE_TITLE": "Experience",
+  "EXPERIENCE": [
+    {
+      "ICON": "default",
+      "TITLE": "Freelance Web Developer",
+      "DATE": "Currently...",
+      "DESCRIPTION": "<p>As an <strong>independent web developer</strong>, I specialize in crafting unique applications for brands and businesses, spanning a full spectrum of needs, from static websites to online stores. My focus is on delivering innovative and functional technological solutions tailored to the specific goals and requirements of each client.</p>",
+      "LINK": "/services/web"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "DISSRETT SAS",
+      "DATE": "Software Engineer - Remote",
+      "DESCRIPTION": "<p>In my role, I was responsible for the design and development of web solutions adapted to the client's needs. I performed software analysis to optimize processes and improve the functionality of the applications. I also managed databases, ensuring their integration and availability.</p>"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "Eco Star Hotel ",
+      "DATE": "Jun 2022 - Oct 2022",
+      "DESCRIPTION": "<p>Me desempeñe en la gestión documental. Durante este periodo, desempeñe funciones en la clasificación y organizar documentos importantes de la empresa. Además del almacenamiento del archivo más antiguo de la empresa.</p>"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "MisionTIC2022",
+      "DATE": "September 2022",
+      "DESCRIPTION": "<p>My participation in <strong>Misión TIC 2022</strong>, since its pilot phase in August 2020, was characterized by comprehensive training in web projects with a specific focus on <strong>Node.js</strong>. Actively collaborating with young individuals from across the country on joint projects not only expanded my technical skills but also provided a valuable experience of nationwide teamwork.</p> <p>Complementary activities, such as <strong>professional talks</strong> and the visit to the <strong>Entrepreneurs' Park</strong>, added significant value to my education. The talks offered enriching perspectives and practical advice, while the park visit provided a tangible insight into the technological needs of the country. These complementary elements enhanced my overall understanding and offered a deeper vision of the practical application of technology in the national context.</p>"
+    }
+  ],
+
+  "EDUCATION_TITLE": "Education",
+  "EDUCATION_PLATZI_PROFILE": "View platzi profile.",
+  "EDUCATION": [
+    {
+      "TITLE": "PLATZI",
+      "DESCRIPTION": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil aut corrupti temporibus inventore facere atque unde ratione, nisi cum repellat!",
+      "ICON": "platzi",
+      "BUTTON_LABEL": "Show credential",
+      "ITEMS": [
+        {
+          "TITLE": "Frontend Developer Course",
+          "DATE": "Oct 2022",
+          "DESCRIPTION": "<p>I delved into the basics of HTML and CSS, exploring its structure, elements, and CSS properties. I acquired advanced skills in layout and responsive design.</p>",
+          "CODE": "Credential ID 5f6e5de5-5717-4bcd-96c2-32071fdef27f",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+        },
+        {
+          "TITLE": "Fundamentals of Software Engineering",
+          "DATE": "Oct 2022",
+          "DESCRIPTION": "<p>I explored the basics of electronics, deepened my knowledge of various operating systems and understood the networks that support the operation of the Internet.</p>",
+          "CODE": "Credential ID e3037410-94bf-40e9-9755-2e677e1d729a",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/1098-ingenieria/diploma/detalle/"
+        },
+        {
+          "TITLE": "Git and GitHub Professional Course",
+          "DATE": "Apr 2022",
+          "DESCRIPTION": "<p>I acquired essential knowledge ranging from fundamental concepts to advanced project management. I developed the ability to clone repositories and efficiently manage my projects, both locally and on collaborative platforms such as GitHub.</p>",
+          "CODE": "Credential ID 4f045261-e515-48be-ae32-7068b833be7",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+        },
+        {
+          "TITLE": "Python Challenge",
+          "DATE": "Oct 2022",
+          "DESCRIPTION": "<p>I followed an optimized path to strengthen my foundation in Python programming, focusing especially on backend development.</p>",
+          "CODE": "Credential ID 2a474433-8298-474a-b82d-3c5d4b75472a",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2613-python-challenge-final-exam/diploma/detalle/"
+        }
+      ]
+    }
+  ],
+
+  "PROJECTS_TITLE": "Projects",
+  "PROJECT_CASE": "Case study",
+
+  "SERVICES_MSG": "Discover how we can together create the perfect website for your brand or company. Turn your vision into reality today!",
+  "SERVICES_BUTTON": "Discover more",
+
+  "CLIENTS_TITLE": "Clients",
+  "CLIENTS_DESC": "",
+
+  "FOOTER_MSG": "Almost all rights reserved",
+  "FOOTER_LINK": "About me",
+
+  "SERVICES_INTRO": "Developing <span>amazing</span> <strong> websites</strong> and <strong>applications</strong>",
+  "SERVICES_TOOLS_DESC": "Integrate the latest in technology to your next project",
+
+  "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
+  "ONE_PLAN_DESC": "A plan for entrepreneurs, brands, or small businesses looking to establish a compelling online presence. With our streamlined approach, we create elegant and functional static websites that showcase the identity of your brand.",
+  "ONE_PLAN_FEACTURES": [
+    "Diseño personalizado",
+    "Navegación intuitiva",
+    "Optimizado para dispositivos móviles",
+    "SEO básico",
+    "Gestión de contenido sencilla",
+    "Soporte técnico básico",
+    "Seguridad garantizada"
+  ],
+
+  "TWO_PLAN_TITLE": "Planes a otro nivel",
+  "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
+  "TWO_PLAN_FEACTURES": [
+    "Una base de datos (Postgres o sqlite)",
+    "Sistema de pagos (strapi, mercado pagos)"
+  ]
+}

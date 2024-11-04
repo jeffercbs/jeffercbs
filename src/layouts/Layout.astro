@@ -1,0 +1,61 @@
+---
+import "@fontsource-variable/onest";
+
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
+import BaseHead from "../components/BaseHead.astro";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale}>
+  <head>
+    <BaseHead title={title} />
+    <ViewTransitions />
+  </head>
+  <body class="bg-black text-white relative overflow-x-hidden">
+    <Header />
+    <slot />
+    <Footer />
+    <style is:global>
+      :root {
+        --text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .hero {
+        @apply lg:max-w-5xl w-full mx-auto px-4;
+      }
+      .text__glowing:hover {
+        text-shadow: var(--text-shadow);
+      }
+    </style>
+  </body>
+</html>

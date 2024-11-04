@@ -1,0 +1,65 @@
+---
+import { getI18n } from "@/i18n";
+import { Icon } from "astro-icon/components";
+import LanguageSelector from "./LanguageSelector.astro";
+import MobileMenu from "./MobileMenu.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<header class="fixed top-0 inset-x-0 w-full h-14 pt-2 z-50">
+  <nav
+    class="h-full md:w-fit w-full mx-auto px-6 flex md:justify-between justify-end items-center rounded-full"
+  >
+    <div class="md:flex hidden">
+      <ul class="flex gap-x-6 mx-2 items-center" id="nav-items">
+        {
+          i18n.HEADER.map((item) => (
+            <li class="opacity-70 hover:opacity-100 transition-opacity ease-in-out">
+              <a
+                href={item.LINK}
+                class="font-semibold text-base text__glowing relative ease-out duration-300 py-2"
+              >
+                {item.LABEL}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="border-s border-gray-500 mx-2"></div>
+      <LanguageSelector />
+    </div>
+    <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
+      <Icon name="menu" class="size-8" />
+    </button>
+  </nav>
+  <MobileMenu />
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.getElementById("mobile-menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("-translate-y-full");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  });
+</script>
+
+<style>
+  nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+  @keyframes blur {
+    to {
+      @apply bg-black/50 text-white backdrop-blur-xl shadow-md;
+    }
+  }
+</style>

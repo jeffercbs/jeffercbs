@@ -1,0 +1,144 @@
+{
+  "TITLE_SEO": "Jeferson Barrero @jeffercbs - Frontend, JavaScript, React, CSS, Performance",
+  "DESCRIPTION_SEO": "Software Enginer | Joven desarrollador web | Entusiasta de la tecnología | Estudiante de @platzi | creador de contenidos | escritor ocasional.",
+  "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
+
+  "HEADER": [
+    {
+      "LABEL": "Inicio",
+      "LINK": "/#"
+    },
+    {
+      "LABEL": "Sobre mi",
+      "LINK": "/#about"
+    },
+    {
+      "LABEL": "Experiencia",
+      "LINK": "/#experience"
+    },
+    {
+      "LABEL": "Proyectos",
+      "LINK": "/#projects"
+    },
+    {
+      "LABEL": "Blog",
+      "LINK": "/blog"
+    }
+  ],
+
+  "INTRO_TITLE": "Hey, soy Jeffecbs",
+  "INTRO_BADGE": "Disponible para trabajar",
+  "INTRO_DESCRIPTION": {
+    "FIRST": "Desarrollador Web y Creador de Contenido",
+    "SECOND": "De Ibagué, Colombia",
+    "THIRD": "Especializado en crear aplicaciones únicas."
+  },
+
+  "ABOUT_TITLE": "Sobre mi",
+  "ABOUT_DESC": "<p><strong>Me llamo Jeferson Barrero</strong>, pero mis amigos me llaman Jef. Mi travesía en la programación comenzó a los 14 años de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web. Esta inmersión temprana en el fascinante mundo de la programación fue mi primera ventana hacia la creatividad digital.</p><p>Como estudiante de <strong>PLATZI</strong> y partícipe en el proyecto '<strong>MisiónTIC2022</strong>', respaldado por el gobierno colombiano y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como <strong>programador</strong>.</p><p>Complementando este camino con cursos virtuales adicionales del <strong>SENA</strong> y mi actual formación en <strong>modelado 3D para la industria</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el <strong>aprendizaje gratuito</strong> y <strong>abierto</strong> de programación.</p>",
+
+  "EXPERIENCE_TITLE": "Experiencia",
+  "EXPERIENCE": [
+    {
+      "ICON": "default",
+      "TITLE": "Desarrollador web independiente",
+      "DATE": "actualmente...",
+      "DESCRIPTION": "<p>Me especializo en <strong>crear aplicaciones</strong> únicas para <strong>marcas y empresas</strong/>, abarcando un espectro completo de necesidades, desde sitios estáticos hasta tiendas en línea. Mi enfoque se centra en proporcionar soluciones tecnológicas innovadoras y funcionales que se adapten a las metas y requerimientos específicos de cada cliente.</p>"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "DISSRETT SAS",
+      "DATE": "Software Engineer - Remote",
+      "DESCRIPTION": "<p>En mi rol, fui responsable del diseño y desarrollo de soluciones web adaptadas a las necesidades del cliente. Realicé análisis de software para optimizar procesos y mejorar la funcionalidad de las aplicaciones. Tambien administre bases de datos, asegurando su integración y disponibilidad.</p>"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "Gestion Documental",
+      "DATE": "Jun 2022 - Oct 2022",
+      "DESCRIPTION": "<p>Me desempeñe en la gestión documental. Durante este periodo, desempeñe funciones en la clasificación y organizar documentos importantes de la empresa. Además del almacenamiento del archivo más antiguo de la empresa.</p>"
+    },
+    {
+      "ICON": "default",
+      "TITLE": "MisionTIC2022",
+      "DATE": "septiembre 21",
+      "DESCRIPTION": "<p>Mi participación en <strong>Misión TIC 2022</strong>, desde su fase piloto en agosto de 2020, se caracterizó por un enfoque en proyectos web usando <strong>Node.js, Javascript, CSS, HTML, React</strong> y una colaboración activa con jóvenes de todo el país con proyectos en conjunto que ampliaron mis habilidades técnicas y proporcionaron una valiosa experiencia de trabajo en equipo.</p> <p>Además de actividades complementarias, como <strong>charlas con profesionales de la industria</strong> y la visita al <strong>Parque de los Empresarios</strong>, una experiencia enriquecedora que me brindo una comprensión más profunda de la aplicación práctica de la tecnología en el ámbito nacional, así como una percepción concreta de las demandas tecnológicas del país. </p>"
+    }
+  ],
+
+  "EDUCATION_TITLE": "Educación",
+  "EDUCATION_PLATZI_PROFILE": "Visitar perfil de Platzi.",
+  "EDUCATION": [
+    {
+      "TITLE": "PLATZI",
+      "DESCRIPTION": "Cursos en platzi",
+      "ICON": "platzi",
+      "BUTTON_LABEL": "Mostrar credencial",
+      "ITEMS": [
+        {
+          "TITLE": "Curso de Frontend Developer",
+          "DATE": "Oct 2021",
+          "DESCRIPTION": "<p>Profundicé en los fundamentos de HTML y CSS, explorando su estructura, elementos, y propiedades de CSS. Adquirí destrezas avanzadas en maquetación y diseño responsive.</p>",
+          "CODE": "Credencial ID 5f6e5de5-5717-4bcd-96c2-32071fdef27f",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+        },
+        {
+          "TITLE": "Fundamentos de Ingenieria de Software",
+          "DATE": "Aug 2021",
+          "DESCRIPTION": "<p>Exploré las bases de la electrónica, profundicé en el conocimiento de diversos sistemas operativos y comprendí las redes que sustentan el funcionamiento de Internet.</p>",
+          "CODE": "Credencial ID e3037410-94bf-40e9-9755-2e677e1d729a",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/1098-ingenieria/diploma/detalle/"
+        },
+        {
+          "TITLE": "Curso Profesional de Git y GitHub",
+          "DATE": "Apr 2022",
+          "DESCRIPTION": "<p>Adquirí conocimientos esenciales que abarcan desde los conceptos fundamentales hasta la gestión avanzada de proyectos. Desarrollé la capacidad de clonar repositorios y gestionar eficazmente mis proyectos, tanto a nivel local como en plataformas colaborativas como GitHub.</p>",
+          "CODE": "Credencial ID 4f045261-e515-48be-ae32-7068b833be7",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+        },
+        {
+          "TITLE": "Python Challenge",
+          "DATE": "Oct 2022",
+          "DESCRIPTION": "<p>Seguí una ruta optimizada para fortalecer mis bases en la programación con Python, centrándome especialmente en el desarrollo backend.</p>",
+          "CODE": "Credencial ID 2a474433-8298-474a-b82d-3c5d4b75472a",
+          "LINK": "https://platzi.com/p/jeffercbs/curso/2613-python-challenge-final-exam/diploma/detalle/"
+        }
+      ]
+    }
+  ],
+
+  "PROJECTS_TITLE": "Proyectos",
+  "PROJECT_CASE": "caso de estudio",
+
+  "SERVICES_MSG": "Descubre cómo podemos crear juntos el sitio web perfecto para tu marca o empresa. ¡Convierte tu visión en realidad hoy mismo!",
+  "SERVICES_BUTTON": "Descubrir más",
+
+  "CLIENTS_TITLE": "Clientes",
+  "CLIENTS_DESC": "",
+
+  "FOOTER_MSG": "Casi todos los derechos reservados.",
+  "FOOTER_LINK": "Sobre mi",
+
+  "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
+  "ONE_PLAN_DESC": "Un plan para emprendedores, marcas o pequeñas empresas que buscan establecer una presencia online impactante. Con nuestro enfoque simplificado, creamos sitios web estáticos elegantes y funcionales que destacan la identidad de tu marca.",
+  "ONE_PLAN_FEACTURES": [
+    "Diseño personalizado",
+    "Navegación intuitiva",
+    "Optimizado para dispositivos móviles",
+    "Soporte técnico básico",
+    "Gestión de contenido sencilla",
+    "SEO"
+  ],
+
+  "SERVICES_INTRO": "Desarrollando <strong> sitios web</strong> y <strong>aplicaciones</strong> <span>increibles</span>",
+  "SERVICES_TOOLS_DESC": "Integra lo utimo en tecnologia a tu proximo proyecto",
+
+  "TWO_PLAN_TITLE": "PLanes empresariales",
+  "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
+  "TWO_PLAN_FEACTURES": [
+    "Caracteristicas del plan para sitios estaticos",
+    "Dominio personalizado (incluido)",
+    "Una base de datos (Postgres o sqlite)",
+    "Sistema de pagos (strapi, mercado pagos)",
+    "Seguridad garantizada"
+  ]
+}

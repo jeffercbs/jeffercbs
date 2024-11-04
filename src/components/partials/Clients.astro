@@ -1,0 +1,39 @@
+---
+import { getI18n } from "@/i18n";
+import ClientCard from "../Card.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section class="min-h-dvh h-fit relative" id="web">
+  <div class="hero size-full flex flex-col gap-x-8 pt-8">
+    <div class="mb-6">
+      <h2
+        aria-label="experience"
+        class="text-2xl uppercase text-white/80 font-semibold py-4"
+      >
+        {i18n.CLIENTS_TITLE}
+      </h2>
+    </div>
+    <div
+      class="flex-1 flex flex-wrap overflow-x-scroll my-6 relative z-20"
+      id="clients"
+    >
+      {
+        [
+          {
+            badge: "remodelaciones",
+            title: "Argermiro remodelacines",
+            website: "https://argermiroremodelaciones.vercel.app",
+          },
+          {
+            badge: "remodelaciones",
+            title: "un nuevo sitio web",
+            website: "https://argermiroremodelaciones.vercel.app",
+          },
+        ].map((client) => <ClientCard {...client} />)
+      }
+    </div>
+  </div>
+</section>
