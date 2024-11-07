@@ -6,20 +6,15 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section
-  id="about"
-  class="h-fit py-14 bg-gradient-to-b from-transparent via-black/70 to-black"
->
+<section id="about" class="h-fit py-14">
   <div class="hero flex md:flex-row gap-8 flex-col">
     <div class="md:w-2/5 w-full flex items-center justify-center px-6">
-      <div
-        class="rounded-lg overflow-hidden shadow-2xl shadow-white/40 aspect-auto"
-      >
+      <div class="aspect-auto p-4">
         <Image
           src="/yo.jpg"
           width="300"
-          height="500"
-          class="size-full object-contain"
+          height="400"
+          class="size-full object-contain rounded-2xl min-h-60 shadow-2xl shadow-white/40 rotate-3"
           alt="i am jeffercbs"
         />
       </div>

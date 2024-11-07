@@ -1,20 +1,15 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Tool from "../Tool.astro";
-import Clients from "../partials/Clients.astro";
-import CodeDeco from "../CodeDeco.astro";
-import PriceCard from "../PriceCard.astro";
 import { getI18n } from "@/i18n";
+import Layout from "@/layouts/Layout.astro";
+import CodeDeco from "../CodeDeco.astro";
+import Tool from "../Tool.astro";
+import Banner from "../partials/Banner.astro";
 
 const { props, currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
 <Layout title={props.title}>
-  <div
-    class="absolute inset-0 z-[-2] w-full h-dvh bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-  >
-  </div>
   <main class="hero">
     <section class="h-dvh flex flex-col items-start justify-center relative">
       <CodeDeco
@@ -77,13 +72,6 @@ const i18n = getI18n({ currentLocale });
       </div>
     </div>
 
-    <section>
-      <div class="py-8 text-center my-9">
-        <h1 class="text-6xl font-bold">
-          <span class="text-orange-500"> Planes</span>
-          Flexibles
-        </h1>
-      </div>
-    </section>
+    <Banner />
   </main>
 </Layout>

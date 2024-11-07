@@ -2,11 +2,15 @@
 import Layout from "@/layouts/Layout.astro";
 import Education from "../partials/Education.astro";
 import Experience from "../partials/Experience.astro";
+import Banner from "../partials/Banner.astro";
 ---
 
 <Layout title="resumen">
-  <main>
-    <Experience />
-    <Education />
+  <main class="hero">
+    <div class="grid md:grid-cols-2 grid-cols-1">
+      <Experience />
+      <Education />
+    </div>
+    <Banner />
   </main>
 </Layout>

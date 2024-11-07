@@ -47,9 +47,7 @@ const {
       <Icon name={ICON} class="absolute size-10 -start-4" />
     ))
 }
-<div
-  class:list={["ml-3 md:ml-6", { "flex md:flex-row flex-col": columns === 2 }]}
->
+<div class:list={["ml-3 md:ml-6", { "flex flex-col": columns === 2 }]}>
   <div class:list={[{ "md:max-w-[280px] w-full": columns === 2 }]}>
     {
       DATE && (

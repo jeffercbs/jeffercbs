@@ -13,8 +13,8 @@
       "LINK": "/#about"
     },
     {
-      "LABEL": "Experiencia",
-      "LINK": "/#experience"
+      "LABEL": "Summary",
+      "LINK": "/summary"
     },
     {
       "LABEL": "Proyectos",
@@ -35,7 +35,7 @@
   },
 
   "ABOUT_TITLE": "Sobre mi",
-  "ABOUT_DESC": "<p><strong>Me llamo Jeferson Barrero</strong>, pero mis amigos me llaman Jef. Mi travesía en la programación comenzó a los 14 años de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web. Esta inmersión temprana en el fascinante mundo de la programación fue mi primera ventana hacia la creatividad digital.</p><p>Como estudiante de <strong>PLATZI</strong> y partícipe en el proyecto '<strong>MisiónTIC2022</strong>', respaldado por el gobierno colombiano y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como <strong>programador</strong>.</p><p>Complementando este camino con cursos virtuales adicionales del <strong>SENA</strong> y mi actual formación en <strong>modelado 3D para la industria</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el <strong>aprendizaje gratuito</strong> y <strong>abierto</strong> de programación.</p>",
+  "ABOUT_DESC": "<p><strong>Me llamo Jeferson Barrero</strong>, pero mis amigos me llaman Jef. Empecé en la programación a la edad de 14 años de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web. Esta inmersión temprana en el fascinante mundo de la programación fue mi primera ventana hacia la creatividad digital.</p><p>Como estudiante de <strong>PLATZI</strong> y partícipe en el proyecto '<strong>MisiónTIC2022</strong>', respaldado por el gobierno colombiano y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como <strong>programador</strong>.</p><p>Complementando este camino con cursos virtuales adicionales del <strong>SENA</strong>, con una formación en <strong>modelado 3D para la industria</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el <strong>aprendizaje gratuito</strong> y <strong>abierto</strong> de programación.</p>",
 
   "EXPERIENCE_TITLE": "Experiencia",
   "EXPERIENCE": [

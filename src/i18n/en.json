@@ -13,12 +13,8 @@
       "LINK": "/#about"
     },
     {
-      "LABEL": "Experience",
-      "LINK": "/#experience"
-    },
-    {
-      "LABEL": "Projects",
-      "LINK": "/#projects"
+      "LABEL": "Summary",
+      "LINK": "/summary"
     },
     {
       "LABEL": "Blog",
