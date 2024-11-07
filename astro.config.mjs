@@ -5,8 +5,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://jeffercbs.github.io/jeffercbs/",
-  base: "/jeffercbs/",
+  site: "https://dev.jeffercbs.tech/",
   integrations: [sitemap(), tailwind(), icon()],
   redirects: {
     "/blog/": "blog/1",
