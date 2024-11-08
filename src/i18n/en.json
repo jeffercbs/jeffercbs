@@ -15,10 +15,6 @@
     {
       "LABEL": "Summary",
       "LINK": "/summary"
-    },
-    {
-      "LABEL": "Blog",
-      "LINK": "/blog"
     }
   ],
 
@@ -31,7 +27,7 @@
   },
 
   "ABOUT_TITLE": "About me",
-  "ABOUT_DESC": "<p><strong>My name is Jeferson Barrero</strong>, but my friends call me Jef. My journey into programming began at the age of 14, self-taught and inspired by figures like <strong>Freddy Vegas</strong> while exploring the web. This early immersion into the fascinating world of programming was my first window into digital creativity.</p><p>As a student at <strong>PLATZI</strong> and participant in the project '<strong>MisiónTIC2022</strong>', backed by the Colombian government and <strong>MINTIC</strong>, I have gained solid knowledge in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been crucial to strengthening my skills, not only as a <strong>programmer</strong> but also in creating unique applications.</p><p>Complementing this journey with additional virtual courses from <strong>SENA</strong> and currently studying <strong>3D modeling</strong> for the industry, I aspire to excel in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As an active collaborator on <strong>GitHub</strong>, I participate in projects aimed at promoting <strong>free</strong> and <strong>open</strong> programming education.</p>",
+  "ABOUT_DESC": "<p>My name is <strong>Jeferson Barrero</strong>, but my friends call me <strong>Jef</strong>. I started programming at the age of <strong>14</strong> as a self-taught enthusiast, inspired by figures like <strong>Freddy Vegas</strong> and by exploring the web. This early dive into the fascinating world of programming shaped my journey.</p> <p>As a <strong>PLATZI</strong> student and a participant in the '<strong>MisiónTIC2022</strong>' project since its pilot phase, backed by the <strong>Colombian government</strong> and <strong>MINTIC</strong>, I have built a solid foundation in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been essential to honing my skills as a developer.</p> <p>Adding to this journey with <strong>virtual courses from SENA</strong> and my current studies in <strong>3D modeling for industry</strong> and <strong>administrative assistance</strong>, I aim to stand out in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As a contributor on <strong>GitHub</strong>, I participate in projects aimed at promoting free and open programming education.</p>",
 
   "EXPERIENCE_TITLE": "Experience",
   "EXPERIENCE": [
