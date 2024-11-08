@@ -2,14 +2,18 @@
 import { getI18n } from "@/i18n";
 import Link from "../Link.astro";
 import Badge from "../Badge.astro";
+import { Image } from "astro:assets";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section class="relative h-dvh flex-col justify-start" id="#">
+<section
+  class="relative hero md:pt-0 pt-8 h-dvh flex-col grid md:grid-cols-2 grid-cols-1 justify-start gap-4"
+  id="#"
+>
   <div
-    class="hero size-full flex flex-col items-start justify-center gap-y-3 relative"
+    class="flex flex-col items-start justify-center gap-y-3 md:order-1 order-last relative"
     id="intro"
   >
     <div class="flex gap-4">
@@ -23,7 +27,7 @@ const i18n = getI18n({ currentLocale });
       </a>
     </div>
     <h1
-      class="text-4xl font-bold tracking-tight sm:text-5xl text-white"
+      class="font-bold tracking-tight text-5xl text-white"
       set:text={i18n.INTRO_TITLE}
     />
 
@@ -46,18 +50,17 @@ const i18n = getI18n({ currentLocale });
       <Link href="/summary" icon="check">summary </Link>
     </nav>
   </div>
-
-  <style>
-    #intro {
-      animation: opacity linear both;
-      animation-timeline: scroll();
-      animation-range: 0 100px;
-    }
-
-    @keyframes opacity {
-      to {
-        @apply opacity-60;
-      }
-    }
-  </style>
+  <div class="relative grid place-content-center">
+    <div
+      class="size-fit bg-green-200 p-5 rounded-full relative overflow-hidden"
+    >
+      <Image
+        src="/yo.png"
+        width="400"
+        height="400"
+        class="object-contain aspect-square md:size-[400px] size-[250px] rounded-full"
+        alt="i am jeffercbs"
+      />
+    </div>
+  </div>
 </section>
