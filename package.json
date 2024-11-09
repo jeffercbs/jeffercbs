@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@fontsource-variable/onest": "^5.1.0",
+    "@midudev/tailwind-animations": "^0.1.0",
     "@tailwindcss/typography": "^0.5.15",
     "astro-icon": "^1.1.1",
     "sharp": "^0.33.5",
