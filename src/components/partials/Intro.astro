@@ -37,12 +37,15 @@ const i18n = getI18n({ currentLocale });
       <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
     </p>
 
-    <nav class="flex flex-wrap md:max-w-[400px] gap-4 mt-8">
+    <nav class="flex flex-wrap md:max-w-[420px] gap-4 mt-8">
       <Link href="https://linkedin.com/in/jeffercbs" icon="linkedin" external>
         Linkedin
       </Link>
       <Link href="https://github.com/jeffercbs" icon="github" external>
         Github
+      </Link>
+      <Link href="https://www.youtube.com/@jeffercbs" icon="youtube" external>
+        Youtube
       </Link>
       <Link href="mailto:jebarrero14@gmail.com" icon="mail" external>
         jebarrero14@gmail.com
@@ -52,7 +55,7 @@ const i18n = getI18n({ currentLocale });
   </div>
   <div class="relative grid place-content-center">
     <div
-      class="size-fit bg-green-200 p-5 rounded-full relative overflow-hidden"
+      class="size-fit bg-green-200 rounded-full relative overflow-hidden animate-blurred-fade-in"
     >
       <Image
         src="/yo.png"

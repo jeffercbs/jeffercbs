@@ -4,9 +4,8 @@ import { getI18n } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
 import Link from "../Link.astro";
 import AboutMe from "../partials/AboutMe.astro";
-import Projects from "../partials/Projects.astro";
 import Banner from "../partials/Banner.astro";
-import Resources from "../partials/Resources.astro";
+import Projects from "../partials/Projects.astro";
 
 const { props, currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -16,7 +15,6 @@ const i18n = getI18n({ currentLocale });
   <main>
     <Intro />
     <AboutMe />
-    <Resources />
     <Projects />
 
     <Banner>
