@@ -1,6 +1,5 @@
 ---
 import { getI18n } from "@/i18n";
-import LanguageSelector from "./LanguageSelector.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -23,9 +22,5 @@ const i18n = getI18n({ currentLocale });
         </li>
       ))
     }
-
-    <li>
-      <LanguageSelector />
-    </li>
   </ul>
 </nav>

@@ -8,10 +8,11 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<header class="fixed top-0 inset-x-0 w-full h-14 pt-2 z-50 md:mx-0 mx-2">
-  <nav
-    class="h-full md:w-fit w-full mx-auto px-6 flex md:justify-between justify-end items-center rounded-full"
-  >
+<header class="fixed top-0 inset-x-0 w-full h-20 z-50">
+  <nav class="size-full px-6 flex justify-between items-center hero">
+    <div class="flex">
+      <span class="hidden lg:block text-3xl font-semibold"> jeffercbs </span>
+    </div>
     <div class="md:flex hidden">
       <ul class="flex gap-x-6 mx-2 items-center" id="nav-items">
         {
@@ -27,12 +28,14 @@ const i18n = getI18n({ currentLocale });
           ))
         }
       </ul>
-      <div class="border-s border-gray-500 mx-2"></div>
-      <LanguageSelector />
     </div>
-    <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
-      <Icon name="menu" class="size-8" />
-    </button>
+    <div class="flex">
+      <LanguageSelector />
+      <div class="border-s border-gray-500 mx-2"></div>
+      <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
+        <Icon name="menu" class="size-8" />
+      </button>
+    </div>
   </nav>
   <MobileMenu />
 </header>
@@ -52,7 +55,7 @@ const i18n = getI18n({ currentLocale });
 </script>
 
 <style>
-  nav {
+  header {
     animation: blur linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
