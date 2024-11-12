@@ -7,6 +7,9 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://dev.jeffercbs.tech/",
   integrations: [sitemap(), tailwind(), icon()],
+  redirects: {
+    "/en/projects/[...slug]": "/projects/[...slug]",
+  },
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
