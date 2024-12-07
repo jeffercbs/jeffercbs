@@ -2,7 +2,6 @@
   "TITLE_SEO": "Jeferson Barrero @jeffercbs - Frontend, JavaScript, React, CSS, Performance",
   "DESCRIPTION_SEO": "Software Enginer | Joven desarrollador web | Entusiasta de la tecnología | Estudiante de @platzi | creador de contenidos | escritor ocasional.",
   "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
-
   "HEADER": [
     {
       "LABEL": "Inicio",
@@ -13,26 +12,19 @@
       "LINK": "/#about"
     },
     {
-      "LABEL": "Summary",
-      "LINK": "/summary"
-    },
-    {
-      "LABEL": "Proyectos",
-      "LINK": "/#projects"
+      "LABEL": "Servicios",
+      "LINK": "/services"
     }
   ],
-
   "INTRO_TITLE": "Hey, soy Jeffecbs",
   "INTRO_BADGE": "Disponible para trabajar",
   "INTRO_DESCRIPTION": {
-    "FIRST": "Desarrollador Web y Creador de Contenido",
-    "SECOND": "De Ibagué, Colombia",
+    "FIRST": "Software Enginer | De Ibagué, Colombia",
+    "SECOND": "Actualmente radicado en Bogotá",
     "THIRD": "Especializado en crear aplicaciones únicas."
   },
-
   "ABOUT_TITLE": "Sobre mi",
   "ABOUT_DESC": "<p>Me llamo <strong>Jeferson Barrero</strong>, pero mis amigos me llaman <strong>Jef</strong>. Empecé en la programación a la edad de <strong>14 años</strong> de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web.</p> <p>Como estudiante de <strong>PLATZI</strong> y participante en el proyecto '<strong>MisiónTIC2022</strong>' desde su fase piloto, respaldado por el <strong>gobierno colombiano</strong> y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como programador.</p> <p>Complementando este camino con <strong>cursos virtuales adicionales del SENA</strong> y mi ultima formación en <strong>modelado 3D para la industria</strong> y <strong>asistencia administrativa</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el aprendizaje <strong>gratuito y abierto</strong> de programación.</p>",
-
   "EXPERIENCE_TITLE": "Experiencia",
   "EXPERIENCE": [
     {
@@ -60,7 +52,6 @@
       "DESCRIPTION": "<p>Mi participación en <strong>Misión TIC 2022</strong>, desde su fase piloto en agosto de 2020, se caracterizó por un enfoque en proyectos web usando <strong>Node.js, Javascript, CSS, HTML, React</strong> y una colaboración activa con jóvenes de todo el país con proyectos en conjunto que ampliaron mis habilidades técnicas y proporcionaron una valiosa experiencia de trabajo en equipo.</p> <p>Además de actividades complementarias, como <strong>charlas con profesionales de la industria</strong> y la visita al <strong>Parque de los Empresarios</strong>, una experiencia enriquecedora que me brindo una comprensión más profunda de la aplicación práctica de la tecnología en el ámbito nacional, así como una percepción concreta de las demandas tecnológicas del país. </p>"
     }
   ],
-
   "EDUCATION_TITLE": "Educación",
   "EDUCATION_PLATZI_PROFILE": "Visitar perfil de Platzi.",
   "EDUCATION": [
@@ -101,19 +92,14 @@
       ]
     }
   ],
-
   "PROJECTS_TITLE": "Proyectos",
   "PROJECT_CASE": "caso de estudio",
-
   "SERVICES_MSG": "Descubre cómo podemos crear juntos el sitio web perfecto para tu marca o empresa. ¡Convierte tu visión en realidad hoy mismo!",
   "SERVICES_BUTTON": "Descubrir más",
-
   "CLIENTS_TITLE": "Clientes",
   "CLIENTS_DESC": "",
-
   "FOOTER_MSG": "Casi todos los derechos reservados.",
   "FOOTER_LINK": "Sobre mi",
-
   "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
   "ONE_PLAN_DESC": "Un plan para emprendedores, marcas o pequeñas empresas que buscan establecer una presencia online impactante. Con nuestro enfoque simplificado, creamos sitios web estáticos elegantes y funcionales que destacan la identidad de tu marca.",
   "ONE_PLAN_FEACTURES": [
@@ -124,10 +110,8 @@
     "Gestión de contenido sencilla",
     "SEO"
   ],
-
   "SERVICES_INTRO": "Desarrollando <strong> sitios web</strong> y <strong>aplicaciones</strong> <span>increibles</span>",
   "SERVICES_TOOLS_DESC": "Integra lo utimo en tecnologia a tu proximo proyecto",
-
   "TWO_PLAN_TITLE": "PLanes empresariales",
   "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
   "TWO_PLAN_FEACTURES": [

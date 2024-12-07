@@ -2,7 +2,6 @@
   "TITLE_SEO": "Jeferson Barrero @jeffercbs - Frontend, JavaScript, React, CSS, Performance",
   "DESCRIPTION_SEO": "Software Enginer | Young web developer | Technology enthusiast | @platzi student | content creator | occasional writer.",
   "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
-
   "HEADER": [
     {
       "LABEL": "Home",
@@ -13,22 +12,19 @@
       "LINK": "/#about"
     },
     {
-      "LABEL": "Summary",
-      "LINK": "/summary"
+      "LABEL": "Services",
+      "LINK": "/en/services"
     }
   ],
-
   "INTRO_TITLE": "Hey, I'm Jeffecbs",
   "INTRO_BADGE": "Available to work",
   "INTRO_DESCRIPTION": {
-    "FIRST": "Web develoment and Content creator",
-    "SECOND": "From Ibagué, Colombia",
+    "FIRST": "Software Enginer | From Ibagué, Colombia",
+    "SECOND": "Currently based in Bogotá",
     "THIRD": "Specialized in creating unique applications."
   },
-
   "ABOUT_TITLE": "About me",
   "ABOUT_DESC": "<p>My name is <strong>Jeferson Barrero</strong>, but my friends call me <strong>Jef</strong>. I started programming at the age of <strong>14</strong> as a self-taught enthusiast, inspired by figures like <strong>Freddy Vegas</strong> and by exploring the web. This early dive into the fascinating world of programming shaped my journey.</p> <p>As a <strong>PLATZI</strong> student and a participant in the '<strong>MisiónTIC2022</strong>' project since its pilot phase, backed by the <strong>Colombian government</strong> and <strong>MINTIC</strong>, I have built a solid foundation in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been essential to honing my skills as a developer.</p> <p>Adding to this journey with <strong>virtual courses from SENA</strong> and my current studies in <strong>3D modeling for industry</strong> and <strong>administrative assistance</strong>, I aim to stand out in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As a contributor on <strong>GitHub</strong>, I participate in projects aimed at promoting free and open programming education.</p>",
-
   "EXPERIENCE_TITLE": "Experience",
   "EXPERIENCE": [
     {
@@ -57,7 +53,6 @@
       "DESCRIPTION": "<p>My participation in <strong>Misión TIC 2022</strong>, since its pilot phase in August 2020, was characterized by comprehensive training in web projects with a specific focus on <strong>Node.js</strong>. Actively collaborating with young individuals from across the country on joint projects not only expanded my technical skills but also provided a valuable experience of nationwide teamwork.</p> <p>Complementary activities, such as <strong>professional talks</strong> and the visit to the <strong>Entrepreneurs' Park</strong>, added significant value to my education. The talks offered enriching perspectives and practical advice, while the park visit provided a tangible insight into the technological needs of the country. These complementary elements enhanced my overall understanding and offered a deeper vision of the practical application of technology in the national context.</p>"
     }
   ],
-
   "EDUCATION_TITLE": "Education",
   "EDUCATION_PLATZI_PROFILE": "View platzi profile.",
   "EDUCATION": [
@@ -98,22 +93,16 @@
       ]
     }
   ],
-
   "PROJECTS_TITLE": "Projects",
   "PROJECT_CASE": "Case study",
-
   "SERVICES_MSG": "Discover how we can together create the perfect website for your brand or company. Turn your vision into reality today!",
   "SERVICES_BUTTON": "Discover more",
-
   "CLIENTS_TITLE": "Clients",
   "CLIENTS_DESC": "",
-
   "FOOTER_MSG": "Almost all rights reserved",
   "FOOTER_LINK": "About me",
-
   "SERVICES_INTRO": "Developing <span>amazing</span> <strong> websites</strong> and <strong>applications</strong>",
   "SERVICES_TOOLS_DESC": "Integrate the latest in technology to your next project",
-
   "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
   "ONE_PLAN_DESC": "A plan for entrepreneurs, brands, or small businesses looking to establish a compelling online presence. With our streamlined approach, we create elegant and functional static websites that showcase the identity of your brand.",
   "ONE_PLAN_FEACTURES": [
@@ -125,7 +114,6 @@
     "Soporte técnico básico",
     "Seguridad garantizada"
   ],
-
   "TWO_PLAN_TITLE": "Planes a otro nivel",
   "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
   "TWO_PLAN_FEACTURES": [
