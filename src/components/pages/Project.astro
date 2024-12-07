@@ -1,8 +1,28 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import { type CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"projects">;
+const data = Astro.props.data;
 ---
 
-<Layout title={Astro.props.title}>
+<Layout title={data.title}>
+  <div class="h-fit w-full relative pt-20 mb-5">
+    <Image
+      src={`/_thumbnails/${data.cover}`}
+      alt={`${data.title}`}
+      class="object-cover aspect-auto h-96 w-full blur-2xl contrast-150 opacity-35"
+      fit="cover"
+      width={300}
+      height={200}
+    />
+    <div class="absolute inset-0 z-[1] grid place-content-center">
+      <h1 class="text-4xl font-medium">
+        {data.title}
+      </h1>
+    </div>
+  </div>
   <article class="hero prose prose-invert pt-16 min-h-dvh">
     <slot />
   </article>

@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 export type Props = {
-  variant?: "link" | "button";
+  variant?: "primary" | "secondary" | "link";
   href: string;
   external?: boolean;
   icon?: string;
@@ -9,7 +9,7 @@ export type Props = {
   wfull?: boolean;
 };
 const {
-  variant = "button",
+  variant = "primary",
   href,
   external = false,
   icon,
@@ -22,13 +22,14 @@ const {
   href={href}
   class:list={[
     classes,
-    "flex justify-center items-center text-base gap-x-2 w-fit",
+    "flex justify-center items-center text-base gap-x-2 w-fit rounded-full p-2 md:px-4",
     { "w-full": wfull },
     { "w-fit": !wfull },
     {
-      "bg-white/5 border border-white/10 rounded-full p-2 md:px-4 text-white/50 hover:bg-white/10":
-        variant === "button",
+      "bg-white/5 border border-white/10 text-white/50 hover:bg-white/10":
+        variant === "primary",
     },
+    { "bg-white text-black": variant === "secondary" },
   ]}
   target={external ? "_blank" : null}
   rel={external ? "noopener noreferrer" : null}

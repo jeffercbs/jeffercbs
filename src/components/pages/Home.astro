@@ -5,23 +5,31 @@ import Layout from "@/layouts/Layout.astro";
 import Link from "../Link.astro";
 import AboutMe from "../partials/AboutMe.astro";
 import Banner from "../partials/Banner.astro";
-import Projects from "../partials/Projects.astro";
+import Education from "../partials/Education.astro";
+import Experience from "../partials/Experience.astro";
 
 const { props, currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
 <Layout title={props.title}>
-  <main>
+  <main class="hero">
     <Intro />
+    <h3 class="text-4xl font-semibold mb-3">
+      <span class="text-balance">Resumen</span>
+      <span class="text-yellow-300">.</span>
+    </h3>
     <AboutMe />
-    <Projects />
+    <div class="grid md:grid-cols-2 grid-cols-1">
+      <Experience />
+      <Education />
+    </div>
 
     <Banner>
       <p class="text-2xl font-semibold max-w-xl mx-auto font-mono">
         {i18n.SERVICES_MSG}
       </p>
-      <Link href="/services" class="mx-auto mt-12">
+      <Link href="/services" class="mx-auto mt-12" variant="secondary">
         {i18n.SERVICES_BUTTON}
       </Link>
     </Banner>

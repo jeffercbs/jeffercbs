@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import CodeDeco from "../CodeDeco.astro";
 import Tool from "../Tool.astro";
 import Banner from "../partials/Banner.astro";
+import Projects from "../partials/Projects.astro";
 
 const { props, currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -58,6 +59,7 @@ const i18n = getI18n({ currentLocale });
         {
           [
             "react",
+            "astrojs",
             "html",
             "planetscale",
             "supabase",
@@ -71,7 +73,7 @@ const i18n = getI18n({ currentLocale });
         }
       </div>
     </div>
-
+    <Projects />
     <Banner />
   </main>
 </Layout>

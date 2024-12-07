@@ -3,7 +3,7 @@ import "@fontsource-variable/onest";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
 
 interface Props {
@@ -16,15 +16,15 @@ const { title } = Astro.props;
 <html lang={Astro.currentLocale}>
   <head>
     <BaseHead title={title} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="bg-neutral-900 relative overflow-x-hidden">
     <div
-      class="absolute inset-0 z-[-2] w-full h-dvh bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#33ee7bac,transparent)]"
+      class="absolute inset-0 z-[-2] w-full h-dvh bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#33ee7b48,transparent)]"
     >
     </div>
     <div
-      class="absolute inset-0 -z-10 h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#33ee7b_100%)]"
+      class="absolute inset-0 -z-10 h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#33ee7b48_100%)]"
     >
     </div>
 

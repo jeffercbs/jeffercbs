@@ -26,18 +26,18 @@ const { title, description, link, repo, cover } = Astro.props;
       <p class="mb-4 text-pretty opacity-70" set:text={description} />
     </div>
     <div class="flex gap-4 font-semibold">
-      <Link href={repo} variant="link" external>Github</Link>
+      <Link href={repo} variant="link" external>visualizar</Link>
       <Link href={`/projects/${link}`} variant="link">{i18n.PROJECT_CASE}</Link>
     </div>
   </div>
   <div class="rounded-2xl overflow-hidden flex-1 w-fit h-full">
     <img
-      src={cover}
-      width="500"
+      src={`_thumbnails/${cover}`}
+      width="700"
       height="500"
       loading="lazy"
       alt={title}
-      class="aspect-video size-full object-cover hover:scale-110 ease-in-out transition duration-300"
+      class="aspect-video size-full object-cover group-hover:scale-110 ease-in-out transition duration-300"
     />
   </div>
 </article>
