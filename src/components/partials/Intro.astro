@@ -1,40 +1,39 @@
 ---
 import { getI18n } from "@/i18n";
-import Link from "../Link.astro";
 import Badge from "../Badge.astro";
-import { Image } from "astro:assets";
+import Link from "../Link.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
 <section
-  class="relative md:pt-0 pt-20 h-dvh flex-col grid md:grid-cols-2 grid-cols-1 justify-start gap-4"
+  class="relative h-dvh grid place-content-center gap-4"
   id="#"
 >
   <div
-    class="flex flex-col items-start justify-center gap-y-3 md:order-1 order-last relative md:text-left text-center"
+    class="flex flex-col items-center justify-center gap-y-3 relative text-center"
     id="intro"
   >
-    <div class="flex gap-4 md:mx-0 mx-auto">
+    <div class="flex gap-4 mx-auto">
       <a
         href="https://linkedin.com/in/jeffercbs"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center transition md:justify-center md:hover:scale-105"
+        class="flex items-center transition md:hover:scale-105"
       >
         <Badge>{i18n.INTRO_BADGE}</Badge>
       </a>
     </div>
-    <h1 class="font-bold text-5xl text-white" set:text={i18n.INTRO_TITLE} />
+    <h1 class="font-bold text-6xl text-white" set:text={i18n.INTRO_TITLE} />
 
-    <p class="md:max-w-xl text-xl md:text-2xl">
+    <p class="md:max-w-xl text-xl md:text-2xl mt-3">
       <span>{i18n.INTRO_DESCRIPTION.FIRST}.</span>
       <span class="text-red-200">{i18n.INTRO_DESCRIPTION.SECOND}.</span>
       <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
     </p>
 
-    <nav class="flex flex-wrap md:max-w-[420px] gap-4 mt-8">
+    <nav class="flex justify-center flex-wrap md:max-w-[420px] gap-4 mt-8">
       <Link href="https://linkedin.com/in/jeffercbs" icon="linkedin" external>
         Linkedin
       </Link>
@@ -47,20 +46,9 @@ const i18n = getI18n({ currentLocale });
       <Link href="mailto:jebarrero14@gmail.com" icon="mail" external>
         jebarrero14@gmail.com
       </Link>
+       <Link href="/about" icon="braces">
+        About
+      </Link>
     </nav>
-  </div>
-  <div class="relative flex justify-start items-center mx-auto">
-    <div
-      class="size-fit rounded-full relative overflow-hidden animate-blurred-fade-in"
-    >
-      <Image
-        src="/yo.jpg"
-        format="webp"
-        width="400"
-        height="400"
-        class="object-cover aspect-square md:size-[400px] size-[250px] rounded-full"
-        alt="i am jeffercbs"
-      />
-    </div>
   </div>
 </section>

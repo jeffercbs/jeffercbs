@@ -1,0 +1,48 @@
+---
+import CardTestimony from "../CardTestimony.astro";
+---
+
+<section id="testimonies" class="relative overflow-hidden">
+  <div class="text-center pb-5">
+    <h2 class="text-center bg-clip-text text-transparent bg-gradient-to-l to-white/70 from-green-200 text-5xl font-semibold">
+      Testimonios
+    </h2>
+  </div>
+  <div
+    data-testimonials=""
+    class="relative data-[testimonials-closed]:mb-0 duration-1000 transition-all testimonials-mask"
+  >
+    <ul class="mt-10 columns-1 gap-5 sm:columns-2 sm:gap-7 md:columns-3 pb-16">
+      {
+        [
+          {
+            name: "ArgermiroRemodelaciones",
+            position: "cliente",
+            company: "argermiroremodelaciones",
+            image: "/images/testimonials/1.jpg",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          },
+
+          {
+            name: "Camilo Davila",
+            position: "Ingeniero de sistemas",
+            company: "MINTIC",
+            image: "/images/testimonials/2.jpg",
+            text: "Lorem ipsum dolor sit amet, consectetur ipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          },
+          {
+            name: "Angie Rey",
+            position: "CEO de ar belleza",
+            company: "Company",
+            image: "/images/testimonials/3.jpg",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          },
+        ].map((testimonial) => (
+          <li class="p-5 break-inside-avoid mb-7 bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-2xl">
+            <CardTestimony {...testimonial} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

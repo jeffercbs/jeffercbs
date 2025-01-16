@@ -1,5 +1,6 @@
 ---
 import { getI18n } from "@/i18n";
+import { Icon } from "astro-icon/components";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -11,13 +12,27 @@ const i18n = getI18n({ currentLocale });
 >
   <ul class="flex flex-col gap-y-4 *:font-semibold">
     {
-      i18n.HEADER.map(({ LINK, LABEL }) => (
-        <li class="opacity-70 hover:opacity-100 transition-opacity ease-in-out">
+      i18n.HEADER.map(({ LINK, LABEL, ACTIVE, ICON }) => (
+        <li
+          class:list={[
+            "group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out",
+            {
+              "opacity-80 hover:opacity-100 hover:border border-transparent hover:bg-white/5 hover:border-white/10":
+                ACTIVE,
+            },
+            { "opacity-50 disabled:cursor-none": !ACTIVE },
+          ]}
+        >
           <a
-            href={LINK}
-            class="text-3xl hover:underline transition-all ease-in-out duration-300 text__glowing"
+            href={!ACTIVE ? "#" : LINK}
+            aria-disabled={!ACTIVE}
+            class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
           >
-            {LABEL}
+            <span class="flex size-full justify-center items-center">
+              <Icon name={ICON} class="size-6 mr-2" />
+              <span class="text-3xl">{LABEL}</span>
+            </span>
+            {!ACTIVE && <small class="mx-auto">¡Próximamente!</small>}
           </a>
         </li>
       ))

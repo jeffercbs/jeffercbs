@@ -1,0 +1,29 @@
+---
+type Props = {
+  name: string;
+  position: string;
+  company: string;
+  image: string;
+  text: string;
+};
+
+const { name, position, company, image, text } = Astro.props;
+---
+
+<article>
+  <header class="flex items-center gap-2.5">
+    <img
+      src={image}
+      alt="Avatar de Mateo Álvarez"
+      loading="lazy"
+      width="80"
+      height="80"
+      class="size-16 aspect-square rounded-full object-cover"
+    />
+    <div>
+      <h3 class="text-white font-semibold" set:text={name} />
+      <small class="text-white/60" set:text={position} />
+    </div>
+  </header>
+  <p class="text-white/70 mt-2.5" set:text={text} />
+</article>

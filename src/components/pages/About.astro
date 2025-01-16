@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "../partials/AboutMe.astro";
+import Education from "../partials/Education.astro";
+import Experience from "../partials/Experience.astro";
+
+const { props } = Astro;
+---
+
+<Layout title={props.title}>
+  <main class="hero">
+    <div class="min-h-52 grid place-content-center">
+      <h3 class="text-4xl font-semibold">
+        <span class="text-balance">Resumen</span>
+        <span class="text-yellow-300">.</span>
+      </h3>
+    </div>
+    <AboutMe />
+    <div class="grid md:grid-cols-2 grid-cols-1">
+      <Experience />
+      <Education />
+    </div>
+  </main>
+</Layout>

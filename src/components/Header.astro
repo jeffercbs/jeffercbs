@@ -9,20 +9,37 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <header class="fixed top-0 inset-x-0 w-full h-20 z-50">
-  <nav class="size-full px-6 flex justify-between items-center hero">
+  <nav class="size-full p-3 flex justify-between items-start hero">
     <div class="flex">
-      <span class="hidden lg:block text-3xl font-semibold"> jeffercbs </span>
+      <a href="/" class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-center items-center gap-x-2">
+        <h2 class="md:text-3xl text-2xl font-medium">jeffercbs</h2>
+        <small class="bg-green-400 text-neutral-900 rounded-full px-2">beta</small>
+      </a>
     </div>
     <div class="md:flex hidden">
-      <ul class="flex gap-x-6 mx-2 items-center" id="nav-items">
+      <ul class="flex gap-x-3 mx-2 items-start justify-center" id="nav-items">
         {
           i18n.HEADER.map((item) => (
-            <li class="opacity-80 hover:opacity-100 transition-opacity ease-in-out">
+            <li
+              class:list={[
+                "group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out",
+                {
+                  "opacity-80 hover:opacity-100 hover:border border-transparent hover:bg-white/5 hover:border-white/10":
+                    item.ACTIVE,
+                },
+                { "opacity-50 disabled:cursor-none": !item.ACTIVE },
+              ]}
+            >
               <a
-                href={item.LINK}
-                class="font-semibold text-base text__glowing relative ease-out duration-300 py-2"
+                href={!item.ACTIVE ? "#" : item.LINK}
+                aria-disabled={!item.ACTIVE}
+                class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
               >
-                {item.LABEL}
+                <span class="flex size-full justify-center items-center">
+                  <Icon name={item.ICON} class="size-6 mr-2" />
+                  <span>{item.LABEL}</span>
+                </span>
+                {!item.ACTIVE && <small class="mx-auto">¡Próximamente!</small>}
               </a>
             </li>
           ))
@@ -31,7 +48,7 @@ const i18n = getI18n({ currentLocale });
     </div>
     <div class="flex">
       <LanguageSelector />
-      <div class="border-s border-gray-500 mx-2"></div>
+      <div class="mx-2"></div>
       <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
         <Icon name="menu" class="size-8" />
       </button>
