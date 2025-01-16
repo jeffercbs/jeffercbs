@@ -4,16 +4,28 @@
   "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
   "HEADER": [
     {
-      "LABEL": "Home",
-      "LINK": "/#"
+      "LABEL": "Blog",
+      "LINK": "/blog",
+      "ICON": "book",
+      "ACTIVE": true
     },
     {
-      "LABEL": "About",
-      "LINK": "/#about"
+      "LABEL": "Mentoring",
+      "LINK": "/en/mentoring",
+      "ICON": "users",
+      "ACTIVE": false
+    },
+    {
+      "LABEL": "Courses",
+      "LINK": "/en/courses",
+      "ICON": "camera",
+      "ACTIVE": false
     },
     {
       "LABEL": "Services",
-      "LINK": "/en/services"
+      "LINK": "/en/services",
+      "ICON": "handshake",
+      "ACTIVE": true
     }
   ],
   "INTRO_TITLE": "Hey, I'm Jeffecbs",
