@@ -18,11 +18,9 @@ const { title, description, link, repo, cover } = Astro.props;
 ---
 
 <article
-  class="card relative group flex md:flex-row flex-col gap-x-6 rounded-2xl p-8 md:h-[400px] h-fit bg-[#212121]"
+  class="card relative group flex flex-col gap-x-6 rounded-2xl p-8 h-fit bg-[#212121]"
 >
-  <div
-    class="flex flex-col md:h-full h-fit md:pb-0 pb-5 justify-between md:w-2/6 w-full"
-  >
+  <div class="flex flex-col pb-5">
     <div class="block gap-y-4">
       <h3 class="text-2xl font-bold text-yellow-100 mb-2">
         {title}
