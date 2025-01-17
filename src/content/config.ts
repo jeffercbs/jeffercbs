@@ -4,6 +4,9 @@ const ArticlesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    published: z.boolean(),
+    cover: z.string(),
+    medium: z.string(),
     created: z
       .string()
       .or(z.date())
