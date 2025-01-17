@@ -104,14 +104,18 @@
       ]
     }
   ],
-  "PROJECTS_TITLE": "Proyectos",
+  "PROJECTS_TITLE": "algunos proyectos desarrollados",
   "PROJECT_CASE": "caso de estudio",
+
   "SERVICES_MSG": "Descubre cómo podemos crear juntos el sitio web perfecto para tu marca o empresa. ¡Convierte tu visión en realidad hoy mismo!",
   "SERVICES_BUTTON": "Descubrir más",
+
   "CLIENTS_TITLE": "Clientes",
   "CLIENTS_DESC": "",
+
   "FOOTER_MSG": "Casi todos los derechos reservados.",
   "FOOTER_LINK": "Sobre mi",
+
   "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
   "ONE_PLAN_DESC": "Un plan para emprendedores, marcas o pequeñas empresas que buscan establecer una presencia online impactante. Con nuestro enfoque simplificado, creamos sitios web estáticos elegantes y funcionales que destacan la identidad de tu marca.",
   "ONE_PLAN_FEACTURES": [
