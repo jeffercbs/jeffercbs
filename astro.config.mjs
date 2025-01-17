@@ -9,6 +9,8 @@ export default defineConfig({
   integrations: [sitemap(), tailwind(), icon()],
   redirects: {
     "/en/projects/[...slug]": "/projects/[...slug]",
+    "/en/blog/p/[...slug]": "/blog/p/[...slug]",
+    "/en/blog": "/blog",
   },
   i18n: {
     defaultLocale: "es",
