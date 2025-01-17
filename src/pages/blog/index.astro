@@ -1,12 +1,52 @@
 ---
+import CardArticle from "@/components/CardArticle.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
 import { type CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"articles">[];
+const isPublished = await getCollection(
+  "articles",
+  (entry) => entry.data.published
+);
+const isNotPublished = await getCollection(
+  "articles",
+  (entry) => !entry.data.published
+);
 ---
 
 <Layout title="blog">
-  <main class="hero min-h-dvh">
-    <h1>blog</h1>
+  <main class="hero flex md:flex-row flex-col-reverse min-h-dvh">
+    <div class="flex-1 py-5 mt-12">
+      <ul class="flex flex-col gap-y-4">
+        {
+          isPublished.map((article) => (
+            <li>
+              <CardArticle {...article} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="md:w-1/3 w-full px-6 md:px-8 mt-6">
+      <div class="pb-8">
+        <small class="bg-green-400 px-3 py-1 rounded-full text-neutral-900">
+          ¡Proximos articulos!
+        </small>
+      </div>
+      <ul>
+        {
+          isNotPublished.length === 0 ? (
+            <li>No hay proximo contanido</li>
+          ) : (
+            isNotPublished.map((article) => (
+              <li class="opacity-80 underline">
+                <span>{article.data.title}</span>
+              </li>
+            ))
+          )
+        }
+      </ul>
+    </div>
   </main>
 </Layout>
