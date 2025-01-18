@@ -4,13 +4,13 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { type CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"articles">[];
+type Props = CollectionEntry<"blog">[];
 const isPublished = await getCollection(
-  "articles",
+  "blog",
   (entry) => entry.data.published
 );
 const isNotPublished = await getCollection(
-  "articles",
+  "blog",
   (entry) => !entry.data.published
 );
 ---
@@ -20,9 +20,9 @@ const isNotPublished = await getCollection(
     <div class="flex-1 py-5 mt-12">
       <ul class="flex flex-col gap-y-4">
         {
-          isPublished.map((article) => (
+          isPublished.map((entry) => (
             <li>
-              <CardArticle {...article} />
+              <CardArticle {...entry} />
             </li>
           ))
         }
@@ -39,9 +39,9 @@ const isNotPublished = await getCollection(
           isNotPublished.length === 0 ? (
             <li>No hay proximo contanido</li>
           ) : (
-            isNotPublished.map((article) => (
+            isNotPublished.map((entry) => (
               <li class="opacity-80 underline">
-                <span>{article.data.title}</span>
+                <span>{entry.data.title}</span>
               </li>
             ))
           )

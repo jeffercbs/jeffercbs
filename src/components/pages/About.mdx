@@ -1,0 +1,32 @@
+---
+title: "acerca de mi"
+description: ""
+---
+
+import AboutMe from "../partials/AboutMe.astro";
+import Education from "../partials/Education.astro";
+import Experience from "../partials/Experience.astro";
+
+<main class="hero">
+  <div class="min-h-44 mt-14 grid place-content-center">
+    <h3 class="flex flex-col text-4xl font-medium text-center">
+      <span> Hello 👋 </span>
+      <span>My name is Jeferson Barrero</span>
+    </h3>
+  </div>
+
+   <div class="flex md:flex-row flex-col gap-4 justify-center my-4">
+
+        ![jeffercbs's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jeffercbs&theme=dark&hide_border=true)
+
+        ![jeffercbs's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jeffercbs&theme=dark&show_icons=true&hide_border=true&layout=compact)
+
+    </div>
+
+<AboutMe />
+<div class="grid md:grid-cols-2 grid-cols-1">
+  <Experience />
+  <Education />
+</div>
+
+</main>
