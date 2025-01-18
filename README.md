@@ -1,16 +1,18 @@
-### Hi 👋 My name is Jeferson Barrero
+# Hi 👋 My name is Jeferson Barrero
 
-<!--
-**jeffercbs** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a passionate developer with a keen interest in web development, open-source projects, and learning. I enjoy exploring new technologies and applying them to solve real-world problems.
 
-Here are some ideas to get you started:
+```python
+me = {
+    "🌱 I’m currently learning": ["Rust"].
+    "💬 Ask me about": ["About the space and technology"].
+    "📫 How to reach me": ["jebarrero14@gmail.com"].
+    "⚡ Fun fact": ["---"].
+}
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📈 GitHub Stats
+
+![jeffercbs's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jeffercbs&theme=dark&hide_border=true)
+
+![jeffercbs's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jeffercbs&theme=dark&show_icons=true&hide_border=true&layout=compact)
