@@ -22,11 +22,11 @@ const {
   href={href}
   class:list={[
     classes,
-    "flex justify-center items-center text-base gap-x-2 rounded-full p-2 md:px-4",
-    { "w-full": wfull },
+    "flex justify-center items-center text-base gap-x-2 rounded-full",
+    { "w-full p-2 md:px-4": wfull },
     { "w-fit": !wfull },
     {
-      "bg-white/5 border border-white/10 text-white/50 hover:bg-white/10":
+      "bg-white/5 border border-white/10 text-white/60 hover:text-white transition-opacity hover:bg-white/10":
         variant === "primary",
     },
     { "bg-white text-black": variant === "secondary" },

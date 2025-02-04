@@ -1,0 +1,53 @@
+---
+import { getI18n } from "@/i18n";
+import CodeDeco from "../CodeDeco.astro";
+import Tool from "../Tool.astro";
+import Container from "./Container.astro";
+
+const { props, currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container
+  id="tools"
+  tag={i18n.TOOLS_TAG}
+  title={i18n.TOOLS_TITLE}
+  description={i18n.TOOLS_DESCRIPTION}
+>
+  <div class="relative">
+    <CodeDeco
+      codelines={[
+        "/**",
+        " * design",
+        " * cms",
+        " * testing",
+        " * framework",
+        " * workflows",
+        " * libraries",
+        "**/",
+      ]}
+      class="absolute -top-10 -right-20 md:-right-36"
+    />
+
+    <div
+      class="flex-1 grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-3 justify-center"
+    >
+      {
+        [
+          "postgresql",
+          "cloudflare",
+          "react",
+          "astrojs",
+          "html",
+          "planetscale",
+          "tailwind",
+          "postgresql",
+          "cloudinary",
+          "shopify",
+          "figma",
+          "aws",
+        ].map((tool) => <Tool {tool} />)
+      }
+    </div>
+  </div>
+</Container>

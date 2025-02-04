@@ -2,53 +2,74 @@
 import { getI18n } from "@/i18n";
 import Badge from "../Badge.astro";
 import Link from "../Link.astro";
+import CodeDeco from "../CodeDeco.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section
-  class="relative h-dvh grid place-content-center gap-4"
-  id="#"
->
-  <div
-    class="flex flex-col items-center justify-center gap-y-3 relative text-center"
-    id="intro"
-  >
-    <div class="flex gap-4 mx-auto">
-      <a
-        href="https://linkedin.com/in/jeffercbs"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center transition md:hover:scale-105"
-      >
-        <Badge>{i18n.INTRO_BADGE}</Badge>
-      </a>
+<section class="relative h-dvh" id="intro">
+  <CodeDeco
+    class="absolute -right-8 top-14"
+    codelines={[
+      "/**",
+      " * HTML",
+      " * CSS",
+      " * JavaScript",
+      " * Responsive Design",
+      " * User Experience",
+      "**/",
+    ]}
+  />
+  <div class="grid place-content-center size-full" id="intro">
+    <div class="absolute">
+      <CodeDeco codelines={["hello()"]} />
+      <CodeDeco codelines={["const message = ''"]} />
     </div>
-    <h1 class="font-bold text-6xl text-white" set:text={i18n.INTRO_TITLE} />
+    <div class="flex flex-col justify-center items-center text-center">
+      <h1 class="font-bold text-6xl text-white" set:text={i18n.INTRO_TITLE} />
 
-    <p class="md:max-w-xl text-xl md:text-2xl mt-3">
-      <span>{i18n.INTRO_DESCRIPTION.FIRST}.</span>
-      <span class="text-red-200">{i18n.INTRO_DESCRIPTION.SECOND}.</span>
-      <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
-    </p>
+      <p class="md:max-w-xl text-xl md:text-2xl mt-3">
+        <span>{i18n.INTRO_DESCRIPTION.FIRST}.</span>
+        <span class="text-red-200">{i18n.INTRO_DESCRIPTION.SECOND}.</span>
+        <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
+      </p>
 
-    <nav class="flex justify-center flex-wrap md:max-w-[420px] gap-4 mt-8">
-      <Link href="https://linkedin.com/in/jeffercbs" icon="linkedin" external>
-        Linkedin
-      </Link>
-      <Link href="https://github.com/jeffercbs" icon="github" external>
-        Github
-      </Link>
-      <Link href="https://www.youtube.com/@jeffercbs" icon="youtube" external>
-        Youtube
-      </Link>
-      <Link href="mailto:jebarrero14@gmail.com" icon="mail" external>
-        jebarrero14@gmail.com
-      </Link>
-       <Link href="/about" icon="braces">
-        About
-      </Link>
-    </nav>
+      <nav class="flex justify-center flex-wrap md:max-w-xl gap-4 mt-8">
+        <Link
+          href="https://linkedin.com/in/jeffercbs"
+          icon="linkedin"
+          class="px-4 py-2"
+          external
+        >
+          Linkedin
+        </Link>
+        <Link
+          href="https://github.com/jeffercbs"
+          icon="github"
+          class="px-4 py-2"
+          external
+        >
+          Github
+        </Link>
+        <Link
+          href="https://www.youtube.com/@jeffercbs"
+          icon="youtube"
+          class="px-4 py-2"
+          external
+        >
+          Youtube
+        </Link>
+        <Link
+          href="mailto:jebarrero14@gmail.com"
+          icon="mail"
+          class="px-4 py-2"
+          external
+        >
+          jebarrero14@gmail.com
+        </Link>
+        <Link href="/about" class="px-4 py-2" icon="braces"> About </Link>
+      </nav>
+    </div>
   </div>
 </section>

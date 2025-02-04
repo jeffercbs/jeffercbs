@@ -20,7 +20,7 @@ const { name, position, image, text } = Astro.props;
       height="50"
       class="size-12 aspect-square rounded-full object-cover"
     />
-    <div>
+    <div class="flex flex-col">
       <h3 class="text-white font-semibold" set:text={name} />
       <small class="text-white/60" set:text={position} />
     </div>

@@ -1,15 +1,18 @@
 ---
+import { getI18n } from "@/i18n";
 import CardTestimony from "../CardTestimony.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
 ---
 
-<section id="testimonies" class="relative overflow-hidden">
-  <div class="text-center h-36 md:max-w-2xl mx-auto">
-    <h2
-      class="text-center bg-clip-text text-transparent bg-gradient-to-l to-white/70 from-green-200 md:text-5xl text-4xl text-pretty font-semibold"
-    >
-      Más que palabras, el trabajo habla por nosotros
-    </h2>
-  </div>
+<Container
+  title={i18n.TESTIMONIES_TITLE}
+  description={i18n.TESTIMONIES_DESCRIPTION}
+  tag={i18n.TESTIMONIES_TAG}
+  id="testimonies"
+>
   <div
     data-testimonials=""
     class="relative data-[testimonials-closed]:mb-0 duration-1000 transition-all testimonials-mask"
@@ -39,7 +42,7 @@ import CardTestimony from "../CardTestimony.astro";
             text: "Jeferson es una persona comprometida, dedicada e inteligente. Disfruta el trabajo en equipo, siendo esto soft skills muy atrayente para las empresas a la vanguardia, tiene toda la disposición para ayudar a los demás y se ve que disfruta cuando lo hace. ",
           },
         ].map((testimonial) => (
-          <li class="p-5 break-inside-avoid mb-7 bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-2xl">
+          <li class="p-5 break-inside-avoid mb-7 bg-black/5 border border-white/10 text-white/50 hover:bg-white/5 rounded-2xl">
             <CardTestimony {...testimonial} />
           </li>
         ))
@@ -53,4 +56,4 @@ import CardTestimony from "../CardTestimony.astro";
       Show more...
     </button> 
   </div> -->
-</section>
+</Container>

@@ -2,9 +2,9 @@
 import Intro from "@/components/partials/Intro.astro";
 import { getI18n } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
-import Link from "../Link.astro";
-import Banner from "../partials/Banner.astro";
+import Projects from "../partials/Projects.astro";
 import Testimonies from "../partials/Testimonies.astro";
+import Tools from "../partials/Tools.astro";
 
 const { props, currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -14,15 +14,8 @@ const i18n = getI18n({ currentLocale });
   <main class="hero">
     <Intro />
 
-    <Testimonies/>
-
-    <Banner>
-      <p class="text-2xl font-semibold max-w-xl mx-auto font-mono">
-        {i18n.SERVICES_MSG}
-      </p>
-      <Link href="/services" class="mx-auto mt-12" variant="secondary">
-        {i18n.SERVICES_BUTTON}
-      </Link>
-    </Banner>
+    <Testimonies />
+    <Projects />
+    <Tools />
   </main>
 </Layout>
