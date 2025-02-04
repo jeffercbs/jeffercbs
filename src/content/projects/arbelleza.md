@@ -1,8 +1,8 @@
 ---
 title: "ARBelleza"
-description: "Tienda de productos de belleza. Contruida en Nextjs y un backend completo en nestjs. Integrando analiticas, autenticación y pagos online."
-cover: "arbellezaa.webp"
-repo: "https://arbellezaa.vercel.app/"
+description: "E-commerce desarrollado con Next.js, NestJS, PostgreSQL y AWS, diseñado para ofrecer una experiencia rápida, segura y escalable."
+cover: "arbelleza-001.webp"
+repo: "https://arbelleza.com"
 ---
 
 ## Descripción del Proyecto
