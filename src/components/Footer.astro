@@ -1,17 +1,33 @@
 ---
 import { getI18n } from "@/i18n";
+import { Image } from "astro:assets";
+import firma from "@/assets/jeffercbs-f-black.png";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<footer class="flex flex-col -z-10 py-8">
-  <div class="hero py-4 flex justify-center items-center">
+<footer class="py-8 flex">
+  <div class="hero flex md:flex-row flex-col-reverse justify-between items-end">
     <p class="text-sm opacity-80">
       <span> &copy; 2024 <em>@jeffercbs</em>.</span>
       <span>
         {i18n.FOOTER_MSG}
       </span>
     </p>
+
+    <div>
+      <a
+        href="https://github.com/jeffercbs"
+        class="flex flex-col justify-center items-center"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image src={firma} alt="firma the jeffercbs" class="size-24" />
+        <span>
+          Diseñado y desarrollado por <em>jeffercbs</em>
+        </span>
+      </a>
+    </div>
   </div>
 </footer>
