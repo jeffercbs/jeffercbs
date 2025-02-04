@@ -20,12 +20,6 @@
       "LINK": "/en/courses",
       "ICON": "camera",
       "ACTIVE": false
-    },
-    {
-      "LABEL": "Services",
-      "LINK": "/en/services",
-      "ICON": "handshake",
-      "ACTIVE": true
     }
   ],
   "INTRO_TITLE": "Hey, I'm Jeffecbs",
@@ -105,20 +99,22 @@
       ]
     }
   ],
-  "PROJECTS_TITLE": "some of the projects developed",
+  "TESTIMONIES_TAG": "Testimonies",
+  "TESTIMONIES_TITLE": "More Than Words, Results",
+  "TESTIMONIES_DESCRIPTION": "Testimonials from clients, colleagues, and collaborators that reflect the impact of my work on every project. 🚀",
+  "PROJECTS_TAG": "Projects",
+  "PROJECTS_TITLE": "Projects that speak for themselves",
+  "PROJECTS_DESCRIPTION": "Explore a mix of client and personal projects, each reflecting my commitment to creating innovative solutions and delivering results that make a difference. 🚀",
   "PROJECT_CASE": "Case study",
-
   "SERVICES_MSG": "Discover how we can together create the perfect website for your brand or company. Turn your vision into reality today!",
   "SERVICES_BUTTON": "Discover more",
-
   "CLIENTS_TITLE": "Clients",
   "CLIENTS_DESC": "",
-
+  "TOOLS_TITLE": "Integrate the latest technology into your next project",
+  "TOOLS_DESCRIPTION": "The most modern tools to create innovative, scalable, and secure solutions tailored to your needs. 🚀",
+  "TOOLS_TAG": "Tools",
   "FOOTER_MSG": "Almost all rights reserved",
-
   "SERVICES_INTRO": "Developing <span>amazing</span> <strong> websites</strong> and <strong>applications</strong>",
-  "SERVICES_TOOLS_DESC": "Integrate the latest in technology to your next project",
-
   "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
   "ONE_PLAN_DESC": "A plan for entrepreneurs, brands, or small businesses looking to establish a compelling online presence. With our streamlined approach, we create elegant and functional static websites that showcase the identity of your brand.",
   "ONE_PLAN_FEACTURES": [

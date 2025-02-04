@@ -19,7 +19,8 @@ const ProjectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     cover: z.string(),
-    repo: z.string(),
+    repo: z.string().optional(),
+    link: z.string().optional(),
   }),
 });
 

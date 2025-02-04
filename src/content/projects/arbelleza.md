@@ -2,6 +2,7 @@
 title: "ARBelleza"
 description: "E-commerce desarrollado con Next.js, NestJS, PostgreSQL y AWS, diseñado para ofrecer una experiencia rápida, segura y escalable."
 cover: "arbelleza-001.webp"
+link: "https://arbelleza.com"
 repo: "https://arbelleza.com"
 ---
 
