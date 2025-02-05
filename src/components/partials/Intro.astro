@@ -1,14 +1,13 @@
 ---
 import { getI18n } from "@/i18n";
-import Badge from "../Badge.astro";
-import Link from "../Link.astro";
 import CodeDeco from "../CodeDeco.astro";
+import Link from "../Link.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section class="relative h-dvh max-h-dvh overflow-hidden" id="intro">
+<section class="relative max-h-dvh overflow-hidden hero" id="intro">
   <CodeDeco
     class="absolute -right-8 md:top-14 bottom-1 text-sm"
     codelines={[
@@ -21,12 +20,14 @@ const i18n = getI18n({ currentLocale });
       "**/",
     ]}
   />
-  <div class="grid place-content-center size-full" id="intro">
+  <div>
     <div class="absolute top-16 left-0">
       <CodeDeco codelines={["hello()"]} />
       <CodeDeco codelines={["const message = ''"]} />
     </div>
-    <div class="flex flex-col justify-center items-center text-center">
+    <div
+      class="flex flex-col justify-center md:items-start items-center md:text-left size-full h-dvh text-center"
+    >
       <h1
         class="font-bold md:text-6xl text-4xl text-white"
         set:text={i18n.INTRO_TITLE}
@@ -39,41 +40,21 @@ const i18n = getI18n({ currentLocale });
       </p>
 
       <nav
-        class="flex justify-center flex-wrap md:max-w-xl md:gap-4 gap-2 mt-8"
+        class="flex md:justify-start justify-center flex-wrap md:max-w-xl md:gap-4 gap-2 mt-8"
       >
-        <Link
-          href="https://linkedin.com/in/jeffercbs"
-          icon="linkedin"
-          class="p-2"
-          external
-        >
+        <Link href="https://linkedin.com/in/jeffercbs" icon="linkedin" external>
           Linkedin
         </Link>
-        <Link
-          href="https://github.com/jeffercbs"
-          icon="github"
-          class="p-2"
-          external
-        >
+        <Link href="https://github.com/jeffercbs" icon="github" external>
           Github
         </Link>
-        <Link
-          href="https://www.youtube.com/@jeffercbs"
-          icon="youtube"
-          class="p-2"
-          external
-        >
+        <Link href="https://www.youtube.com/@jeffercbs" icon="youtube" external>
           Youtube
         </Link>
-        <Link
-          href="mailto:jebarrero14@gmail.com"
-          icon="mail"
-          class="p-2"
-          external
-        >
+        <Link href="mailto:jebarrero14@gmail.com" icon="mail" external>
           jebarrero14@gmail.com
         </Link>
-        <Link href="/about" class="p-2" icon="braces"> About </Link>
+        <Link href="/about" icon="braces"> About </Link>
       </nav>
     </div>
   </div>

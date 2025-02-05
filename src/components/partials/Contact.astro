@@ -1,0 +1,42 @@
+---
+import Link from "../Link.astro";
+import Container from "./Container.astro";
+---
+
+<Container id="">
+  <div
+    class="bg-[url('/mockup.jpg')] relative overflow-hidden bg-no-repeat bg-cover bg-center rounded-2xl h-[600px] w-full after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-tr after:from-black/40 after:to-black/50 after:backdrop-blur-sm after:z-[1]"
+  >
+    <div
+      class="relative z-[2] md:max-w-xl md:px-16 px-6 w-full flex flex-col justify-center h-full gap-y-3"
+    >
+      <h2 class="md:text-4xl text-xl font-bold text-pretty">
+        ¡Hablemos sobre tu proyecto! 🚀
+      </h2>
+      <p>
+        Agenda una cita y revisaremos <strong>
+          tus necesidades y objetivos
+        </strong> para encontrar la mejor solución. Juntos definiremos <strong>
+          la estrategia y el desarrollo
+        </strong> que mejor se adapte a tu proyecto.
+      </p>
+
+      <p>
+        📅 <strong>Reserva tu cita ahora</strong> y llevemos tu idea al siguiente
+        nivel. 💻✨
+      </p>
+      <Link
+        href="https://calendar.app.google/cu1kgfTpDhHMWQzJA"
+        external
+        wfull
+        class="mt-5">Reservar cita</Link
+      >
+    </div>
+  </div>
+</Container>
+
+<style>
+  p {
+    @apply opacity-80 text-pretty font-medium md:text-lg text-base;
+  }
+</style>

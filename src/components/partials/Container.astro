@@ -1,29 +1,32 @@
 ---
 export type Props = {
-  title: string;
+  title?: string;
   id: string;
   tag?: string;
   description?: string;
+  class?: string;
 };
 
-const { title, id, description, tag } = Astro.props;
+const { title, id, description, tag, class: classes } = Astro.props;
 ---
 
-<section class="relative overflow-hidden my-10" id={id}>
-  <div class="container py-8 text-left md:max-w-2xl w-full">
+<section class:list={["relative py-9", classes]} id={id}>
+  <div class="hero">
     {
-      tag && (
-        <span class="text-base bg-clip-text text-transparent bg-gradient-to-l to-green-400 from-lime-400">
-          {tag}
-        </span>
+      tag && title && description && (
+        <div class="container py-8 text-left md:max-w-2xl w-full mb-4">
+          {tag && (
+            <span class="text-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-sky-400 uppercase font-bold">
+              {tag}
+            </span>
+          )}
+          {title && <h2 class="text-4xl font-bold text-balance">{title}</h2>}
+          {description && (
+            <p class=" text-gray-400 mt-1 text-lg text-pretty">{description}</p>
+          )}
+        </div>
       )
     }
-    <h2 class="text-4xl font-bold text-balance">{title}</h2>
-    {
-      description && (
-        <p class=" text-gray-400 mt-1 text-lg text-pretty">{description}</p>
-      )
-    }
+    <slot />
   </div>
-  <slot />
 </section>
