@@ -8,9 +8,9 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section class="relative h-dvh" id="intro">
+<section class="relative h-dvh max-h-dvh overflow-hidden" id="intro">
   <CodeDeco
-    class="absolute -right-8 top-14"
+    class="absolute -right-8 md:top-14 bottom-1 text-sm"
     codelines={[
       "/**",
       " * HTML",
@@ -22,12 +22,15 @@ const i18n = getI18n({ currentLocale });
     ]}
   />
   <div class="grid place-content-center size-full" id="intro">
-    <div class="absolute">
+    <div class="absolute top-16 left-0">
       <CodeDeco codelines={["hello()"]} />
       <CodeDeco codelines={["const message = ''"]} />
     </div>
     <div class="flex flex-col justify-center items-center text-center">
-      <h1 class="font-bold text-6xl text-white" set:text={i18n.INTRO_TITLE} />
+      <h1
+        class="font-bold md:text-6xl text-4xl text-white"
+        set:text={i18n.INTRO_TITLE}
+      />
 
       <p class="md:max-w-xl text-xl md:text-2xl mt-3">
         <span>{i18n.INTRO_DESCRIPTION.FIRST}.</span>
@@ -35,11 +38,13 @@ const i18n = getI18n({ currentLocale });
         <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
       </p>
 
-      <nav class="flex justify-center flex-wrap md:max-w-xl gap-4 mt-8">
+      <nav
+        class="flex justify-center flex-wrap md:max-w-xl md:gap-4 gap-2 mt-8"
+      >
         <Link
           href="https://linkedin.com/in/jeffercbs"
           icon="linkedin"
-          class="px-4 py-2"
+          class="p-2"
           external
         >
           Linkedin
@@ -47,7 +52,7 @@ const i18n = getI18n({ currentLocale });
         <Link
           href="https://github.com/jeffercbs"
           icon="github"
-          class="px-4 py-2"
+          class="p-2"
           external
         >
           Github
@@ -55,7 +60,7 @@ const i18n = getI18n({ currentLocale });
         <Link
           href="https://www.youtube.com/@jeffercbs"
           icon="youtube"
-          class="px-4 py-2"
+          class="p-2"
           external
         >
           Youtube
@@ -63,12 +68,12 @@ const i18n = getI18n({ currentLocale });
         <Link
           href="mailto:jebarrero14@gmail.com"
           icon="mail"
-          class="px-4 py-2"
+          class="p-2"
           external
         >
           jebarrero14@gmail.com
         </Link>
-        <Link href="/about" class="px-4 py-2" icon="braces"> About </Link>
+        <Link href="/about" class="p-2" icon="braces"> About </Link>
       </nav>
     </div>
   </div>

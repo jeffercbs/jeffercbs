@@ -31,7 +31,9 @@ const {
       </div>
     </div>
 
-    <div class="relative size-fit rounded-lg overflow-hidden">
+    <div
+      class="relative w-full h-60 md:h-32 md:w-fit rounded-lg overflow-hidden"
+    >
       <Image
         src={cover}
         alt="Blog post illustration"
@@ -39,7 +41,7 @@ const {
         width={250}
         height={250}
         transition:name={`image-a-${slug}`}
-        class="aspect-video group-hover:scale-125 transition-transform duration-300"
+        class="aspect-video size-full group-hover:scale-125 transition-transform duration-300"
       />
     </div>
   </div>
