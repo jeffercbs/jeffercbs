@@ -16,7 +16,6 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 
 const { title, description, link, repo, cover, slug } = Astro.props;
-console.log(Astro.props);
 ---
 
 <article
@@ -30,7 +29,7 @@ console.log(Astro.props);
       <p class="mb-4 text-pretty opacity-90" set:text={description} />
     </div>
     <div class="flex gap-x-4 font-semibold">
-      <Link href={link} variant="link" external>visualizar</Link>
+      <Link href={link || "#"} variant="link" external>visualizar</Link>
       <Link href={`/projects/${slug}`} variant="link">{i18n.PROJECT_CASE}</Link>
       {repo && <Link href={repo} variant="link" icon="github" external />}
     </div>
