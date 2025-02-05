@@ -1,7 +1,7 @@
 import spanish from "./es.json";
 import english from "./en.json";
 
-const LANGS = {
+export const LANGS = {
   Spanish: "es",
   English: "en",
 } as const;

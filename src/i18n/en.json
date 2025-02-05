@@ -4,6 +4,12 @@
   "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
   "HEADER": [
     {
+      "LABEL": "Home",
+      "LINK": "/",
+      "ICON": "home",
+      "ACTIVE": true
+    },
+    {
       "LABEL": "Blog",
       "LINK": "/blog",
       "ICON": "book",
