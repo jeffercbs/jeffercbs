@@ -1,7 +1,9 @@
 {
-  "TITLE_SEO": "Jeferson Barrero @jeffercbs - Frontend, JavaScript, React, CSS, Performance",
-  "DESCRIPTION_SEO": "Software Enginer | Young web developer | Technology enthusiast | @platzi student | content creator | occasional writer.",
-  "KEYWORD_SEO": "Frontend, JavaScript, React, CSS, Performance",
+  "TITLE_SEO": "Jeferson Barrero | Software Consultant & Digital Solutions Architect",
+  "DESCRIPTION_SEO": "Expert in software architecture and enterprise technology consulting. Development of scalable web solutions, systems optimization, and digital transformation. Over 5 years creating high-impact digital products for leading companies.",
+  "KEYWORD_SEO": "Software Architecture, Technology Consulting, Web Development, React, Next.js, Performance, Optimization, Digital Transformation",
+  "AUTHOR": "Jeferson Barrero",
+  "COPYRIGHT": "Jeferson Barrero",
   "HEADER": [
     {
       "LABEL": "Home",
