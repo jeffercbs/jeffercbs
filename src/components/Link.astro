@@ -29,7 +29,10 @@ const {
       "bg-black/30 hover:bg-black/10 border py-3 px-6 border-white/10 text-white/60 hover:text-white transition-opacity ":
         variant === "primary",
     },
-    { "bg-white text-black": variant === "secondary" },
+    {
+      "bg-white text-black py-2 hover:bg-gray-300 transitio ease-in-out hover:shadow-white/20 hover:shadow-2xl":
+        variant === "secondary",
+    },
   ]}
   target={external ? "_blank" : null}
   rel={external ? "noopener noreferrer" : null}

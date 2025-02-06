@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import { ClientRouter } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
-import "@/global.css";
+import "../global.css";
 
 interface Props {
   title: string;
@@ -21,7 +21,7 @@ const { title } = Astro.props;
   </head>
   <body class="bg-neutral-900 relative overflow-x-hidden">
     <div
-      class="absolute inset-0 -z-[5] w-full h-full bg-gradient-to-tl from-transparent from-50% via-blue-700/60 to-sky-700/60"
+      class="absolute inset-0 -z-[5] w-full h-full bg-radial-[at_25%_25%] from-sky-700/60 to-neutral-900 to-55%"
     >
     </div>
     <div class="relative z-[1] text-white">
@@ -29,42 +29,5 @@ const { title } = Astro.props;
       <slot />
       <Footer />
     </div>
-    <style is:global>
-      :root {
-        color-scheme: light dark;
-        --oxford-blue: #091940ff --text-shadow: 0 0 20px #fff, 0 0 40px #fff,
-          0 0 80px #fff;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        font-family: "Onest Variable", system-ui, sans-serif;
-        scroll-behavior: smooth;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-        backdrop-filter: blur(10px);
-        border-radius: 5px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-        border-radius: 5px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.5);
-      }
-      .hero {
-        @apply lg:max-w-6xl w-full mx-auto px-4;
-      }
-      .text__glowing {
-        text-shadow: var(--text-shadow);
-      }
-    </style>
   </body>
 </html>

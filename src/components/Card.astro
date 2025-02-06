@@ -16,10 +16,15 @@ const {
 } = Astro.props;
 ---
 
-<article class:list={["card mx-auto group", classes]}>
+<article
+  class:list={[
+    "w-full max-w-80 h-[550px] rounded-2xl hover:shadow-2xl shadow-white/30 overflow-hidden text-black relative mx-auto group",
+    classes,
+  ]}
+>
   <a href={website} target="_blank" rel="noopener noreferrer">
     <img src={`/_thumbnails/${cover}`} alt={title} class="size-full" />
-    <div class="card-footer">
+    <div class="absolute inset-x-0 top-0 h-2/5 size-full p-8 z-20">
       <div class="flex flex-col items-stretch gap-y-6">
         <div class="block gap-y-2">
           <span
@@ -36,13 +41,3 @@ const {
     </div>
   </a>
 </article>
-
-<style>
-  .card {
-    @apply w-full max-w-80 h-[550px] rounded-2xl shadow-gray-500/50 text-black relative;
-    @apply hover:shadow-2xl shadow-white/30 overflow-hidden;
-  }
-  .card-footer {
-    @apply absolute inset-x-0 top-0 h-2/5 size-full p-8 z-20;
-  }
-</style>

@@ -8,7 +8,9 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<header class="sticky top-0 inset-x-0 w-full h-20 z-50">
+<header
+  class="sticky md:pt-3 backdrop-blur-2xl top-0 inset-x-0 w-full h-20 z-50"
+>
   <nav
     class="size-full px-3 py-4 flex justify-between md:items-start items-center hero"
   >
@@ -76,16 +78,3 @@ const i18n = getI18n({ currentLocale });
     });
   });
 </script>
-
-<style>
-  header {
-    animation: blur linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-  @keyframes blur {
-    to {
-      @apply bg-black/50 text-white backdrop-blur-xl shadow-md;
-    }
-  }
-</style>
