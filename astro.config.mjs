@@ -8,7 +8,10 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://dev.jeffercbs.tech/",
-  integrations: [sitemap(), tailwindcss(), icon(), mdx()],
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  integrations: [sitemap(), icon(), mdx()],
   redirects: {
     "/en/projects/[...slug]": "/projects/[...slug]",
     "/en/blog/p/[...slug]": "/blog/p/[...slug]",

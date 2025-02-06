@@ -13,10 +13,8 @@
     "@astrojs/check": "0.9.4",
     "@astrojs/mdx": "^4.0.8",
     "@astrojs/sitemap": "3.2.1",
-    "@tailwindcss/postcss": "^4.0.3",
     "@tailwindcss/vite": "^4.0.3",
-    "astro": "5.2.5",
-    "postcss": "^8.5.1"
+    "astro": "5.2.5"
   },
   "devDependencies": {
     "@fontsource-variable/onest": "^5.1.1",
