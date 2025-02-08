@@ -6,8 +6,9 @@
 
 :root {
   color-scheme: light dark;
-  --text-shadow: 0 0 0.5rem var(--color-sky-400), 0 0 1rem var(--color-sky-400),
-    0 0 2rem var(--color-sky-400), 0 0 4rem var(--color-sky-400);
+  --text-shadow: 0 0 0.5rem var(--color-green-400),
+    0 0 1rem var(--color-green-400), 0 0 2rem var(--color-green-400),
+    0 0 4rem var(--color-green-400);
 }
 *,
 html,
@@ -43,5 +44,23 @@ body {
 @media (width >= 64rem /* 1024px */) {
   .hero {
     max-width: 72rem;
+  }
+}
+
+@layer components {
+  .header-animate {
+    animation: reduce-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+  @keyframes reduce-header {
+    to {
+      box-shadow:
+        0 5px 50px -5px hsla(0, 0%, 100%, 0.1),
+        0 0 0 1px hsla(0, 0%, 100%, 0.1);
+      background: rgba(25, 25, 25, 0.534);
+      padding-block: 1rem;
+      backdrop-filter: blur(10px);
+    }
   }
 }
