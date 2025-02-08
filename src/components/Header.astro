@@ -48,7 +48,9 @@ const i18n = getI18n({ currentLocale });
                   <Icon name={item.ICON} class="size-6 mr-2" />
                   <span>{item.LABEL}</span>
                 </span>
-                {!item.ACTIVE && <small class="mx-auto">¡Próximamente!</small>}
+                {!item.ACTIVE && (
+                  <small class="mx-auto" set:text={i18n.HEADER_PROX} />
+                )}
               </a>
             </li>
           ))
