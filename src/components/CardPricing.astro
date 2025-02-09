@@ -1,0 +1,83 @@
+---
+import type { Pricing } from "@/types/pricing";
+import { Icon } from "astro-icon/components";
+import { formatCurrency } from "@/utils/format_currency";
+
+type Props = Pricing;
+
+const {
+  TITLE,
+  DESCRIPTION,
+  HIGHLIGHT_TEXT,
+  PERFECT_FOR,
+  PERFECT_FOR_COLOR,
+  PRICE,
+  PRICE_TEXT,
+  CLASS: CLASSES,
+  FEATURES,
+  ICON,
+} = Astro.props;
+---
+
+<article
+  class:list={[
+    "bg-white/10 border w-full border-white/20 backdrop-blur-md relative group rounded-lg pt-6 px-5",
+    "hover:shadow-2xl hover:shadow-green-300/20 transition-all ease-in-out hover:border-green-400",
+    CLASSES,
+  ]}
+>
+  {
+    HIGHLIGHT_TEXT && (
+      <div class="absolute -top-4 left-0 right-0 flex justify-center">
+        <span class="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm px-3 py-1 rounded-full">
+          {HIGHLIGHT_TEXT}
+        </span>
+      </div>
+    )
+  }
+  <header class="space-y-2 mb-4">
+    {TITLE && <h2 class="text-lg font-medium">{TITLE}</h2>}
+    <span
+      class="text-3xl font-bold text-white"
+      set:text={PRICE_TEXT ? PRICE_TEXT : formatCurrency(PRICE || 0)}
+    />
+  </header>
+
+  <div class="space-y-4 mb-8">
+    {DESCRIPTION && <p class="text-gray-300">{DESCRIPTION}</p>}
+    {
+      PERFECT_FOR && (
+        <div class={`${PERFECT_FOR_COLOR} px-4 py-3 rounded-lg`}>
+          <strong class="text-sm font-bold pb-3">👉 Perfecto para:</strong>
+          <p class="text-sm text-pretty">{PERFECT_FOR}</p>
+        </div>
+      )
+    }
+    {
+      FEATURES && (
+        <ul class="space-y-2 text-sm text-gray-300 mt-6">
+          {FEATURES.map((feature, index) => (
+            <li class="flex items-center gap-2">
+              <Icon
+                name={ICON}
+                size={25}
+                class={`size-5 ${ICON === "check" ? "text-emerald-400" : "text-amber-400"}`}
+              />
+              <spann class="flex-1 text-sm">{feature}</spann>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+  <footer>
+    <a
+      class={`w-full ${
+        HIGHLIGHT_TEXT
+          ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white"
+          : "bg-white text-black hover:bg-gray-200"
+      }`}
+    >
+    </a>
+  </footer>
+</article>

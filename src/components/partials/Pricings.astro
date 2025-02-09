@@ -1,0 +1,21 @@
+---
+import { getI18n } from "@/i18n";
+import type { Pricing } from "@/types/pricing";
+import CardPricing from "../CardPricing.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = await getI18n({ currentLocale });
+---
+
+<Container
+  id="pricing"
+  tag="Planes y Precios"
+  title="Encuentra la mejor opción"
+  description="Selecciona el plan que mejor se adapte a tus necesidades y agende su cita. Todos los planes incluyen dominio y hosting gratis por el primer año."
+  class="bg-radial-[at_50%_50%] from-green-400/10 via-transparent to-transparent"
+>
+  <div class="grid md:grid-cols-4 grid-cols-1 gap-3">
+    {i18n.PLANS.map((p) => <CardPricing {...(p as Pricing)} />)}
+  </div>
+</Container>
