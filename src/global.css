@@ -43,7 +43,7 @@ body {
 
 @media (width >= 64rem /* 1024px */) {
   .hero {
-    max-width: 72rem;
+    max-width: 80rem;
   }
 }
 
