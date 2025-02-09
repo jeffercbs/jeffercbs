@@ -124,21 +124,98 @@
   "TOOLS_TAG": "Tools",
   "FOOTER_MSG": "Almost all rights reserved",
   "SERVICES_INTRO": "Developing <span>amazing</span> <strong> websites</strong> and <strong>applications</strong>",
-  "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
-  "ONE_PLAN_DESC": "A plan for entrepreneurs, brands, or small businesses looking to establish a compelling online presence. With our streamlined approach, we create elegant and functional static websites that showcase the identity of your brand.",
-  "ONE_PLAN_FEACTURES": [
-    "Diseño personalizado",
-    "Navegación intuitiva",
-    "Optimizado para dispositivos móviles",
-    "SEO básico",
-    "Gestión de contenido sencilla",
-    "Soporte técnico básico",
-    "Seguridad garantizada"
-  ],
-  "TWO_PLAN_TITLE": "Planes a otro nivel",
-  "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
-  "TWO_PLAN_FEACTURES": [
-    "Una base de datos (Postgres o sqlite)",
-    "Sistema de pagos (strapi, mercado pagos)"
+  "PLANS": [
+    {
+      "TITLE": "Personal Blog",
+      "PRICE": 990000,
+      "DESCRIPTION": "Create your blog with a simple and attractive design to share content and connect with your audience.",
+      " PERFECT_FOR": "Ideal for bloggers, writers, content creators, or anyone looking to start their blog professionally.",
+      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
+      "FEATURES": [
+        "Attractive and responsive design",
+        "Article section with categories and tags",
+        "Social media sharing buttons",
+        "Basic contact form",
+        "Basic SEO optimization",
+        "Technical support for 1 month"
+      ],
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Personal Brand or Business",
+      "PRICE": 1995000,
+      "DESCRIPTION": "Establish your online presence with a professional and optimized website to attract clients.",
+      " PERFECT_FOR": "Entrepreneurs, freelancers, small businesses, and professionals who need a professional website to attract more clients.",
+      "PERFECT_FOR_COLOR": "text-blue-100 bg-blue-600/20",
+      "FEATURES": [
+        "Up to 5 custom sections (Home, Services, About Me, Contact, etc.)",
+        "Advanced contact form with data validation",
+        "Integration with social media (Instagram, LinkedIn, etc.)",
+        "Location map with Google Maps",
+        "SEO optimization to appear on Google",
+        "Technical support for 2 months"
+      ],
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Online Store",
+      "PRICE": 3990000,
+      "DESCRIPTION": "Sell products or services online with a functional, secure, and optimized store to receive payments.",
+      " PERFECT_FOR": "Businesses, entrepreneurs, or brands selling products or services that need an efficient online store to manage sales and payments.",
+      "PERFECT_FOR_COLOR": "text-pink-100 bg-pink-600/20",
+      "FEATURES": [
+        "Self-manageable product and/or service catalog",
+        "Shopping cart and optimized checkout process",
+        "Integration with payment gateways (MercadoPago, Strapi, etc.)",
+        "Inventory management (if applicable) and stock alerts",
+        "Admin panel to view orders and customers",
+        "SEO optimization to boost sales",
+        "Technical support for 3 months"
+      ],
+      "HIGHLIGHT_TEXT": "For your business",
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Custom Plan",
+      "PRICE_TEXT": "Custom",
+      "DESCRIPTION": "Tailor-made solutions for businesses with specific needs or more complex projects.",
+      " PERFECT_FOR": "Large companies, startups, or tech projects that require custom functionalities to scale their business.",
+      "PERFECT_FOR_COLOR": "text-orange-100 bg-orange-600/20",
+      "FEATURES": [
+        "100% custom design and development for your brand",
+        "Advanced integrations with APIs and external systems",
+        "Process automation and internal tools",
+        "Development of specialized platforms or systems",
+        "Advanced SEO and performance optimization",
+        "Ongoing technical support and maintenance"
+      ],
+      "ICON": "start"
+    },
+    {
+      "TITLE": "Multi-language Support",
+      "PRICE": 599000,
+      "DESCRIPTION": "Expand your audience by offering your website in multiple languages with seamless integration.",
+      "PERFECT_FOR": "Businesses, bloggers, and online stores that want to reach international customers.",
+      "PERFECT_FOR_COLOR": "text-green-100 bg-green-600/20",
+      "FEATURES": [
+        "Translation into multiple languages",
+        "Automatic language detection",
+        "SEO optimization for multilingual content",
+        "Integration with Google Translate or custom translations",
+        "Language switcher on the website"
+      ],
+      "ICON": "translate"
+    },
+    {
+      "PRICE_TEXT": "Included in all plans",
+      "DESCRIPTION": "Benefits you get regardless of the plan you choose.",
+      "FEATURES": [
+        "Responsive design adapted for mobile devices",
+        "Speed and performance optimization",
+        "Technical support for the time defined in the plan"
+      ],
+      "ICON": "check",
+      "CLASS": "border-dashed border-2 md:col-span-2"
+    }
   ]
 }

@@ -124,24 +124,96 @@
   "TOOLS_TAG": "Tecnologias",
   "FOOTER_MSG": "Casi todos los derechos reservados.",
   "FOOTER_LINK": "Sobre mi",
-  "ONE_PLAN_TITLE": "Nuestro plan para sitios estaticos",
-  "ONE_PLAN_DESC": "Un plan para emprendedores, marcas o pequeñas empresas que buscan establecer una presencia online impactante. Con nuestro enfoque simplificado, creamos sitios web estáticos elegantes y funcionales que destacan la identidad de tu marca.",
-  "ONE_PLAN_FEACTURES": [
-    "Diseño personalizado",
-    "Navegación intuitiva",
-    "Optimizado para dispositivos móviles",
-    "Soporte técnico básico",
-    "Gestión de contenido sencilla",
-    "SEO"
-  ],
-  "SERVICES_INTRO": "Desarrollando <strong> sitios web</strong> y <strong>aplicaciones</strong> <span>increibles</span>",
-  "TWO_PLAN_TITLE": "PLanes empresariales",
-  "TWO_PLAN_DESC": "Un plan diseñado para empresas en crecimiento, tiendas online y sitios web de mayor envergadura que requieren funcionalidades avanzadas. Con nuestro enfoque integral, creamos sitios web dinámicos, con backend y base de datos, para llevar tu presencia online al siguiente nivel.",
-  "TWO_PLAN_FEACTURES": [
-    "Caracteristicas del plan para sitios estaticos",
-    "Dominio personalizado (incluido)",
-    "Una base de datos (Postgres o sqlite)",
-    "Sistema de pagos (strapi, mercado pagos)",
-    "Seguridad garantizada"
+  "PLANS": [
+    {
+      "TITLE": "Blog Personal",
+      "PRICE": 990000,
+      "DESCRIPTION": "Crea tu blog con un diseño sencillo y atractivo para compartir contenido y conectar con tu audiencia.",
+      "PERFECT_FOR": "Ideal para bloggers, escritores, creadores de contenido o cualquier persona que desee iniciar su blog profesionalmente.",
+      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
+      "FEATURES": [
+        "Diseño atractivo y responsivo",
+        "Sección de artículos con categorías y etiquetas",
+        "Botones de redes sociales para compartir",
+        "Formulario de contacto básico",
+        "Optimización SEO básica",
+        "Soporte técnico por 1 mes"
+      ],
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Marca Personal o Negocio",
+      "PRICE": 1995000,
+      "DESCRIPTION": "Establece tu presencia en línea con un sitio web profesional y optimizado para atraer clientes.",
+      "PERFECT_FOR": "Emprendedores, freelancers, pequeños negocios y profesionales que necesitan un sitio web profesional para atraer más clientes.",
+      "PERFECT_FOR_COLOR": "text-blue-100 bg-blue-600/20",
+      "FEATURES": [
+        "Hasta 5 secciones personalizadas (Inicio, Servicios, Sobre mí, Contacto, etc.)",
+        "Formulario de contacto avanzado con validación de datos",
+        "Integración con redes sociales (Instagram, LinkedIn, etc.)",
+        "Mapa de ubicación con Google Maps",
+        "Optimización SEO para aparecer en Google",
+        "Soporte técnico por 2 meses"
+      ],
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Tienda Online",
+      "PRICE": 3990000,
+      "DESCRIPTION": "Vende productos o servicios en línea con una tienda funcional, segura y optimizada para recibir pagos.",
+      "PERFECT_FOR": "Empresas, emprendedores o marcas que venden productos o servicios y necesitan una tienda online eficiente para gestionar ventas y pagos.",
+      "PERFECT_FOR_COLOR": "text-pink-100 bg-pink-600/20",
+      "FEATURES": [
+        "Catálogo de productos y/o servicios autoadministrable",
+        "Carrito de compras y proceso de checkout optimizado",
+        "Integración con pasarelas de pago (MercadoPago, Strapi, etc.)",
+        "Gestión de inventario (si aplica) y alertas de stock",
+        "Panel de administración para ver pedidos y clientes",
+        "Optimización SEO para mejorar las ventas",
+        "Soporte técnico por 3 meses"
+      ],
+      "HIGHLIGHT_TEXT": "Para tu negocio",
+      "ICON": "check"
+    },
+    {
+      "TITLE": "Plan Personalizado",
+      "PRICE_TEXT": "Personalizado",
+      "DESCRIPTION": "Soluciones a medida para empresas con necesidades específicas o proyectos más complejos.",
+      "PERFECT_FOR": "Grandes empresas, startups o proyectos tecnológicos que requieren funcionalidades personalizadas para escalar su negocio.",
+      "PERFECT_FOR_COLOR": "text-orange-100 bg-orange-600/20",
+      "FEATURES": [
+        "Diseño y desarrollo 100% personalizado para tu marca",
+        "Integraciones avanzadas con APIs y sistemas externos",
+        "Automatización de procesos y herramientas internas",
+        "Desarrollo de plataformas o sistemas especializados",
+        "Optimización avanzada para SEO y rendimiento",
+        "Soporte técnico y mantenimiento continuo"
+      ],
+      "ICON": "start"
+    },
+    {
+      "TITLE": "Soporte Multilenguaje",
+      "PRICE": 599000,
+      "PERFECT_FOR": "Negocios, bloggers y tiendas online que desean llegar a clientes internacionales.",
+      "PERFECT_FOR_COLOR": "text-green-100 bg-green-600/20",
+      "FEATURES": [
+        "Traducción a múltiples idiomas",
+        "Detección automática de idioma",
+        "Optimización SEO para contenido multilingüe",
+        "Selector de idioma en el sitio web"
+      ],
+      "ICON": "translate"
+    },
+    {
+      "PRICE_TEXT": "Incluido en todos los planes",
+      "DESCRIPTION": "Beneficios que obtienes independientemente del plan que elijas.",
+      "FEATURES": [
+        "Diseño responsivo y adaptado a móviles",
+        "Optimización de velocidad y rendimiento",
+        "Soporte técnico por el tiempo definido en el plan"
+      ],
+      "ICON": "check",
+      "CLASS": "border-dashed border-2 md:col-span-2"
+    }
   ]
 }
