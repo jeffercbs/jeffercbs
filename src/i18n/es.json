@@ -13,6 +13,12 @@
       "ACTIVE": true
     },
     {
+      "LABEL": "Biografia",
+      "LINK": "/jeferson-barrero",
+      "ICON": "user",
+      "ACTIVE": true
+    },
+    {
       "LABEL": "Blog",
       "LINK": "/blog",
       "ICON": "book",
@@ -195,7 +201,7 @@
       "TITLE": "Soporte Multilenguaje",
       "PRICE": 599000,
       "PERFECT_FOR": "Negocios, bloggers y tiendas online que desean llegar a clientes internacionales.",
-      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
+      "PERFECT_FOR_COLOR": "text-sky-100 bg-sky-600/20",
       "FEATURES": [
         "Traducción a múltiples idiomas",
         "Detección automática de idioma",

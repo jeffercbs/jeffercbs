@@ -8,8 +8,14 @@
   "HEADER": [
     {
       "LABEL": "Home",
-      "LINK": "/",
+      "LINK": "/en",
       "ICON": "home",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Biography",
+      "LINK": "/jeferson-barrero",
+      "ICON": "braces",
       "ACTIVE": true
     },
     {
@@ -196,7 +202,7 @@
       "PRICE": 599000,
       "DESCRIPTION": "Expand your audience by offering your website in multiple languages with seamless integration.",
       "PERFECT_FOR": "Businesses, bloggers, and online stores that want to reach international customers.",
-      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
+      "PERFECT_FOR_COLOR": "text-sky-100 bg-sky-600/20",
       "FEATURES": [
         "Translation into multiple languages",
         "Automatic language detection",

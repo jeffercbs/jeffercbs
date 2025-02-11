@@ -25,7 +25,7 @@ const BecauseSection: FunctionalComponent<{ data: BecauseSectionProps[] }> = ({
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8">
-        <div className="w-full space-y-4 bg-radial-[at_50%_50%] from-blue-400/10 via-transparent to-transparent">
+        <div className="w-full space-y-4 bg-radial-[at_50%_50%] from-amber-400/10 via-transparent to-transparent">
           {data.map((benefit, index) => (
             <BecauseCard
               key={benefit.ID}
@@ -37,7 +37,7 @@ const BecauseSection: FunctionalComponent<{ data: BecauseSectionProps[] }> = ({
           ))}
         </div>
 
-        <div className="w-full h-fit aspect-square mx-auto relative shadow-2xl rounded-lg overflow-hidden shadow-blue-300/40">
+        <div className="w-full h-fit aspect-square mx-auto relative shadow-2xl rounded-lg overflow-hidden shadow-amber-300/40">
           {data.map((benefit, index) => (
             <BecauseImage
               key={benefit.ID}
@@ -58,12 +58,15 @@ const BecauseSection: FunctionalComponent<{ data: BecauseSectionProps[] }> = ({
           padding: 2px;
           background: linear-gradient(
             90deg,
-            var(--color-blue-600),
-            var(--color-blue-400)
+            var(--color-amber-600),
+            var(--color-amber-400)
           );
-          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
-          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
           animation: borderCompletion 15s linear;
