@@ -22,14 +22,14 @@ const {
 <article
   class:list={[
     "bg-white/10 border w-full border-white/20 backdrop-blur-md relative group rounded-lg pt-6 px-5",
-    "hover:shadow-2xl hover:shadow-green-300/20 transition-all ease-in-out hover:border-green-400",
+    "hover:shadow-2xl hover:shadow-blue-300/20 transition-all ease-in-out hover:border-blue-400",
     CLASSES,
   ]}
 >
   {
     HIGHLIGHT_TEXT && (
       <div class="absolute -top-4 left-0 right-0 flex justify-center">
-        <span class="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm px-3 py-1 rounded-full">
+        <span class="bg-gradient-to-r from-blue-600 to-pink-600 text-white text-sm px-3 py-1 rounded-full">
           {HIGHLIGHT_TEXT}
         </span>
       </div>
@@ -74,7 +74,7 @@ const {
     <a
       class={`w-full ${
         HIGHLIGHT_TEXT
-          ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white"
+          ? "bg-gradient-to-r from-blue-600 to-pink-600 hover:opacity-90 text-white"
           : "bg-white text-black hover:bg-gray-200"
       }`}
     >
