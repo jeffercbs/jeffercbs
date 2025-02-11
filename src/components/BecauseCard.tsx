@@ -26,7 +26,7 @@ const BenefitCard: FunctionalComponent<BenefitCardProps> = ({
       `}
       onClick={onClick}
     >
-      <h3 className="text-lg md:text-xl font-semibold mb-2">{title}</h3>
+      <h3 className="text-lg md:text-xl font-semibold mb-1">{title}</h3>
       <p
         className={`
         text-zinc-400 text-sm md:text-base
