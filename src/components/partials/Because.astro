@@ -1,0 +1,16 @@
+---
+import { getI18n } from "@/i18n";
+import BecauseSection from "../BecauseSection";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container
+  id="benefits"
+  title="Somos la mejor opción para tu negocio o marca"
+  tag="beneficios"
+>
+  <BecauseSection data={i18n.BECAUSE} client:load />
+</Container>
