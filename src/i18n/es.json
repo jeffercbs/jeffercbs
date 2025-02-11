@@ -195,7 +195,7 @@
       "TITLE": "Soporte Multilenguaje",
       "PRICE": 599000,
       "PERFECT_FOR": "Negocios, bloggers y tiendas online que desean llegar a clientes internacionales.",
-      "PERFECT_FOR_COLOR": "text-green-100 bg-green-600/20",
+      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
       "FEATURES": [
         "Traducción a múltiples idiomas",
         "Detección automática de idioma",
@@ -214,6 +214,38 @@
       ],
       "ICON": "check",
       "CLASS": "border-dashed border-2 md:col-span-2"
+    }
+  ],
+  "BECAUSE": [
+    {
+      "ID": 1,
+      "TITLE": "🚀 Experiencia Comprobada",
+      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales. He aprendido y soy parte de la comunidad de estudiantes de Platzi.",
+      "IMAGE": "/images/experiencia.webp"
+    },
+    {
+      "ID": 2,
+      "TITLE": "📊 Panel de Cliente Exclusivo",
+      "DESCRIPTION": "Tendrás acceso a un portal donde podrás ver avances en tiempo real, descargar el contrato, revisar funcionalidades implementadas y hacer seguimiento a tiempos de entrega.",
+      "IMAGE": "/images/panel-cliente.webp"
+    },
+    {
+      "ID": 3,
+      "TITLE": "⚡ Diseño Optimizado y Responsivo",
+      "DESCRIPTION": "Creo sitios web modernos, atractivos y adaptables a cualquier dispositivo, asegurando una experiencia fluida tanto en computadoras como en móviles.",
+      "IMAGE": "/images/diseno-responsivo.webp"
+    },
+    {
+      "ID": 4,
+      "TITLE": "💼 Paquetes Adaptados a tu Negocio",
+      "DESCRIPTION": "Ofrezco planes flexibles y personalizados según las necesidades de tu empresa, negocio o marca, asegurando que obtengas la mejor solución para tu proyecto.",
+      "IMAGE": "/images/paquetes-adaptados.webp"
+    },
+    {
+      "ID": 5,
+      "TITLE": "🛠️ Soporte y Atención Continua",
+      "DESCRIPTION": "Siempre estaré disponible para responder tus preguntas y resolver cualquier duda durante el desarrollo de tu proyecto.",
+      "IMAGE": "/images/soporte.webp"
     }
   ]
 }

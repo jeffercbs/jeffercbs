@@ -196,7 +196,7 @@
       "PRICE": 599000,
       "DESCRIPTION": "Expand your audience by offering your website in multiple languages with seamless integration.",
       "PERFECT_FOR": "Businesses, bloggers, and online stores that want to reach international customers.",
-      "PERFECT_FOR_COLOR": "text-green-100 bg-green-600/20",
+      "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
       "FEATURES": [
         "Translation into multiple languages",
         "Automatic language detection",
@@ -216,6 +216,38 @@
       ],
       "ICON": "check",
       "CLASS": "border-dashed border-2 md:col-span-2"
+    }
+  ],
+  "BECAUSE": [
+    {
+      "ID": 1,
+      "TITLE": "🚀 Proven Experience",
+      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects. I've learned a lot and am part of the Platzi student community.",
+      "IMAGE": "/images/experiencia.webp"
+    },
+    {
+      "ID": 2,
+      "TITLE": "📊 Exclusive Client Panel",
+      "DESCRIPTION": "You'll have access to a portal where you can see real-time progress, download contracts, review implemented features, and track delivery timelines.",
+      "IMAGE": "/images/panel-cliente.webp"
+    },
+    {
+      "ID": 3,
+      "TITLE": "⚡ Optimized and Responsive Design",
+      "DESCRIPTION": "I create modern, attractive, and responsive websites that work smoothly on both computers and mobile devices.",
+      "IMAGE": "/images/diseno-responsivo.webp"
+    },
+    {
+      "ID": 4,
+      "TITLE": "💼 Tailored Packages for Your Business",
+      "DESCRIPTION": "I offer flexible and customized plans based on the needs of your business or brand, ensuring you get the best solution for your project.",
+      "IMAGE": "/images/paquetes-adaptados.webp"
+    },
+    {
+      "ID": 5,
+      "TITLE": "🛠️ Continuous Support and Assistance",
+      "DESCRIPTION": "I’ll always be available to answer your questions and address any concerns during your project’s development.",
+      "IMAGE": "/images/soporte.webp"
     }
   ]
 }
