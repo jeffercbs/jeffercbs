@@ -5,13 +5,15 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://dev.jeffercbs.tech/",
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [sitemap(), icon(), mdx()],
+  integrations: [sitemap(), icon(), mdx(), preact()],
   redirects: {
     "/en/projects/[...slug]": "/projects/[...slug]",
     "/en/blog/p/[...slug]": "/blog/p/[...slug]",
