@@ -1,14 +1,62 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
 
 @theme {
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: fadeInUp 0.5s ease-in-out;
+  --animate-slide-up-out: slideUpOut 0.5s ease-in-out;
+}
+
+@layer components {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUpOut {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDownOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 :root {
   color-scheme: light dark;
-  --text-shadow:
-    0 0 0.5rem var(--color-amber-400), 0 0 1rem var(--color-amber-400),
-    0 0 2rem var(--color-amber-400), 0 0 4rem var(--color-amber-400);
+  --text-shadow: 0 0 0.5rem var(--color-amber-400),
+    0 0 1rem var(--color-amber-400), 0 0 2rem var(--color-amber-400),
+    0 0 4rem var(--color-amber-400);
 }
 *,
 html,
@@ -55,8 +103,7 @@ body {
   }
   @keyframes reduce-header {
     to {
-      box-shadow:
-        0 5px 50px -5px hsla(0, 0%, 100%, 0.1),
+      box-shadow: 0 5px 50px -5px hsla(0, 0%, 100%, 0.1),
         0 0 0 1px hsla(0, 0%, 100%, 0.1);
       background: rgba(25, 25, 25, 0.534);
       padding-block: 1rem;
