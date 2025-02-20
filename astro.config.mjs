@@ -1,24 +1,38 @@
 import { defineConfig } from "astro/config";
 
+import db from "@astrojs/db";
+import mdx from "@astrojs/mdx";
+import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
-import mdx from "@astrojs/mdx";
+import auth from "auth-astro";
 
-import preact from "@astrojs/preact";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://jeffercbs.tech/",
+
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
-  integrations: [sitemap(), icon(), mdx(), preact()],
+
+  integrations: [
+    sitemap(),
+    icon(),
+    mdx(),
+    preact({ compat: true, devtools: true }),
+    db(),
+    auth(),
+  ],
+
   redirects: {
     "/en/projects/[...slug]": "/projects/[...slug]",
     "/en/blog/p/[...slug]": "/blog/p/[...slug]",
     "/en/blog": "/blog",
   },
+
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
@@ -26,4 +40,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
+  adapter: vercel(),
 });
