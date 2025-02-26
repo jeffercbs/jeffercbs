@@ -51,7 +51,12 @@
     "I develop websites and digital products for companies, businesses, and brands.",
     "From <span> blogs </span> and <span> online stores </span> to <span> web applications </span> and <span> custom systems. </span>"
   ],
-  "INTRO_TAGS": ["CUSTOM WEBSITES", "ONLINE STORES", "WEB APPLICATIONS"],
+  "INTRO_TAGS": [
+    "CUSTOM WEBSITES",
+    "ONLINE STORES",
+    "WEB APPLICATIONS",
+    "DIGITAL PRODUCTS"
+  ],
   "QUOTE_TITLE": [
     "Software Engineer",
     "From Ibagué, Colombia. Currently based in Bogotá.",
