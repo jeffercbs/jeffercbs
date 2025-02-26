@@ -9,22 +9,21 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <header
-  class="header-animate sticky inset-x-0 top-0 h-20 flex md:justify-start justify-center w-full z-[99999] md:py-3 py-4"
+  class="header-animate sticky inset-x-0 top-0 h-fit flex md:justify-start justify-center w-full z-[99999]"
 >
   <nav
-    class="size-full px-3 py-4 flex justify-between md:items-start items-center hero"
+    class="size-full h-fit flex justify-between md:items-start items-center hero"
   >
-    <div class="flex">
-      <a
-        href="/"
-        class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-center items-center gap-x-2"
-      >
-        <h2 class="md:text-3xl text-2xl font-medium">jeffercbs</h2>
-        <small class="bg-amber-400 text-neutral-900 rounded-full px-2">
-          beta
-        </small>
-      </a>
-    </div>
+    <a
+      href="/"
+      class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-center items-center gap-x-2"
+    >
+      <h2 class="md:text-3xl text-2xl font-medium">jeffercbs</h2>
+      <small class="bg-green-400 text-neutral-900 rounded-full px-2">
+        beta
+      </small>
+    </a>
+
     <div class="md:flex hidden">
       <ul class="flex gap-x-3 mx-2 items-start justify-center" id="nav-items">
         {

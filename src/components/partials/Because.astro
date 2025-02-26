@@ -1,6 +1,6 @@
 ---
 import { getI18n } from "@/i18n";
-import BecauseSection from "../BecauseSection";
+import BecauseCard from "../BecauseCard.astro";
 import Container from "./Container.astro";
 
 const { currentLocale } = Astro;
@@ -11,6 +11,13 @@ const i18n = getI18n({ currentLocale });
   id="benefits"
   title="Somos la mejor opción para tu negocio o marca"
   tag="beneficios"
+  class="hero"
 >
-  <BecauseSection data={i18n.BECAUSE} client:load />
+  <div class="grid md:grid-cols-3 grid-cols-1 pt-12 md:px-0 px-2">
+    {
+      i18n.BECAUSE.map(({ TITLE, DESCRIPTION }) => (
+        <BecauseCard title={TITLE} description={DESCRIPTION} />
+      ))
+    }
+  </div>
 </Container>

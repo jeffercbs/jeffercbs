@@ -1,69 +1,46 @@
 ---
-import { getI18n } from "@/i18n";
-import Link from "./Link.astro";
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
-export type Props = {
-  title?: string;
-  description?: string;
-  cover?: string;
-  link?: string;
-  repo?: string;
-  slug: string;
-  class?: string;
-};
+type Props = CollectionEntry<"projects">;
 
-const { currentLocale } = Astro;
-const i18n = getI18n({ currentLocale });
-
-const { title, description, link, repo, cover, slug } = Astro.props;
+const {
+  data: { title, image },
+  slug,
+} = Astro.props;
 ---
 
-<article
-  class="card relative group flex flex-col gap-x-6 p-8 h-fit bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-2xl transition-colors ease-in-out"
->
-  <div class="flex flex-col pb-5 relative z-[1]">
-    <div class="block gap-y-4">
-      <h3 class="text-2xl font-bold text-amber-100 mb-2">
-        {title}
-      </h3>
-      <p class="mb-4 text-pretty" set:text={description} />
-    </div>
-    <div class="flex gap-x-4 font-semibold">
-      <Link href={link || "#"} variant="link" external>visualizar</Link>
-      <Link href={`/projects/${slug}`} variant="link">{i18n.PROJECT_CASE}</Link>
-      {repo && <Link href={repo} variant="link" icon="github" external />}
-    </div>
-  </div>
-  <div class="rounded-2xl overflow-hidden flex-1 md:w-fit w-full h-full">
-    <img
-      src={`/_thumbnails/${cover}`}
-      width="700"
-      height="500"
-      loading="lazy"
+<a href={`/projects/${slug}`} class="group overflow-hidden">
+  <article
+    class="relative p-1 hover:shadow-2xl size-full bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-lg transition-colors ease-in-out"
+  >
+    <Image
+      src={`/_thumbnails/${image}`}
       alt={title}
+      width={400}
+      height={500}
       class="aspect-video size-full object-cover group-hover:scale-110 ease-in-out transition duration-300"
     />
-  </div>
-</article>
 
-<style>
-  .card {
-    animation: linear both reveal;
-    animation-range: 5% 15%;
-    animation-timeline: view();
-  }
-
-  @keyframes reveal {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    50% {
-      opacity: 0.1;
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+    <div
+      class="absolute inset-0 bg-black/10 backdrop-blur-sm opacity-0 rounded-lg group-hover:opacity-100 transition-opacity ease-in-out z-[10]"
+    >
+      <div class="size-full grid place-content-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-12"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </article>
+</a>

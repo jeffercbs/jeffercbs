@@ -22,14 +22,14 @@ const {
 <article
   class:list={[
     "bg-white/10 border w-full border-white/20 backdrop-blur-md relative group rounded-lg pt-6 px-5",
-    "hover:shadow-2xl hover:shadow-amber-300/20 transition-all ease-in-out hover:border-amber-400",
+    "hover:shadow-2xl hover:shadow-green-300/20 transition-all ease-in-out hover:border-green-400",
     CLASSES,
   ]}
 >
   {
     HIGHLIGHT_TEXT && (
       <div class="absolute -top-4 left-0 right-0 flex justify-center">
-        <span class="bg-gradient-to-r from-amber-600 to-pink-600 text-white text-sm px-3 py-1 rounded-full">
+        <span class="bg-gradient-to-r from-green-600 to-pink-600 text-white text-sm px-3 py-1 rounded-full">
           {HIGHLIGHT_TEXT}
         </span>
       </div>
@@ -61,7 +61,7 @@ const {
               <Icon
                 name={ICON}
                 size={25}
-                class={`size-5 ${ICON === "check" ? "text-emerald-400" : "text-amber-400"}`}
+                class={`size-5 ${ICON === "check" ? "text-emerald-400" : "text-green-400"}`}
               />
               <spann class="flex-1 text-sm">{feature}</spann>
             </li>
@@ -74,7 +74,7 @@ const {
     <a
       class={`w-full ${
         HIGHLIGHT_TEXT
-          ? "bg-gradient-to-r from-amber-600 to-pink-600 hover:opacity-90 text-white"
+          ? "bg-gradient-to-r from-green-600 to-pink-600 hover:opacity-90 text-white"
           : "bg-white text-black hover:bg-gray-200"
       }`}
     >

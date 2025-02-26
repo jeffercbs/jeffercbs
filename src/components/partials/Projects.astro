@@ -2,24 +2,23 @@
 import { getI18n } from "@/i18n";
 import { getCollection } from "astro:content";
 import ProjectCard from "../ProjectCard.astro";
-import Container from "./Container.astro";
 const projects = await getCollection("projects");
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<Container
-  title={i18n.PROJECTS_TITLE}
-  tag={i18n.PROJECTS_TAG}
-  description={i18n.PROJECTS_DESCRIPTION}
+<section
   id="projects"
+  class="grid min-h-56 md:grid-cols-3 gap-y-6 w-full flex-1 gap-4 pb-1 hero py-20"
 >
-  <div class="grid md:grid-cols-2 gap-y-6 w-full flex-1 gap-4 pb-12">
-    {
-      projects
-        .reverse()
-        .map(({ data, slug }) => <ProjectCard {...data} {slug} />)
-    }
-  </div>
-</Container>
+  <article class="px-4 py-2">
+    <h1 class="text-2xl text-balance font-bold mb-3">
+      {i18n.PROJECTS_TITLE}
+    </h1>
+    <p class="text-lg text-zinc-400 text-balance">
+      {i18n.PROJECTS_DESCRIPTION}
+    </p>
+  </article>
+  {projects.reverse().map((p) => <ProjectCard {...p} />)}
+</section>

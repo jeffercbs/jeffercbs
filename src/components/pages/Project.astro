@@ -8,20 +8,10 @@ const data = Astro.props.data;
 ---
 
 <Layout title={data.title}>
-  <div class="h-fit w-full relative pt-20 mb-5">
-    <Image
-      src={`/_thumbnails/${data.cover}`}
-      alt={`${data.title}`}
-      class="object-cover aspect-auto h-96 w-full blur-2xl contrast-150 opacity-35"
-      fit="cover"
-      width={300}
-      height={200}
-    />
-    <div class="absolute inset-0 z-[1] grid place-content-center">
-      <h1 class="text-4xl font-medium text-center">
-        {data.title}
-      </h1>
-    </div>
+  <div
+    class="w-dvw h-72 bg-cover bg-center relative bg-no-repeat mb-5"
+    style={`background: url('/_thumbnails/${data.cover}')`}
+  >
   </div>
   <article class="hero prose prose-invert pt-16 min-h-dvh">
     <slot />

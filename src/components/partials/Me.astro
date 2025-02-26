@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import { getI18n } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section
+  id="me"
+  class="w-full max-w-dvw overflow-hidden py-24 container px-4 md:px-6 hero"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-24 items-center">
+    <div class="relative">
+      <div
+        class="absolute inset-0 -z-[2] rounded-2xl bg-green-400 transform -rotate-6"
+      >
+      </div>
+      <div class="relative -z-[1] aspect-square rounded-2xl overflow-hidden">
+        <div
+          class="absolute inset-0 z-[1] bg-[url('https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/snpkuv0ecamvxvszyx4e')] contrast-125 bg-cover bg-center mix-blend-overlay"
+        >
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      <div class="flex items-center gap-4">
+        <div
+          class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-green-400"
+        >
+          <Image
+            src="/images/experiencia.webp"
+            alt="Profile"
+            width="64"
+            height="64"
+            class="object-cover"
+          />
+        </div>
+        <div>
+          <div class="bg-zinc-800 px-4 py-1 rounded-full inline-block mb-2">
+            <span class="text-green-400 font-semibold">20+</span>
+            <span class="text-zinc-400 text-sm ml-1">
+              {i18n.PROJECTS_COMPLETED}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-4xl font-bold leading-tight">
+        <span class="bg-yellow-200 pl-2 py-1 rounded-md text-black">
+          {i18n.QUOTE_TITLE[0]}
+        </span>
+        <span>
+          {i18n.QUOTE_TITLE[1]}
+        </span>
+        <span class="text-green-200">
+          {i18n.QUOTE_TITLE[2]}
+        </span>
+      </h2>
+
+      <blockquote
+        class="text-xl text-zinc-400 border-l-4 border-green-400 pl-4 my-8"
+      >
+        "{i18n.QUOTE_Q}"
+      </blockquote>
+
+      <div class="grid grid-cols-3 bg-zinc-800/50 p-6 rounded-xl">
+        <div class="flex flex-col items-center border-r-2 border-zinc-700">
+          <h3 class="font-bold text-xl text-center capitalize md:text-2xl mb-1">
+            {i18n.YEAR_EXPERIENCE}
+          </h3>
+          <small class="text-zinc-400">
+            {i18n.YEAR_EXPERIENCE_DESC}
+          </small>
+        </div>
+
+        <div class="flex flex-col items-center border-r-2 border-zinc-700">
+          <h3 class="font-bold text-xl text-center capitalize md:text-2xl mb-1">
+            10+
+          </h3>
+          <small class="text-zinc-400">
+            {i18n.HAPPY_CLIENTS}
+          </small>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <h3 class="font-bold text-xl text-center capitalize md:text-2xl mb-1">
+            100%
+          </h3>
+          <small class="text-zinc-400">
+            {i18n.SATISFACTION}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

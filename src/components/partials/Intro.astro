@@ -1,13 +1,15 @@
 ---
 import { getI18n } from "@/i18n";
 import CodeDeco from "../CodeDeco.astro";
-import Link from "../Link.astro";
+import { Icon } from "astro-icon/components";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section class="relative max-h-dvh overflow-hidden hero" id="intro">
+<section
+  class="flex relative items-center justify-center h-dvh w-dvw overflow-x-hidden"
+>
   <CodeDeco
     class="absolute -right-8 md:top-14 bottom-1 text-sm"
     codelines={[
@@ -20,45 +22,85 @@ const i18n = getI18n({ currentLocale });
       "**/",
     ]}
   />
-  <div>
-    <div class="absolute top-16 left-0">
-      <CodeDeco codelines={["hello()"]} />
-      <CodeDeco codelines={["const message = ''"]} />
-    </div>
-    <div
-      class="flex flex-col justify-center md:items-start items-center md:text-left size-full h-dvh text-center"
+  <div class="text-center hero w-full *:text-pretty text-pretty">
+    <h1
+      class="flex md:max-w-4xl w-full mx-auto flex-wrap justify-center gap-x-2 text-5xl md:text-7xl font-extrabold text-white leading-tight relative"
     >
-      <h1
-        class="font-bold md:text-6xl text-4xl text-white"
-        set:text={i18n.INTRO_TITLE}
-      />
-
-      <p class="md:max-w-xl text-xl md:text-2xl mt-3">
-        <span>{i18n.INTRO_DESCRIPTION.FIRST}.</span>
-        <span class="text-red-200">{i18n.INTRO_DESCRIPTION.SECOND}.</span>
-        <span class="text-yellow-200">{i18n.INTRO_DESCRIPTION.THIRD}</span>
-      </p>
-
-      <nav
-        class="flex md:justify-start justify-center flex-wrap md:max-w-xl gap-1 mt-8"
+      <span
+        class="absolute -left-3 -top-4 bg-purple-500 size-8 flex justify-center items-center text-white text-lg rounded-full"
       >
-        <Link href="https://linkedin.com/in/jeffercbs" icon="linkedin" external>
-          Linkedin
-        </Link>
-        <Link href="https://github.com/jeffercbs" icon="github" external>
-          Github
-        </Link>
-        <Link href="https://www.youtube.com/@jeffercbs" icon="youtube" external>
-          Youtube
-        </Link>
-        <Link href="mailto:jebarrero14@gmail.com" icon="mail" external>
-          contactarme
-        </Link>
-        <Link href="https://www.twitch.tv/jeffercbs" icon="twitch" external>
-          Twitch
-        </Link>
-        <Link href="/jeferson-barrero" icon="braces"> Biografia </Link>
-      </nav>
+        ✦
+      </span>
+      <span class="relative" set:text={i18n.INTRO_TITLE[0]} />
+      <span class="text-white" set:text={i18n.INTRO_TITLE[1]} />
+      <span set:text={i18n.INTRO_TITLE[2]} />
+      <span
+        class="bg-purple-300 px-4 rounded-full text-black"
+        set:text={i18n.INTRO_TITLE[3]}
+      />
+      <span set:text={i18n.INTRO_TITLE[4]} />
+      <span class="text-white" set:text={i18n.INTRO_TITLE[5]} />
+      <span class="relative bg-green-500 px-3 rounded-lg mx-2">
+        {i18n.INTRO_TITLE[6]}
+      </span>
+      <span
+        class="absolute -bottom-5 right-1 bg-yellow-400 size-8 flex justify-center items-center text-black text-xl rounded-full"
+      >
+        ✦
+      </span>
+    </h1>
+
+    <div class="flex gap-x-3 gap-y-6 flex-col md:flex-row md:items-end w-full">
+      <div class="flex flex-col md:max-w-52 text-left">
+        <div
+          class="mb-4 bg-green-500 rounded-full size-8 md:size-16 grid place-content-center"
+        >
+          <Icon name="start" class="md:size-10 size-5 text-yellow-100" />
+        </div>
+        <h2
+          class="text-green-400 font-bold mb-2 text-lg"
+          set:text={i18n.INTRO_DETAILS[0]}
+        />
+        <p class="text-sm" set:text={i18n.INTRO_DETAILS[1]} />
+      </div>
+
+      <div
+        class="flex-1 flex justify-center flex-wrap *:h-fit gap-4 text-black *:text-sm font-bold"
+      >
+        <span class="bg-green-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[0]}
+        </span>
+        <span class="bg-yellow-300 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[1]}
+        </span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[2]}
+        </span>
+      </div>
+
+      <div class="flex flex-col text-center md:text-right md:max-w-52">
+        <p
+          class="*:text-white text-sm *:font-semibold *:text-pretty text-pretty"
+          set:html={i18n.INTRO_DETAILS[2]}
+        />
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .clip-star {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+</style>
