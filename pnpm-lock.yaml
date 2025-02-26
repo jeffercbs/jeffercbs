@@ -44,9 +44,9 @@ importers:
       is-hotkey:
         specifier: ^0.2.0
         version: 0.2.0
-      lucide-react:
+      lucide-preact:
         specifier: ^0.476.0
-        version: 0.476.0(react@19.0.0)
+        version: 0.476.0(preact@10.26.2)
       preact:
         specifier: ^10.26.2
         version: 10.26.2
@@ -2295,10 +2295,10 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.476.0:
-    resolution: {integrity: sha512-x6cLTk8gahdUPje0hSgLN1/MgiJH+Xl90Xoxy9bkPAsMPOUiyRSKR4JCDPGVCEpyqnZXH3exFWNItcvra9WzUQ==}
+  lucide-preact@0.476.0:
+    resolution: {integrity: sha512-vJ6DBNSVki2e8Y5MWRoLszRCOhXjaTMtJJlUi5PLeJwhbCkTELSIq6Ce+dw1eYXAGGUnv/5vF+e74fnaLx9qHg==}
     peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      preact: ^10.5.13
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -5926,9 +5926,9 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.476.0(react@19.0.0):
+  lucide-preact@0.476.0(preact@10.26.2):
     dependencies:
-      react: 19.0.0
+      preact: 10.26.2
 
   magic-string@0.30.17:
     dependencies:
