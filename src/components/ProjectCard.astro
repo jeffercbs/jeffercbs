@@ -10,9 +10,9 @@ const {
 } = Astro.props;
 ---
 
-<a href={`/projects/${slug}`} class="group overflow-hidden">
+<a href={`/projects/${slug}`} class="group">
   <article
-    class="relative p-1 hover:shadow-2xl size-full bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-lg transition-colors ease-in-out"
+    class="relative p-1 hover:shadow-2xl size-full bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-lg transition-colors ease-in-out overflow-hidden"
   >
     <Image
       src={`/_thumbnails/${image}`}

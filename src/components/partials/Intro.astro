@@ -11,7 +11,7 @@ const i18n = getI18n({ currentLocale });
   class="flex relative items-center justify-center h-dvh w-full max-w-dvw overflow-x-hidden"
 >
   <CodeDeco
-    class="absolute right-1 md:top-14 top-0 text-sm"
+    class="absolute md:flex flex-col hidden right-1 md:top-14 top-0 text-sm"
     codelines={[
       "/**",
       " * HTML",
@@ -27,7 +27,7 @@ const i18n = getI18n({ currentLocale });
       class="flex md:max-w-4xl w-full mx-auto flex-wrap justify-center gap-x-2 text-5xl md:text-7xl font-extrabold text-white leading-tight relative"
     >
       <span
-        class="absolute -left-3 -top-4 bg-purple-500 size-8 flex justify-center items-center text-white text-lg rounded-full"
+        class="absolute -left-3 -top-8 bg-purple-500 size-8 flex justify-center items-center text-white text-lg rounded-full"
       >
         ✦
       </span>
@@ -50,8 +50,10 @@ const i18n = getI18n({ currentLocale });
       </span>
     </h1>
 
-    <div class="flex gap-x-3 gap-y-6 flex-col md:flex-row md:items-end w-full">
-      <div class="flex flex-col md:max-w-52 text-left">
+    <div
+      class="grid lg:grid-cols-4 grid-cols-2 place-content-center gap-4 pt-12"
+    >
+      <div class="flex flex-col md:max-w-52 text-left md:order-1 order-2">
         <div
           class="mb-4 bg-green-500 rounded-full size-8 md:size-16 grid place-content-center"
         >
@@ -61,11 +63,11 @@ const i18n = getI18n({ currentLocale });
           class="text-green-400 font-bold mb-2 text-lg"
           set:text={i18n.INTRO_DETAILS[0]}
         />
-        <p class="text-sm" set:text={i18n.INTRO_DETAILS[1]} />
+        <p set:text={i18n.INTRO_DETAILS[1]} />
       </div>
 
       <div
-        class="flex-1 flex justify-center flex-wrap *:h-fit gap-4 text-black *:text-sm font-bold"
+        class="col-span-2 md:order-2 order-1 flex justify-center h-fit mt-auto flex-wrap gap-2 text-black *:text-sm font-bold"
       >
         <span class="bg-green-200 px-4 py-2 rounded-full">
           {i18n.INTRO_TAGS[0]}
@@ -81,9 +83,11 @@ const i18n = getI18n({ currentLocale });
         </span>
       </div>
 
-      <div class="flex flex-col text-center md:text-right md:max-w-52">
+      <div
+        class="flex justify-end lg:items-start items-center order-3 text-center md:text-right"
+      >
         <p
-          class="*:text-white text-sm *:font-semibold *:text-pretty text-pretty"
+          class="*:text-white *:font-semibold *:text-balance text-balance w-full md:max-w-56"
           set:html={i18n.INTRO_DETAILS[2]}
         />
       </div>
