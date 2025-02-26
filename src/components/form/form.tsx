@@ -24,7 +24,7 @@ export default function FormContent() {
   } = useContext(FormContext);
 
   return (
-    <div className="h-dvh bg-gradient-to-b text-neutral-950 from-green-400 via-80% to-100% via-green-300 to-green-100 flex items-center justify-center p-4 overflow-hidden">
+    <div className="h-dvh w-dvw bg-gradient-to-b text-neutral-950 from-green-400 via-80% to-100% via-green-300 to-green-100 flex items-center justify-center p-4 overflow-hidden">
       {isLoading ? (
         <LoadingScreen />
       ) : currentStep === -1 ? (

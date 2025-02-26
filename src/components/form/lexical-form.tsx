@@ -1,25 +1,37 @@
+import isHotkey from "is-hotkey";
 import {
   useCallback,
-  useContext,
   useMemo,
   type JSX,
   type KeyboardEvent,
   type ReactNode,
 } from "preact/compat";
-import isHotkey from "is-hotkey";
-import { Editable, withReact, useSlate, Slate, ReactEditor } from "slate-react";
 import {
   Editor,
+  Element as SlateElement,
   Transforms,
   createEditor,
-  type Descendant,
-  Element as SlateElement,
   type BaseEditor,
+  type Descendant,
 } from "slate";
 import { withHistory } from "slate-history";
+import { Editable, ReactEditor, Slate, useSlate, withReact } from "slate-react";
 import { Button, Toolbar } from "./slate-components";
-import { DynamicIcon } from "lucide-react/dynamic";
-import { FormContext } from "@/context/form";
+import {
+  Bold,
+  Italic,
+  Underline,
+  Code,
+  Heading1,
+  Heading2,
+  Quote,
+  ListOrdered,
+  List,
+  AlignLeft,
+  AlignRight,
+  AlignCenter,
+  AlignJustify,
+} from "lucide-preact";
 
 const HOTKEYS = {
   "mod+b": "bold",
@@ -91,14 +103,14 @@ export const EditorRender = () => {
     }
   };
 
+  function savedata() {
+    console.log(editor.onChange());
+  }
+
   return (
     <div className="flex flex-col bg-white/80 overflow-hidden rounded-lg border border-gray-200">
       <Slate editor={editor} initialValue={initialValue}>
         <div className="flex w-full justify-between items-center px-5 bg-white">
-          <span className="flex text-sm font-semibold gap-x-2 items-center">
-            <DynamicIcon name="file-text" className="size-3 text-gray-500" />
-            proyecto
-          </span>
           <Toolbar
             style={{
               display: "flex",
@@ -120,21 +132,12 @@ export const EditorRender = () => {
             <BlockButton format="right" icon="align-right" />
             <BlockButton format="justify" icon="align-justify" />
           </Toolbar>
+          <button>Guardar cambios</button>
         </div>
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}
-          placeholder="Comienza a escribir..."
           name="content"
-          onChange={(value: any) => {
-            const isAstChange = editor.operations.some(
-              (op) => "set_selection" !== op.type
-            );
-            if (isAstChange) {
-              const content = JSON.stringify(value);
-              localStorage.setItem("content", content);
-            }
-          }}
           style={{
             minHeight: "500px",
             padding: "10px",
@@ -353,6 +356,7 @@ const BlockButton = ({ format, icon }: { format: string; icon: string }) => {
   const editor = useSlate();
   return (
     <Button
+      label={format}
       active={isBlockActive(
         editor,
         format,
@@ -363,7 +367,25 @@ const BlockButton = ({ format, icon }: { format: string; icon: string }) => {
         toggleBlock(editor, format);
       }}
     >
-      <DynamicIcon name={icon} className="size-6" />
+      {format === "left" ? (
+        <AlignLeft />
+      ) : format === "center" ? (
+        <AlignCenter />
+      ) : format === "right" ? (
+        <AlignRight />
+      ) : format === "justify" ? (
+        <AlignJustify />
+      ) : format === "numbered-list" ? (
+        <ListOrdered />
+      ) : format === "bulleted-list" ? (
+        <List />
+      ) : format === "heading-one" ? (
+        <Heading1 />
+      ) : format === "heading-two" ? (
+        <Heading2 />
+      ) : format === "block-quote" ? (
+        <Quote />
+      ) : null}
     </Button>
   );
 };
@@ -378,7 +400,15 @@ const MarkButton = ({ format, icon }: { format: string; icon: string }) => {
         toggleMark(editor, format);
       }}
     >
-      <DynamicIcon name={icon} className="size-6" />
+      {format === "bold" ? (
+        <Bold />
+      ) : format === "italic" ? (
+        <Italic />
+      ) : format === "underline" ? (
+        <Underline />
+      ) : format === "code" ? (
+        <Code />
+      ) : null}
     </Button>
   );
 };

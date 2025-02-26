@@ -8,10 +8,10 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <section
-  class="flex relative items-center justify-center h-dvh w-dvw overflow-x-hidden"
+  class="flex relative items-center justify-center h-dvh w-full max-w-dvw overflow-x-hidden"
 >
   <CodeDeco
-    class="absolute -right-8 md:top-14 bottom-1 text-sm"
+    class="absolute right-1 md:top-14 top-0 text-sm"
     codelines={[
       "/**",
       " * HTML",
@@ -75,6 +75,9 @@ const i18n = getI18n({ currentLocale });
         </span>
         <span class="bg-gray-200 px-4 py-2 rounded-full">
           {i18n.INTRO_TAGS[2]}
+        </span>
+        <span class="bg-blue-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[3]}
         </span>
       </div>
 

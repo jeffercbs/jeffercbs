@@ -2,14 +2,6 @@ import type { QuestionType } from "./types";
 
 export const questions: QuestionType[] = [
   {
-    id: "projectDescription",
-    question: "Describe tu proyecto",
-    type: "lexical",
-    placeholder: "Cuéntanos más sobre tu proyecto...",
-    description:
-      "Describe los objetivos y necesidades principales de tu proyecto",
-  },
-  {
     id: "name",
     question: "¿Cuál es tu nombre?",
     type: "text",
@@ -36,6 +28,14 @@ export const questions: QuestionType[] = [
     type: "text",
     placeholder: "Ej: Mi Empresa S.L.",
     description: "El nombre de tu empresa o proyecto",
+  },
+  {
+    id: "projectDescription",
+    question: "Describe tu proyecto",
+    type: "textarea",
+    placeholder: "Cuéntanos más sobre tu proyecto...",
+    description:
+      "Describe los objetivos y necesidades principales de tu proyecto",
   },
   {
     id: "project",

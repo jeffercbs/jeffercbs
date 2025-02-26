@@ -1,8 +1,8 @@
 import { FormContext } from "@/context/form";
 import { useContext } from "preact/hooks";
 
-export function SummaryView({}) {
-  const { formData, setRating, handleSubmit, handlePrevious, rating } =
+export function SummaryView() {
+  const { setRating, handleSubmit, handlePrevious, rating } =
     useContext(FormContext);
 
   return (
@@ -33,7 +33,6 @@ export function SummaryView({}) {
         <button
           type="button"
           onClick={handleSubmit}
-          disabled={rating < 1}
           className="flex-1 bg-inherial text-emerald-600 px-8 py-6 text-xl rounded-lg 
                           transition-all duration-300 transform hover:scale-105
                           disabled:bg-inherial/20 disabled:text-inherial/50 disabled:cursor-not-allowed"

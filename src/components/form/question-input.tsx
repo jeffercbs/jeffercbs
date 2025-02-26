@@ -44,7 +44,7 @@ export function QuestionInput({
         <textarea
           {...inputProps}
           className={clsx(
-            "w-full min-h-[250px] border-b-2 border-b-black/20 text-black p-6 rounded-lg placeholder:text-black/50  focus:outline-none focus:border-b-black resize-none transition-colors duration-300",
+            "w-full min-h-[300px] border text-black p-6 placeholder:text-black/50 focus:outline-none resize-none transition-colors duration-300",
             { "border-red-900": error }
           )}
         />

@@ -15,7 +15,7 @@ export default function Welcome() {
         <button
           type="button"
           onClick={handleStartForm}
-          className="bg-inherial text-lime-900 px-6 py-3 text-xl rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-inherial focus:ring-offset-2 focus:ring-offset-emerald-500 "
+          className="bg-black text-white px-6 py-3 text-xl rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-inherial focus:ring-offset-2 focus:ring-offset-emerald-500 "
         >
           Comenzar
         </button>

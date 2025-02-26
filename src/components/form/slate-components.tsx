@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 interface BaseProps {
   className?: string;
+  format?: string;
   [key: string]: unknown;
 }
 
@@ -17,6 +18,7 @@ export const Button = forwardRef(
       className,
       active,
       reversed,
+      format,
       ...props
     }: {
       active: boolean;
@@ -26,6 +28,7 @@ export const Button = forwardRef(
   ) => (
     <button
       {...props}
+      aria-label={format}
       ref={ref}
       className={clsx("p-1 rounded-lg", className, {
         "bg-green-500/15 text-green-500": active,
