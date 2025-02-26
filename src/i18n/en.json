@@ -37,13 +37,32 @@
       "ACTIVE": false
     }
   ],
-  "INTRO_TITLE": "Hey, I'm Jeffecbs",
-  "INTRO_BADGE": "Available to work",
-  "INTRO_DESCRIPTION": {
-    "FIRST": "Software Enginer | From Ibagué, Colombia",
-    "SECOND": "Currently based in Bogotá",
-    "THIRD": "Specialized in creating unique applications."
-  },
+  "INTRO_TITLE": [
+    "EVERYTHING",
+    "YOU NEED",
+    "TO",
+    "BOOST",
+    "YOUR",
+    "DIGITAL",
+    "PRESENCE"
+  ],
+  "INTRO_DETAILS": [
+    "SERVICES",
+    "I develop websites and digital products for companies, businesses, and brands.",
+    "From <span> blogs </span> and <span> online stores </span> to <span> web applications </span> and <span> custom systems. </span>"
+  ],
+  "INTRO_TAGS": ["CUSTOM WEBSITES", "ONLINE STORES", "WEB APPLICATIONS"],
+  "QUOTE_TITLE": [
+    "Software Engineer",
+    "From Ibagué, Colombia. Currently based in Bogotá.",
+    "Specialized in creating unique applications."
+  ],
+  "QUOTE_Q": "Every line of code is an opportunity to create something extraordinary. Let's build the future together.",
+  "YEAR_EXPERIENCE": "3+ years",
+  "YEAR_EXPERIENCE_DESC": "Experience",
+  "HAPPY_CLIENTS": "Happy clients",
+  "SATISFACTION": "Success rate",
+  "PROJECTS_COMPLETED": "Projects completed",
   "ABOUT_TITLE": "About me",
   "ABOUT_DESC": "<p>My name is <strong>Jeferson Barrero</strong>, but my friends call me <strong>Jef</strong>. I started programming at the age of <strong>14</strong> as a self-taught enthusiast, inspired by figures like <strong>Freddy Vegas</strong> and by exploring the web. This early dive into the fascinating world of programming shaped my journey.</p> <p>As a <strong>PLATZI</strong> student and a participant in the '<strong>MisiónTIC2022</strong>' project since its pilot phase, backed by the <strong>Colombian government</strong> and <strong>MINTIC</strong>, I have built a solid foundation in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been essential to honing my skills as a developer.</p> <p>Adding to this journey with <strong>virtual courses from SENA</strong> and my current studies in <strong>3D modeling for industry</strong> and <strong>administrative assistance</strong>, I aim to stand out in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As a contributor on <strong>GitHub</strong>, I participate in projects aimed at promoting free and open programming education.</p>",
   "EXPERIENCE_TITLE": "Experience",
@@ -119,7 +138,7 @@
   "TESTIMONIES_DESCRIPTION": "Testimonials from clients, colleagues, and collaborators that reflect the impact of my work on every project. 🚀",
   "PROJECTS_TAG": "Projects",
   "PROJECTS_TITLE": "Projects that speak for themselves",
-  "PROJECTS_DESCRIPTION": "Explore a mix of client and personal projects, each reflecting my commitment to creating innovative solutions and delivering results that make a difference. 🚀",
+  "PROJECTS_DESCRIPTION": "Discover the projects I've worked on, creating innovative solutions with real impact. 🚀",
   "PROJECT_CASE": "Case study",
   "SERVICES_MSG": "Discover how we can together create the perfect website for your brand or company. Turn your vision into reality today!",
   "SERVICES_BUTTON": "Discover more",
@@ -133,7 +152,7 @@
   "PLANS": [
     {
       "TITLE": "Personal Blog",
-      "PRICE": 990000,
+      "PRICE": 890000,
       "DESCRIPTION": "Create your blog with a simple and attractive design to share content and connect with your audience.",
       " PERFECT_FOR": "Ideal for bloggers, writers, content creators, or anyone looking to start their blog professionally.",
       "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
@@ -149,7 +168,7 @@
     },
     {
       "TITLE": "Personal Brand or Business",
-      "PRICE": 1995000,
+      "PRICE": 1895000,
       "DESCRIPTION": "Establish your online presence with a professional and optimized website to attract clients.",
       " PERFECT_FOR": "Entrepreneurs, freelancers, small businesses, and professionals who need a professional website to attract more clients.",
       "PERFECT_FOR_COLOR": "text-blue-100 bg-blue-600/20",
@@ -165,7 +184,7 @@
     },
     {
       "TITLE": "Online Store",
-      "PRICE": 3990000,
+      "PRICE": 3890000,
       "DESCRIPTION": "Sell products or services online with a functional, secure, and optimized store to receive payments.",
       " PERFECT_FOR": "Businesses, entrepreneurs, or brands selling products or services that need an efficient online store to manage sales and payments.",
       "PERFECT_FOR_COLOR": "text-pink-100 bg-pink-600/20",
@@ -226,34 +245,24 @@
   ],
   "BECAUSE": [
     {
-      "ID": 1,
-      "TITLE": "🚀 Experience",
-      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects. I've learned a lot and am part of the Platzi student community.",
-      "IMAGE": "/images/experiencia.webp"
+      "TITLE": "Experience",
+      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects. I've learned a lot and am part of the Platzi student community."
     },
     {
-      "ID": 2,
-      "TITLE": "📊 Exclusive Client Panel",
-      "DESCRIPTION": "You'll have access to a portal where you can see real-time progress, download contracts, review implemented features, and track delivery timelines.",
-      "IMAGE": "/images/panel-cliente.webp"
+      "TITLE": "Exclusive Client Panel",
+      "DESCRIPTION": "You'll have access to a portal where you can see real-time progress, download contracts, review implemented features, and track delivery timelines."
     },
     {
-      "ID": 3,
-      "TITLE": "⚡ Optimized and Responsive Design",
-      "DESCRIPTION": "I create modern, attractive, and responsive websites that work smoothly on both computers and mobile devices.",
-      "IMAGE": "/images/diseno-responsivo.webp"
+      "TITLE": "Optimized and Responsive Design",
+      "DESCRIPTION": "I create modern, attractive, and responsive websites that work smoothly on both computers and mobile devices."
     },
     {
-      "ID": 4,
-      "TITLE": "💼 Tailored Packages for Your Business",
-      "DESCRIPTION": "I offer flexible and customized plans based on the needs of your business or brand, ensuring you get the best solution for your project.",
-      "IMAGE": "/images/paquetes-adaptados.webp"
+      "TITLE": "Tailored Packages for Your Business",
+      "DESCRIPTION": "I offer flexible and customized plans based on the needs of your business or brand, ensuring you get the best solution for your project."
     },
     {
-      "ID": 5,
       "TITLE": "🛠️ Continuous Support and Assistance",
-      "DESCRIPTION": "I’ll always be available to answer your questions and address any concerns during your project’s development.",
-      "IMAGE": "/images/soporte.webp"
+      "DESCRIPTION": "I’ll always be available to answer your questions and address any concerns during your project’s development."
     }
   ]
 }

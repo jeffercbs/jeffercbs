@@ -37,13 +37,34 @@
       "ACTIVE": false
     }
   ],
-  "INTRO_TITLE": "Hey, soy Jeffecbs",
-  "INTRO_BADGE": "Disponible para trabajar",
-  "INTRO_DESCRIPTION": {
-    "FIRST": "Software Enginer | De Ibagué, Colombia",
-    "SECOND": "Actualmente radicado en Bogotá",
-    "THIRD": "Especializado en crear aplicaciones únicas."
-  },
+  "INTRO_TITLE": [
+    "TODO ",
+    "LO QUE ",
+    "NECESITAS ",
+    "PARA ",
+    "POTENCIAR TU ",
+    "PRESENCIA ",
+    "DIGITAL "
+  ],
+  "INTRO_DETAILS": [
+    "SERVICIOS",
+    "Desarrollo sitios web y productos digitales para empresas negocios y marcas.",
+    "Desde <span> blogs </span> y <span> tiendas online </span> hasta <span> aplicaciones web </span> y <span> sistemas personalizados. </span>"
+  ],
+  "INTRO_TAGS": ["SITIOS WEB A MEDIDA", "TIENDAS ONLINE", "APLICACIONES WEB"],
+
+  "QUOTE_TITLE": [
+    "Software Engineer",
+    "De Ibagué, Colombia. Actualmente radicado en Bogotá.",
+    "Especializado en crear aplicaciones únicas."
+  ],
+  "QUOTE_Q": "Cada línea de código es una oportunidad para crear algo extraordinario. Construyamos el futuro juntos.",
+  "YEAR_EXPERIENCE": "3+ años",
+  "YEAR_EXPERIENCE_DESC": "Experiencia",
+  "HAPPY_CLIENTS": "Clientes satisfechos",
+  "SATISFACTION": "Satisfacción",
+  "PROJECTS_COMPLETED": "Proyectos completados",
+
   "ABOUT_TITLE": "Sobre mi",
   "ABOUT_DESC": "<p>Me llamo <strong>Jeferson Barrero</strong>, pero mis amigos me llaman <strong>Jef</strong>. Empecé en la programación a la edad de <strong>14 años</strong> de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web.</p> <p>Como estudiante de <strong>PLATZI</strong> y participante en el proyecto '<strong>MisiónTIC2022</strong>' desde su fase piloto, respaldado por el <strong>gobierno colombiano</strong> y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como programador.</p> <p>Complementando este camino con <strong>cursos virtuales adicionales del SENA</strong> y mi ultima formación en <strong>modelado 3D para la industria</strong> y <strong>asistencia administrativa</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el aprendizaje <strong>gratuito y abierto</strong> de programación.</p>",
   "EXPERIENCE_TITLE": "Experiencia",
@@ -118,8 +139,8 @@
   "TESTIMONIES_TITLE": "Más que palabras, resultados",
   "TESTIMONIES_DESCRIPTION": "Testimonios de clientes, colegas y colaboradores que reflejan el impacto de mi trabajo en cada proyecto. 🚀",
   "PROJECTS_TAG": "Proyectos",
-  "PROJECTS_TITLE": "Proyectos que hablan por sí mismos",
-  "PROJECTS_DESCRIPTION": "Explora una combinación de proyectos para clientes y personales, donde cada uno refleja mi compromiso por crear soluciones innovadoras y resultados que marcan la diferencia. 🚀",
+  "PROJECTS_TITLE": "Proyectos que hablan por sí solos",
+  "PROJECTS_DESCRIPTION": "Descubre los proyectos en los que he trabajado, creando soluciones innovadoras con impacto real. 🚀",
   "PROJECT_CASE": "caso de estudio",
   "SERVICES_MSG": "Descubre cómo podemos crear juntos el sitio web perfecto para tu marca o empresa. ¡Convierte tu visión en realidad hoy mismo!",
   "SERVICES_BUTTON": "Descubrir más",
@@ -133,7 +154,7 @@
   "PLANS": [
     {
       "TITLE": "Blog Personal",
-      "PRICE": 990000,
+      "PRICE": 890000,
       "DESCRIPTION": "Crea tu blog con un diseño sencillo y atractivo para compartir contenido y conectar con tu audiencia.",
       "PERFECT_FOR": "Ideal para bloggers, escritores, creadores de contenido o cualquier persona que desee iniciar su blog profesionalmente.",
       "PERFECT_FOR_COLOR": "text-purple-100 bg-purple-600/20",
@@ -149,7 +170,7 @@
     },
     {
       "TITLE": "Marca Personal o Negocio",
-      "PRICE": 1995000,
+      "PRICE": 1895000,
       "DESCRIPTION": "Establece tu presencia en línea con un sitio web profesional y optimizado para atraer clientes.",
       "PERFECT_FOR": "Emprendedores, freelancers, pequeños negocios y profesionales que necesitan un sitio web profesional para atraer más clientes.",
       "PERFECT_FOR_COLOR": "text-blue-100 bg-blue-600/20",
@@ -165,7 +186,7 @@
     },
     {
       "TITLE": "Tienda Online",
-      "PRICE": 3990000,
+      "PRICE": 3890000,
       "DESCRIPTION": "Vende productos o servicios en línea con una tienda funcional, segura y optimizada para recibir pagos.",
       "PERFECT_FOR": "Empresas, emprendedores o marcas que venden productos o servicios y necesitan una tienda online eficiente para gestionar ventas y pagos.",
       "PERFECT_FOR_COLOR": "text-pink-100 bg-pink-600/20",
@@ -198,19 +219,6 @@
       "ICON": "start"
     },
     {
-      "TITLE": "Soporte Multilenguaje",
-      "PRICE": 599000,
-      "PERFECT_FOR": "Negocios, bloggers y tiendas online que desean llegar a clientes internacionales.",
-      "PERFECT_FOR_COLOR": "text-sky-100 bg-sky-600/20",
-      "FEATURES": [
-        "Traducción a múltiples idiomas",
-        "Detección automática de idioma",
-        "Optimización SEO para contenido multilingüe",
-        "Selector de idioma en el sitio web"
-      ],
-      "ICON": "translate"
-    },
-    {
       "PRICE_TEXT": "Incluido en todos los planes",
       "DESCRIPTION": "Beneficios que obtienes independientemente del plan que elijas.",
       "FEATURES": [
@@ -224,34 +232,24 @@
   ],
   "BECAUSE": [
     {
-      "ID": 1,
       "TITLE": "🚀 Experiencia",
-      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales. He aprendido y soy parte de la comunidad de estudiantes de Platzi.",
-      "IMAGE": "/images/experiencia.webp"
+      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales. He aprendido y soy parte de la comunidad de estudiantes de Platzi."
     },
     {
-      "ID": 2,
       "TITLE": "📊 Panel de Cliente Exclusivo",
-      "DESCRIPTION": "Tendrás acceso a un portal donde podrás ver avances en tiempo real, descargar el contrato, revisar funcionalidades implementadas y hacer seguimiento a tiempos de entrega.",
-      "IMAGE": "/images/panel-cliente.webp"
+      "DESCRIPTION": "Tendrás acceso a un portal donde podrás ver avances en tiempo real, descargar el contrato, revisar funcionalidades implementadas y hacer seguimiento a tiempos de entrega."
     },
     {
-      "ID": 3,
       "TITLE": "⚡ Diseño Optimizado y Responsivo",
-      "DESCRIPTION": "Creo sitios web modernos, atractivos y adaptables a cualquier dispositivo, asegurando una experiencia fluida tanto en computadoras como en móviles.",
-      "IMAGE": "/images/diseno-responsivo.webp"
+      "DESCRIPTION": "Creo sitios web modernos, atractivos y adaptables a cualquier dispositivo, asegurando una experiencia fluida tanto en computadoras como en móviles."
     },
     {
-      "ID": 4,
       "TITLE": "💼 Paquetes Adaptados a tu Negocio",
-      "DESCRIPTION": "Ofrezco planes flexibles y personalizados según las necesidades de tu empresa, negocio o marca, asegurando que obtengas la mejor solución para tu proyecto.",
-      "IMAGE": "/images/paquetes-adaptados.webp"
+      "DESCRIPTION": "Ofrezco planes flexibles y personalizados según las necesidades de tu empresa, negocio o marca, asegurando que obtengas la mejor solución para tu proyecto."
     },
     {
-      "ID": 5,
       "TITLE": "🛠️ Soporte y Atención Continua",
-      "DESCRIPTION": "Siempre estaré disponible para responder tus preguntas y resolver cualquier duda durante el desarrollo de tu proyecto.",
-      "IMAGE": "/images/soporte.webp"
+      "DESCRIPTION": "Siempre estaré disponible para responder tus preguntas y resolver cualquier duda durante el desarrollo de tu proyecto."
     }
   ]
 }
