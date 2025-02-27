@@ -4,7 +4,6 @@ description: "E-commerce desarrollado con Next.js, NestJS, PostgreSQL y AWS, dis
 cover: "arbelleza-001-banner.webp"
 image: "arbelleza-001.webp"
 link: "https://arbelleza.com"
-repo: "https://arbelleza.com"
 ---
 
 ## Descripción del Proyecto
