@@ -5,7 +5,7 @@ import CardPricing from "../CardPricing.astro";
 import Container from "./Container.astro";
 
 const { currentLocale } = Astro;
-const i18n = await getI18n({ currentLocale });
+const i18n = getI18n({ currentLocale });
 ---
 
 <Container

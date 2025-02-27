@@ -1,5 +1,20 @@
 import isHotkey from "is-hotkey";
 import {
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  Code,
+  Heading1,
+  Heading2,
+  Italic,
+  List,
+  ListOrdered,
+  Quote,
+  Underline,
+} from "lucide-preact";
+import {
   useCallback,
   useMemo,
   type JSX,
@@ -17,21 +32,6 @@ import {
 import { withHistory } from "slate-history";
 import { Editable, ReactEditor, Slate, useSlate, withReact } from "slate-react";
 import { Button, Toolbar } from "./slate-components";
-import {
-  Bold,
-  Italic,
-  Underline,
-  Code,
-  Heading1,
-  Heading2,
-  Quote,
-  ListOrdered,
-  List,
-  AlignLeft,
-  AlignRight,
-  AlignCenter,
-  AlignJustify,
-} from "lucide-preact";
 
 const HOTKEYS = {
   "mod+b": "bold",
@@ -103,10 +103,6 @@ export const EditorRender = () => {
     }
   };
 
-  function savedata() {
-    console.log(editor.onChange());
-  }
-
   return (
     <div className="flex flex-col bg-white/80 overflow-hidden rounded-lg border border-gray-200">
       <Slate editor={editor} initialValue={initialValue}>
@@ -118,19 +114,19 @@ export const EditorRender = () => {
               margin: "auto 0",
             }}
           >
-            <MarkButton format="bold" icon="bold" />
-            <MarkButton format="italic" icon="italic" />
-            <MarkButton format="underline" icon="underline" />
-            <MarkButton format="code" icon="code" />
-            <BlockButton format="heading-one" icon="heading-1" />
-            <BlockButton format="heading-two" icon="heading-2" />
-            <BlockButton format="block-quote" icon="quote" />
-            <BlockButton format="numbered-list" icon="list-ordered" />
-            <BlockButton format="bulleted-list" icon="list" />
-            <BlockButton format="left" icon="align-left" />
-            <BlockButton format="center" icon="align-center" />
-            <BlockButton format="right" icon="align-right" />
-            <BlockButton format="justify" icon="align-justify" />
+            <MarkButton format="bold" />
+            <MarkButton format="italic" />
+            <MarkButton format="underline" />
+            <MarkButton format="code" />
+            <BlockButton format="heading-one" />
+            <BlockButton format="heading-two" />
+            <BlockButton format="block-quote" />
+            <BlockButton format="numbered-list" />
+            <BlockButton format="bulleted-list" />
+            <BlockButton format="left" />
+            <BlockButton format="center" />
+            <BlockButton format="right" />
+            <BlockButton format="justify" />
           </Toolbar>
           <button>Guardar cambios</button>
         </div>
@@ -352,7 +348,7 @@ const Leaf = ({
   return <span {...attributes}>{children}</span>;
 };
 
-const BlockButton = ({ format, icon }: { format: string; icon: string }) => {
+const BlockButton = ({ format }: { format: string }) => {
   const editor = useSlate();
   return (
     <Button
@@ -390,7 +386,7 @@ const BlockButton = ({ format, icon }: { format: string; icon: string }) => {
   );
 };
 
-const MarkButton = ({ format, icon }: { format: string; icon: string }) => {
+const MarkButton = ({ format }: { format: string }) => {
   const editor = useSlate();
   return (
     <Button

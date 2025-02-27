@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"projects">;
@@ -8,10 +9,14 @@ const { title, cover, repo, link } = Astro.props.data;
 
 <Layout title={title}>
   <article class="hero min-h-dvh">
-    <div
-      class="h-[450px] border border-white/20 aspect-auto"
-      style={`background: url('/_thumbnails/${cover}'); background-size: cover; background-position: center; background-repeat: no-repeat;`}
-    >
+    <div class="md:h-[500px] h-80 w-full border border-white/20">
+      <Image
+        src={`/_thumbnails/${cover}`}
+        alt={title}
+        class="size-full object-cover aspect-video"
+        width={1920}
+        height={1080}
+      />
     </div>
     <div class="flex md:flex-row flex-col-reverse gap-5 border border-white/20">
       <div class="flex-1 w-full pt-20">

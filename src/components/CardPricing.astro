@@ -1,7 +1,7 @@
 ---
 import type { Pricing } from "@/types/pricing";
-import { Icon } from "astro-icon/components";
 import { formatCurrency } from "@/utils/format_currency";
+import { Icon } from "astro-icon/components";
 
 type Props = Pricing;
 
@@ -56,7 +56,7 @@ const {
     {
       FEATURES && (
         <ul class="space-y-2 text-sm text-gray-300 mt-6">
-          {FEATURES.map((feature, index) => (
+          {FEATURES.map((feature) => (
             <li class="flex items-center gap-2">
               <Icon
                 name={ICON}

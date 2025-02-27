@@ -5,21 +5,13 @@ export type Props = {
   tag?: string;
   description?: string;
   class?: string;
-  hero?: boolean;
 };
 
-const {
-  title,
-  id,
-  description,
-  tag,
-  class: classes,
-  hero = false,
-} = Astro.props;
+const { title, id, description, tag, class: classes } = Astro.props;
 ---
 
-<section class:list={["relative py-24 h-fit", classes]} id={id}>
-  <div class="container text-left md:max-w-2xl w-full mb-4">
+<section class:list={["relative py-16 h-fit", classes]} id={id}>
+  <div class="container text-left md:max-w-2xl w-full mb-4 md:px-0 px-2">
     {
       tag && (
         <span class="bg-green-400 text-black capitalize px-4 py-1 rounded-full inline-block mb-4 font-medium">

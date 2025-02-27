@@ -15,7 +15,6 @@ export function QuestionInput({
   name,
   onChange,
   placeholder,
-  description,
   question,
   error,
 }: QuestionInputProps) {

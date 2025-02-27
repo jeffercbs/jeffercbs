@@ -8,10 +8,10 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <section
-  class="flex relative items-center justify-center h-dvh w-full max-w-dvw overflow-x-hidden"
+  class="flex relative items-start py-16 h-dvh w-full max-w-dvw overflow-x-hidden"
 >
   <CodeDeco
-    class="absolute md:flex flex-col hidden right-1 md:top-14 top-0 text-sm"
+    class="absolute lg:flex flex-col hidden right-1 lg:top-14 top-0 text-sm"
     codelines={[
       "/**",
       " * HTML",
@@ -22,9 +22,9 @@ const i18n = getI18n({ currentLocale });
       "**/",
     ]}
   />
-  <div class="text-center hero w-full *:text-pretty text-pretty">
+  <div class="hero w-full">
     <h1
-      class="flex md:max-w-4xl w-full mx-auto flex-wrap justify-center gap-x-2 text-5xl md:text-7xl font-extrabold text-white leading-tight relative"
+      class="flex lg:max-w-4xl w-full mx-auto flex-wrap justify-center gap-x-2 text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight relative"
     >
       <span
         class="absolute -left-3 -top-8 bg-purple-500 size-8 flex justify-center items-center text-white text-lg rounded-full"
@@ -51,23 +51,25 @@ const i18n = getI18n({ currentLocale });
     </h1>
 
     <div
-      class="grid lg:grid-cols-4 grid-cols-2 place-content-center gap-4 pt-12"
+      class="grid lg:grid-cols-4 grid-cols-1 place-content-center lg:gap-4 gap-1 pt-12"
     >
-      <div class="flex flex-col md:max-w-52 text-left md:order-1 order-2">
+      <div
+        class="flex flex-col w-full lg:max-w-56 items-start text-center md:text-left"
+      >
         <div
-          class="mb-4 bg-green-500 rounded-full size-8 md:size-16 grid place-content-center"
+          class="mb-4 bg-green-500 rounded-full size-8 lg:size-16 lg:grid hidden place-content-center"
         >
-          <Icon name="start" class="md:size-10 size-5 text-yellow-100" />
+          <Icon name="start" class="lg:size-10 size-5 text-yellow-100" />
         </div>
         <h2
-          class="text-green-400 font-bold mb-2 text-lg"
+          class="text-green-400 font-bold mb-2 text-lg lg:block hidden"
           set:text={i18n.INTRO_DETAILS[0]}
         />
         <p set:text={i18n.INTRO_DETAILS[1]} />
       </div>
 
       <div
-        class="col-span-2 md:order-2 order-1 flex justify-center h-fit mt-auto flex-wrap gap-2 text-black *:text-sm font-bold"
+        class="lg:col-span-2 col-span-3 flex justify-center h-fit lg:mt-auto mt-8 lg:mb-0 mb-6 flex-wrap gap-2 text-black *:text-sm font-bold"
       >
         <span class="bg-green-200 px-4 py-2 rounded-full">
           {i18n.INTRO_TAGS[0]}
@@ -84,10 +86,10 @@ const i18n = getI18n({ currentLocale });
       </div>
 
       <div
-        class="flex justify-end lg:items-start items-center order-3 text-center md:text-right"
+        class="flex justify-end lg:items-start items-center text-center lg:text-right"
       >
         <p
-          class="*:text-white *:font-semibold *:text-balance text-balance w-full md:max-w-56"
+          class="*:text-white *:font-semibold *:text-balance text-balance w-full lg:max-w-56"
           set:html={i18n.INTRO_DETAILS[2]}
         />
       </div>
@@ -96,18 +98,9 @@ const i18n = getI18n({ currentLocale });
 </section>
 
 <style>
-  .clip-star {
-    clip-path: polygon(
-      50% 0%,
-      61% 35%,
-      98% 35%,
-      68% 57%,
-      79% 91%,
-      50% 70%,
-      21% 91%,
-      32% 57%,
-      2% 35%,
-      39% 35%
-    );
+  p,
+  h1,
+  span {
+    text-wrap: pretty;
   }
 </style>

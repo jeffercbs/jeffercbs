@@ -53,7 +53,7 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentStep, setCurrentStep] = useState(-1);
   const [formId] = useState(
-    () => `form_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+    () => `form_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
   );
   const [rating, setRating] = useState(0);
   const [formData, setFormData] = useState<Partial<FormData>>({

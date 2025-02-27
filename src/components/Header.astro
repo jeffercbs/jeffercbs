@@ -11,16 +11,16 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <header
-  class="header-animate sticky inset-x-0 top-0 h-16 transition-all ease-in-out flex md:justify-start justify-center w-full z-[99999]"
+  class="h-fit flex md:justify-start justify-center w-full bg-black/50 backdrop-blur-md z-[10000] relative"
 >
   <nav
-    class="size-full h-fit flex justify-between md:items-start items-center pt-2 px-1 hero"
+    class="size-full h-fit flex justify-between md:items-start items-center py-2 px-1 hero"
   >
     <a
       href="/"
       class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-start items-center gap-x-2"
     >
-      <Image src={logo} alt="Logo" width={90} height={80} />
+      <Image src={logo} alt="Logo" width={80} height={80} />
       <small class="bg-green-400 text-neutral-900 rounded-full px-2">
         beta
       </small>
@@ -59,8 +59,9 @@ const i18n = getI18n({ currentLocale });
       </ul>
     </div>
     <div class="flex">
-      <LanguageSelector />
-      <div class="mx-2"></div>
+      <div class="md:mx-2 md:inline hidden">
+        <LanguageSelector />
+      </div>
       <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
         <Icon name="menu" class="size-8" />
       </button>

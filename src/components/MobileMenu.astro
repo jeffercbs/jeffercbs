@@ -1,6 +1,7 @@
 ---
 import { getI18n } from "@/i18n";
 import { Icon } from "astro-icon/components";
+import LanguageSelector from "./LanguageSelector.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -37,5 +38,10 @@ const i18n = getI18n({ currentLocale });
         </li>
       ))
     }
+    <li
+      class="group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out"
+    >
+      <LanguageSelector />
+    </li>
   </ul>
 </nav>
