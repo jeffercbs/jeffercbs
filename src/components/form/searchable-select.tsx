@@ -153,12 +153,6 @@ export function SearchableSelect({
         </div>
       </div>
 
-      {description && <p className="text-black/80 text-lg">{description}</p>}
-
-      {error && (
-        <p className="text-red-900 text-sm mt-2 animate-slide-up">{error}</p>
-      )}
-
       {selected.length > 0 && !isOpen && (
         <div className="flex flex-wrap gap-1">
           {selected.map((item) => (

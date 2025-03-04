@@ -9,7 +9,6 @@ import type { FormData } from "./schema";
 import { SearchableSelect } from "./searchable-select";
 import { SummaryView } from "./summary-view";
 import Welcome from "./welcome";
-import { EditorRender } from "./lexical-form";
 
 export default function FormContent() {
   const {
@@ -24,7 +23,13 @@ export default function FormContent() {
   } = useContext(FormContext);
 
   return (
-    <div className="h-dvh w-dvw bg-gradient-to-b text-neutral-950 from-green-400 via-80% to-100% via-green-300 to-green-100 flex items-center justify-center p-4 overflow-hidden">
+    <div
+      style={{
+        background:
+          " radial-gradient(at 74% 19%, #384137 0px, transparent 50%), radial-gradient(at 26% 78%, #406661 0px, transparent 50%), radial-gradient(at 12% 93%, #3bb873 0px, transparent 50%), radial-gradient(at 61% 84%, #94ed88 0px, transparent 50%), #384137",
+      }}
+      className="h-dvh w-dvw flex items-center justify-center p-4 overflow-hidden"
+    >
       {isLoading ? (
         <LoadingScreen />
       ) : currentStep === -1 ? (
@@ -40,7 +45,7 @@ export default function FormContent() {
                 direction === "up" ? "animate-slide-up" : "animate-slide-up-out"
               }`}
             >
-              <h2 className="text-2xl text-inherit font-medium mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 {currentQuestion.question}
               </h2>
 
@@ -53,7 +58,7 @@ export default function FormContent() {
                     selected={
                       (formData[
                         currentQuestion.id as keyof FormData
-                      ] as string[]) || []
+                      ] as unknown as string[]) || []
                     }
                     onChange={handleSelectChange}
                     description={currentQuestion.description}
@@ -74,8 +79,6 @@ export default function FormContent() {
                     error={errors[currentQuestion.id as keyof FormData]}
                   />
                 )
-              ) : currentQuestion.type === "lexical" ? (
-                <EditorRender />
               ) : (
                 <QuestionInput
                   id={currentQuestion.id}
@@ -93,14 +96,30 @@ export default function FormContent() {
                   error={errors[currentQuestion.id as keyof FormData]}
                 />
               )}
+
+              <div className="min-h-20 flex flex-col gap-y-2 justify-end items-start">
+                {errors[currentQuestion.id as keyof FormData] && (
+                  <small
+                    id={`error-${name}`}
+                    className="rounded-lg bg-yellow-800/30 text-yellow-200 shadow-2xl px-3 py-1 text-sm animate-slide-up"
+                  >
+                    {errors[currentQuestion.id as keyof FormData]}
+                  </small>
+                )}
+                {currentQuestion.description && (
+                  <small className="text-inherial/80 text-sm font-semibold bg-black/50 rounded-lg py-1 px-2 w-fit">
+                    {currentQuestion.description}
+                  </small>
+                )}
+              </div>
             </div>
           )}
           <NavigationArrows />
 
-          <div class="fixed inset-x-8 bottom-8 flex justify-center items-center gap-2 animate-fade-in">
-            <div className="w-1/2 bg-black/20 h-1 mt-8 rounded-full overflow-hidden">
+          <div class="fixed inset-x-8 bottom-8 flex flex-col justify-center items-center gap-2 animate-fade-in">
+            <div className="w-1/2 bg-black/20 h-2 mt-8 rounded-full overflow-hidden">
               <div
-                className="h-full bg-black transition-all duration-500 ease-in-out"
+                className="h-full bg-white transition-all duration-500 ease-in-out"
                 style={{
                   width: `${((currentStep + 1) / questions.length) * 100}%`,
                 }}
@@ -109,7 +128,10 @@ export default function FormContent() {
                 aria-valuemin={0}
                 aria-valuemax={100}
               />
-            </div>{" "}
+            </div>
+            <span class="bg-black/50 text-white/90 text-sm font-semibold rounded-lg px-2 py-1">
+              {currentStep + 1} / {questions.length}
+            </span>
           </div>
         </div>
       )}

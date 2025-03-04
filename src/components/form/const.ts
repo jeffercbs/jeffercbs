@@ -30,14 +30,6 @@ export const questions: QuestionType[] = [
     description: "El nombre de tu empresa o proyecto",
   },
   {
-    id: "projectDescription",
-    question: "Describe tu proyecto",
-    type: "textarea",
-    placeholder: "Cuéntanos más sobre tu proyecto...",
-    description:
-      "Describe los objetivos y necesidades principales de tu proyecto",
-  },
-  {
     id: "project",
     question: "¿Qué tipo de proyecto necesitas?",
     type: "single-select",
@@ -51,41 +43,6 @@ export const questions: QuestionType[] = [
     ],
     description:
       "Selecciona el tipo de proyecto que mejor se ajuste a tus necesidades",
-  },
-
-  {
-    id: "feactures",
-    question: "¿Qué características principales necesitas?",
-    type: "multi-select",
-    options: [
-      "Diseño Responsivo",
-      "Panel de Administración",
-      "Blog",
-      "Carrito de Compras",
-      "Integración con Redes Sociales",
-      "Chat en Vivo",
-      "Sistema de Usuarios",
-      "SEO Optimizado",
-      "Analíticas",
-      "Multiidioma",
-    ],
-    description: "Selecciona todas las características que necesitas",
-  },
-  {
-    id: "preferredTechnology",
-    question: "¿Qué tecnologías prefieres?",
-    type: "multi-select",
-    options: [
-      "React",
-      "Next.js",
-      "Vue.js",
-      "Node.js",
-      "Python",
-      "PHP",
-      "WordPress",
-      "No tengo preferencia",
-    ],
-    description: "Selecciona las tecnologías que prefieras para tu proyecto",
   },
   {
     id: "estimatedBudget",

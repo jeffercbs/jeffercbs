@@ -25,8 +25,8 @@ export function QuestionInput({
     onChange,
     placeholder,
     className: clsx(
-      "w-full border-b-4 focus:border-b-8 border-b-black/20 text-black text-xl px-6 py-3 placeholder:text-black/50 focus:outline-none transition-colors duration-300",
-      { "border-red-500": error }
+      "w-full bg-black/30 border-2 rounded-lg border-white text-white text-base md:text-xl px-6 py-3 placeholder:text-white/50 focus:outline-none transition-colors duration-300",
+      { "border-yellow-500": error }
     ),
     "aria-label": question,
     "aria-invalid": !!error,
@@ -43,24 +43,13 @@ export function QuestionInput({
         <textarea
           {...inputProps}
           className={clsx(
-            "w-full min-h-[300px] border text-black p-6 placeholder:text-black/50 focus:outline-none resize-none transition-colors duration-300",
-            { "border-red-900": error }
+            "w-full min-h-[300px] border text-white p-6 placeholder:text-white/50 focus:outline-none resize-none transition-colors duration-300",
+            { "border-yellow-900": error }
           )}
         />
       ) : (
         <input type={type} {...inputProps} />
       )}
-
-      <div className="min-h-10 flex flex-col justify-center items-start">
-        {error && (
-          <p
-            id={`error-${name}`}
-            className="text-red-500 text-sm animate-slide-up"
-          >
-            {error}
-          </p>
-        )}
-      </div>
     </div>
   );
 }
