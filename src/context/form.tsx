@@ -136,21 +136,17 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
         | HTMLTextAreaElement;
       setFormData((prev) => ({ ...prev, [name]: value }));
       validateField(name as keyof FormData, value);
-      console.log("formData", formData);
     },
     [validateField]
   );
 
   const handleSubmit = useCallback(async () => {
     const result = formSchema.safeParse(formData);
+
     if (result.success) {
       try {
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        console.log("Formulario enviado:", {
-          ...result.data,
-          id: formId,
-          rating,
-        });
+        handleNext();
       } catch (error) {
         console.error("Error al enviar el formulario:", error);
       }
