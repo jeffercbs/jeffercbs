@@ -13,7 +13,7 @@ const i18n = getI18n({ currentLocale });
 >
   <ul class="flex flex-col gap-y-4 *:font-semibold">
     {
-      i18n.HEADER.map(({ LINK, LABEL, ACTIVE, ICON }) => (
+      i18n.HEADER.map(({ LINK, LABEL, ACTIVE }) => (
         <li
           class:list={[
             "group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out",
@@ -29,10 +29,7 @@ const i18n = getI18n({ currentLocale });
             aria-disabled={!ACTIVE}
             class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
           >
-            <span class="flex size-full justify-center items-center">
-              <Icon name={ICON} class="size-6 mr-2" />
-              <span class="text-3xl">{LABEL}</span>
-            </span>
+            <span class="text-3xl">{LABEL}</span>
             {!ACTIVE && <small class="mx-auto">¡Próximamente!</small>}
           </a>
         </li>

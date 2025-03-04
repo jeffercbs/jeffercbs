@@ -1,26 +1,18 @@
 ---
-import Intro from "@/components/partials/Intro.astro";
 import Layout from "@/layouts/Layout.astro";
-import Contact from "../partials/Contact.astro";
 import Me from "../partials/Me.astro";
-import Pricings from "../partials/Pricings.astro";
 import Projects from "../partials/Projects.astro";
 import Testimonies from "../partials/Testimonies.astro";
-import Tools from "../partials/Tools.astro";
-import Because from "../partials/Because.astro";
+import LastPosts from "../partials/LastPosts.astro";
 
 const { props } = Astro;
 ---
 
 <Layout title={props.title}>
   <main>
-    <Intro />
     <Me />
-    <Because />
+    <LastPosts />
     <Projects />
     <Testimonies />
-    <Tools />
-    <Contact />
-    <Pricings />
   </main>
 </Layout>

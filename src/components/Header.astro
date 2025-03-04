@@ -1,41 +1,40 @@
 ---
+import logo from "@/assets/logo.png";
 import { getI18n } from "@/i18n";
-import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import LanguageSelector from "./LanguageSelector.astro";
 import MobileMenu from "./MobileMenu.astro";
-import logo from "@/assets/logo.png";
-import { Image } from "astro:assets";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<header
-  class="h-fit flex md:justify-start justify-center w-full bg-black/50 backdrop-blur-md z-[10000] relative"
->
-  <nav
-    class="size-full h-fit flex justify-between md:items-start items-center py-2 px-1 hero"
-  >
-    <a
-      href="/"
-      class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-start items-center gap-x-2"
-    >
-      <Image src={logo} alt="Logo" width={80} height={80} />
-      <small class="bg-green-400 text-neutral-900 rounded-full px-2">
-        beta
-      </small>
-    </a>
+<header class="h-16 flex items-center z-[10000] relative">
+  <div class="flex justify-between items-center w-full hero">
+    <div class="flex items-center gap-x-3">
+      <a
+        href="/"
+        class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-start items-center gap-x-2"
+      >
+        <Image src={logo} alt="Logo" width={50} height={50} />
+        <small class="bg-green-400 text-neutral-900 rounded-full px-2">
+          beta
+        </small>
+      </a>
+      <div class="md:mx-2 md:inline hidden">
+        <LanguageSelector />
+      </div>
+    </div>
 
-    <div class="md:flex hidden">
-      <ul class="flex gap-x-3 mx-2 items-start justify-center" id="nav-items">
+    <nav>
+      <ul class="md:flex hidden gap-x-10 my-auto h-fit" id="nav-items">
         {
           i18n.HEADER.map((item) => (
             <li
               class:list={[
-                "group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out",
+                "group h-fit rounded-lg transition-border transition-opacity ease-in-out",
                 {
-                  "opacity-80 hover:opacity-100 hover:border border-transparent hover:bg-white/5 hover:border-white/10":
-                    item.ACTIVE,
+                  "opacity-80 hover:opacity-100": item.ACTIVE,
                 },
                 { "opacity-50 disabled:cursor-none": !item.ACTIVE },
               ]}
@@ -45,10 +44,7 @@ const i18n = getI18n({ currentLocale });
                 aria-disabled={!item.ACTIVE}
                 class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
               >
-                <span class="flex size-full justify-center items-center">
-                  <Icon name={item.ICON} class="size-6 mr-2" />
-                  <span>{item.LABEL}</span>
-                </span>
+                <small class="text-sm">{item.LABEL}</small>
                 {!item.ACTIVE && (
                   <small class="mx-auto" set:text={i18n.HEADER_PROX} />
                 )}
@@ -57,16 +53,8 @@ const i18n = getI18n({ currentLocale });
           ))
         }
       </ul>
-    </div>
-    <div class="flex">
-      <div class="md:mx-2 md:inline hidden">
-        <LanguageSelector />
-      </div>
-      <button id="mobile-menu-toggle" role="menu" class="md:hidden flex">
-        <Icon name="menu" class="size-8" />
-      </button>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <MobileMenu />
 </header>
 
