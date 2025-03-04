@@ -9,31 +9,32 @@
     {
       "LABEL": "Home",
       "LINK": "/en",
-      "ICON": "home",
+      "ACTIVE": true
+    },
+     {
+      "LABEL": "Services",
+      "LINK": "/services",
       "ACTIVE": true
     },
     {
       "LABEL": "Biography",
       "LINK": "/jeferson-barrero",
-      "ICON": "braces",
+      
       "ACTIVE": true
     },
     {
       "LABEL": "Blog",
       "LINK": "/blog",
-      "ICON": "book",
       "ACTIVE": true
     },
     {
       "LABEL": "Mentoring",
       "LINK": "/en/mentoring",
-      "ICON": "users",
       "ACTIVE": false
     },
     {
       "LABEL": "Courses",
       "LINK": "/en/courses",
-      "ICON": "camera",
       "ACTIVE": false
     }
   ],
