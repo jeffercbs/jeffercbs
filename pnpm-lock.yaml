@@ -44,9 +44,6 @@ importers:
       preact:
         specifier: ^10.26.4
         version: 10.26.4
-      tailwindcss-animate:
-        specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.9)
       zod:
         specifier: ^3.24.2
         version: 3.24.2
@@ -66,6 +63,9 @@ importers:
       tailwindcss:
         specifier: ^4.0.9
         version: 4.0.9
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@4.0.9)
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
