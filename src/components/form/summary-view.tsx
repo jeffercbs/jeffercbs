@@ -1,10 +1,4 @@
-import { FormContext } from "@/context/form";
-import { useContext } from "preact/hooks";
-
 export function SummaryView() {
-  const { setRating, handleSubmit, handlePrevious, rating } =
-    useContext(FormContext);
-
   return (
     <div className="max-w-3xl w-full space-y-8 animate-fade-in bg-black/50 text-white p-8 rounded-lg">
       <h1 className="text-4xl font-bold text-white">

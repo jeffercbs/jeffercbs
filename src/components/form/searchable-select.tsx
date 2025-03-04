@@ -21,7 +21,6 @@ export function SearchableSelect({
   options,
   selected,
   onChange,
-  description,
   question,
   error,
 }: SearchableSelectProps) {

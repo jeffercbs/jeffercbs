@@ -22,3 +22,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
   return new Response("Hello, world!");
 };
+
+export const GET: APIRoute = async ({ request }) => {
+  return new Response("Hello, world!");
+};

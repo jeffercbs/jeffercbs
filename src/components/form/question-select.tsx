@@ -16,7 +16,6 @@ export function QuestionSelect({
   selected,
   onChange,
   isMulti,
-  description,
   question,
 }: QuestionSelectProps) {
   const handleSelect = useCallback(
