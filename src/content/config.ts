@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     published: z.boolean(),
     cover: z.string(),
     medium: z.string(),
+    tags: z.array(z.string()),
     created: z
       .string()
       .or(z.date())

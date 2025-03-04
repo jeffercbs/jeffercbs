@@ -5,4 +5,6 @@ published: false
 cover: "/banner.webp"
 created: "01/17/2025"
 medium: ""
+tags:
+    - rust
 ---

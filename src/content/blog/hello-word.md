@@ -5,6 +5,8 @@ published: true
 cover: "/banner.webp"
 created: "01/12/2023"
 medium: "https://medium.com/@jeffercbs/hola-mundo-fd1508be7289"
+tags:
+    - programación
 ---
 
 Bienvenidos a mi blog, donde comparto mi pasión por la programación y mi experiencia como escritor ocasional. Mi objetivo es ayudar a todos aquellos que estén aprendiendo a programar, ofreciéndoles contenido de calidad en español.
