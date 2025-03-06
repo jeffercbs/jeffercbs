@@ -6,12 +6,12 @@ import Badge from "./Badge.astro";
 
 type Props = CollectionEntry<"blog">;
 const {
-  slug,
+  id,
   data: { title, description, cover, created, tags },
 } = Astro.props;
 ---
 
-<a href={`/blog/p/${slug}`} class="group">
+<a href={`/blog/p/${id}`} class="group">
   <article>
     <div class="flex flex-col gap-8 h-fit items-start">
       <div class="overflow-hidden rounded-lg shadow-lg">

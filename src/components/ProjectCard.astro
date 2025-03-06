@@ -5,41 +5,54 @@ import { Image } from "astro:assets";
 type Props = CollectionEntry<"projects">;
 
 const {
-  data: { title, image },
-  slug,
+  data: { title, image, cols, rows, type },
+  id,
 } = Astro.props;
 ---
 
-<a href={`/projects/${slug}`} class="group">
+<a
+  href={`/projects/${id}`}
+  class:list={[
+    "group",
+    { "md:col-span-2 col-span-1": cols === 2 },
+    { "md:row-span-2 row-span-1": rows === 2 },
+    { "row-span-1": rows !== 2 },
+  ]}
+>
   <article
-    class="relative p-1 hover:shadow-2xl size-full bg-white/5 border border-white/10 text-white/50 hover:bg-white/10 rounded-lg transition-colors ease-in-out overflow-hidden"
+    class="relative p-1 hover: shadow-2xl size-full bg-white/5 border border-white/10 hover:bg-white/10 rounded-lg overflow-hidden"
   >
     <Image
       src={`/_thumbnails/${image}`}
       alt={title}
       width={400}
       height={500}
-      class="aspect-video rounded-lg size-full object-cover group-hover:scale-110 ease-in-out transition duration-300"
+      class="aspect-video rounded-lg size-full object-center object-cover"
     />
 
     <div
-      class="absolute inset-0 bg-black/10 backdrop-blur-sm opacity-0 rounded-lg group-hover:opacity-100 transition-opacity ease-in-out z-[10]"
+      class:list={["absolute inset-0 rounded-lg grid place-content-start p-4"]}
     >
-      <div class="size-full grid place-content-center">
+      <div
+        class="flex items-center gap-2 border-2 border-white/50 px-2 py-1 rounded-full bg-black/30 backdrop-blur-md"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-12"
+          class="size-5"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-          ></path>
+            d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+          >
+          </path>
         </svg>
+
+        <small>{type} </small>
       </div>
     </div>
   </article>
