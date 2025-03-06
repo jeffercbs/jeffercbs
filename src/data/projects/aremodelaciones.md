@@ -4,6 +4,9 @@ description: "Sitio web desarrollado para Argemiro Remodelaciones, una empresa e
 cover: "argemiroremodelaciones-banner.webp"
 image: "argemiroremodelaciones.webp"
 link: "https://argermiroremodelaciones.vercel.app/"
+color: "amber"
+type: "Negocios"
+createdAt: "05/15/2024"
 ---
 
 ## Descripción del Proyecto

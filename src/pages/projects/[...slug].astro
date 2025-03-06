@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import Project from "@/components/pages/Project.astro";
 
 export type Props = CollectionEntry<"projects">;
@@ -9,15 +9,15 @@ export const getStaticPaths = (async () => {
   const pages = await getCollection("projects");
 
   return pages.map((p) => ({
-    params: { slug: p.slug },
+    params: { slug: p.id },
     props: p,
   }));
 }) satisfies GetStaticPaths;
 
 const page = Astro.props;
-const { Content } = await page.render();
+const { Content } = await render(page);
 ---
 
-<Project {...Astro.props}>
+<Project {...page}>
   <Content />
 </Project>

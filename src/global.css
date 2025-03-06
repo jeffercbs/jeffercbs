@@ -6,6 +6,9 @@
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-up: fadeInUp 0.5s ease-in-out;
   --animate-slide-up-out: slideUpOut 0.5s ease-in-out;
+
+  --color-primary: #1F6242ff;
+  --color-secondary: #FFB762ff;
 }
 
 @layer components {
@@ -100,6 +103,7 @@ body {
     animation-timeline: scroll();
     animation-range: 0 150px;
   }
+  
   @keyframes reduce-header {
     to {
       box-shadow: 0 5px 50px -5px hsla(0, 0%, 100%, 0.1),

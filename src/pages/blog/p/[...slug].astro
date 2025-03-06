@@ -1,13 +1,14 @@
 ---
 import Article from "@/components/pages/Article.astro";
 import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const getStaticPaths = (async () => {
   const blog = await getCollection("blog");
 
   return blog.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: entry,
   }));
 }) satisfies GetStaticPaths;
@@ -15,7 +16,7 @@ export const getStaticPaths = (async () => {
 type Props = CollectionEntry<"blog">;
 const { props } = Astro;
 
-const { Content } = await props.render();
+const { Content } = await render(props);
 ---
 
 <Article {...props}>
