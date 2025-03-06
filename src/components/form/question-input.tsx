@@ -25,7 +25,7 @@ export function QuestionInput({
     onChange,
     placeholder,
     className: clsx(
-      "w-full bg-black/30 border-2 rounded-lg border-white text-white text-base md:text-xl px-6 py-3 placeholder:text-white/50 focus:outline-none transition-colors duration-300",
+      "w-full border-b-2 border-b-secondary text-secondary text-xl font-medium md:text-2xl py-1 placeholder:text-white/50 focus:outline-none transition-colors duration-300",
       { "border-yellow-500": error }
     ),
     "aria-label": question,
@@ -43,7 +43,7 @@ export function QuestionInput({
         <textarea
           {...inputProps}
           className={clsx(
-            "w-full min-h-[300px] border text-white p-6 placeholder:text-white/50 focus:outline-none resize-none transition-colors duration-300",
+            "w-full min-h-[300px] border text-secondary p-6 placeholder:text-secondary/50 focus:outline-none resize-none transition-colors duration-300",
             { "border-yellow-900": error }
           )}
         />

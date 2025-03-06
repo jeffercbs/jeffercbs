@@ -19,7 +19,7 @@ export const questions: QuestionType[] = [
     id: "phone",
     question: "¿Cuál es tu número de teléfono?",
     type: "tel",
-    placeholder: "+34 XXX XXX XXX",
+    placeholder: "+57 XXX XXX XXX",
     description: "Un número donde podamos contactarte",
   },
   {
@@ -39,7 +39,6 @@ export const questions: QuestionType[] = [
       "Aplicación Web",
       "Landing Page",
       "Blog",
-      "Otro",
     ],
     description:
       "Selecciona el tipo de proyecto que mejor se ajuste a tus necesidades",

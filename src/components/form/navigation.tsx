@@ -16,7 +16,7 @@ export function NavigationArrows() {
           {
             "bg-black/70 hover:bg-black": currentStep >= 0,
           },
-          "p-3 disabled:opacity-50 bg-black text-white hover:bg-black/80 disabled:cursor-not-allowed rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-90"
+          "p-3 disabled:opacity-50 bg-secondary text-black hover:bg-secondary/80 disabled:cursor-not-allowed rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-90"
         )}
         aria-label="Pregunta anterior"
       >
@@ -39,7 +39,7 @@ export function NavigationArrows() {
           onClick={handleSubmit}
           disabled={currentStep === questions.length}
           className={clsx(
-            "p-3 rounded-lg disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:bg-black/80 text-white bg-black duration-300 ease-in-out hover:scale-105 active:scale-90"
+            "p-3 rounded-lg disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:bg-secondary/80 text-black bg-secondary duration-300 ease-in-out hover:scale-105 active:scale-90"
           )}
           aria-label="Siguiente pregunta"
         >
@@ -50,9 +50,10 @@ export function NavigationArrows() {
           onClick={handleNext}
           disabled={currentStep === questions.length}
           className={clsx(
-            "p-3 rounded-lg disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:bg-black/80 text-white bg-black duration-300 ease-in-out hover:scale-105 active:scale-90",
+            "p-3 rounded-lg disabled:cursor-not-allowed disabled:opacity-50 transition-all hover:bg-secondary/80 text-black bg-secondary duration-300 ease-in-out hover:scale-105 active:scale-90",
             {
-              "text-white hover:bg-black/80 bg-black": currentStep !== 0,
+              "text-black hover:bg-secondary/80 bg-secondary":
+                currentStep !== 0,
             }
           )}
           aria-label="Siguiente pregunta"

@@ -1,5 +1,5 @@
 import { FormContext } from "@/context/form";
-import { useContext } from "preact/hooks";
+import { useContext, useEffect } from "preact/hooks";
 import { questions } from "./const";
 import { LoadingScreen } from "./loading-screen";
 import { NavigationArrows } from "./navigation";
@@ -20,16 +20,37 @@ export default function FormContent() {
     formData,
     errors,
     direction,
+    handleNext,
+    handlePrevious,
   } = useContext(FormContext);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      console.log(e.key);
+      switch (e.key) {
+        case "ArrowRight":
+          handleNext();
+          break;
+        case "ArrowLeft":
+          handlePrevious();
+          break;
+        case "Enter":
+          handleNext();
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleNext, handlePrevious]);
+
   return (
-    <div
-      style={{
-        background:
-          " radial-gradient(at 74% 19%, #384137 0px, transparent 50%), radial-gradient(at 26% 78%, #406661 0px, transparent 50%), radial-gradient(at 12% 93%, #3bb873 0px, transparent 50%), radial-gradient(at 61% 84%, #94ed88 0px, transparent 50%), #384137",
-      }}
-      className="h-dvh w-dvw flex items-center justify-center p-4 overflow-hidden"
-    >
+    <div className="h-dvh w-dvw flex items-center justify-center bg-primary overflow-hidden">
       {isLoading ? (
         <LoadingScreen />
       ) : currentStep === -1 ? (
@@ -45,9 +66,16 @@ export default function FormContent() {
                 direction === "up" ? "animate-slide-up" : "animate-slide-up-out"
               }`}
             >
-              <h2 className="text-3xl font-bold mb-6">
-                {currentQuestion.question}
-              </h2>
+              <div className="mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  {currentQuestion.question}
+                </h2>
+                {currentQuestion.description && (
+                  <p className="text-white/80 ">
+                    {currentQuestion.description}
+                  </p>
+                )}
+              </div>
 
               {currentQuestion.type === "single-select" ||
               currentQuestion.type === "multi-select" ? (
@@ -97,21 +125,14 @@ export default function FormContent() {
                 />
               )}
 
-              <div className="min-h-20 flex flex-col gap-y-2 justify-end items-start">
-                {errors[currentQuestion.id as keyof FormData] && (
-                  <small
-                    id={`error-${name}`}
-                    className="rounded-lg bg-yellow-800/30 text-yellow-200 shadow-2xl px-3 py-1 text-sm animate-slide-up"
-                  >
-                    {errors[currentQuestion.id as keyof FormData]}
-                  </small>
-                )}
-                {currentQuestion.description && (
-                  <small className="text-inherial/80 text-sm font-semibold bg-black/50 rounded-lg py-1 px-2 w-fit">
-                    {currentQuestion.description}
-                  </small>
-                )}
-              </div>
+              {errors[currentQuestion.id as keyof FormData] && (
+                <small
+                  id={`error-${name}`}
+                  className="rounded-lg bg-white text-red-800 shadow-2xl px-3 py-1 text-sm animate-slide-up"
+                >
+                  {errors[currentQuestion.id as keyof FormData]}
+                </small>
+              )}
             </div>
           )}
           <NavigationArrows />
@@ -119,7 +140,7 @@ export default function FormContent() {
           <div class="fixed inset-x-8 bottom-8 flex flex-col justify-center items-center gap-2 animate-fade-in">
             <div className="w-1/2 bg-black/20 h-2 mt-8 rounded-full overflow-hidden">
               <div
-                className="h-full bg-white transition-all duration-500 ease-in-out"
+                className="h-full bg-secondary transition-all duration-500 ease-in-out"
                 style={{
                   width: `${((currentStep + 1) / questions.length) * 100}%`,
                 }}
@@ -129,7 +150,7 @@ export default function FormContent() {
                 aria-valuemax={100}
               />
             </div>
-            <span class="bg-black/50 text-white/90 text-sm font-semibold rounded-lg px-2 py-1">
+            <span class="bg-black/50 text-secondary/90 text-sm font-semibold rounded-lg px-2 py-1">
               {currentStep + 1} / {questions.length}
             </span>
           </div>
