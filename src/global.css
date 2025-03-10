@@ -95,7 +95,7 @@ body {
 
 @media (width >= 64rem /* 1024px */) {
   .hero {
-    max-width: 80rem;
+    max-width: 75rem;
     padding-left: 0;
     padding-right: 0;
   }
