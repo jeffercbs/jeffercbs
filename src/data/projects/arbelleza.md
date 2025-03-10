@@ -1,11 +1,17 @@
 ---
 title: "ARBelleza"
 description: "E-commerce desarrollado con Next.js, NestJS, PostgreSQL y AWS, diseñado para ofrecer una experiencia rápida, segura y escalable."
-cover: "arbelleza-001-banner.webp"
-image: "arbelleza-001.webp"
+cover: "/_thumbnails/arbelleza-001-banner.webp"
+image: "/_thumbnails/arbelleza-001.webp"
 cols: 2
 link: "https://arbelleza.com"
-color: "purple"
+stack:
+    framework: "Next.js"
+    case: "E-commerce"
+    css: "TailwindCSS"
+    database: "PostgreSQL"
+    auth: "Clerk"
+    others: "AWS, MercadoPago"
 type: "E commerce"
 createdAt: "01/29/2025"
 ---

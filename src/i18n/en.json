@@ -12,8 +12,8 @@
       "ACTIVE": true
     },
     {
-      "LABEL": "Services",
-      "LINK": "/services",
+      "LABEL": "Projects",
+      "LINK": "/#projects",
       "ACTIVE": true
     },
     {
@@ -60,7 +60,8 @@
   ],
   "QUOTE_TITLE": [
     "Software Engineer",
-    "Specialized in creating unique applications."
+    "Specialized in creating",
+    "unique applications."
   ],
   "QUOTE_Q": "I transform ideas into digital solutions for businesses, brands, and companies. Custom web development, scalable applications, and digital experiences that drive your growth in the online world.",
   "YEAR_EXPERIENCE": "3+ years",
@@ -175,7 +176,7 @@
       "TITLE": "Personal Brand or Business",
       "PRICE": 1895000,
       "DESCRIPTION": "Establish your online presence with a professional and optimized website to attract clients.",
-      " PERFECT_FOR": "Entrepreneurs, freelancers, small businesses, and professionals who need a professional website to attract more clients.",
+      "PERFECT_FOR": "Entrepreneurs, freelancers, small businesses, and professionals who need a professional website to attract more clients.",
       "PERFECT_FOR_COLOR": "text-blue-100 bg-blue-600/20",
       "FEATURES": [
         "Up to 5 custom sections (Home, Services, About Me, Contact, etc.)",
@@ -191,7 +192,7 @@
       "TITLE": "Online Store",
       "PRICE": 3890000,
       "DESCRIPTION": "Sell products or services online with a functional, secure, and optimized store to receive payments.",
-      " PERFECT_FOR": "Businesses, entrepreneurs, or brands selling products or services that need an efficient online store to manage sales and payments.",
+      "PERFECT_FOR": "Businesses, entrepreneurs, or brands selling products or services that need an efficient online store to manage sales and payments.",
       "PERFECT_FOR_COLOR": "text-pink-100 bg-pink-600/20",
       "FEATURES": [
         "Self-manageable product and/or service catalog",
@@ -209,7 +210,7 @@
       "TITLE": "Custom Plan",
       "PRICE_TEXT": "Custom",
       "DESCRIPTION": "Tailor-made solutions for businesses with specific needs or more complex projects.",
-      " PERFECT_FOR": "Large companies, startups, or tech projects that require custom functionalities to scale their business.",
+      "PERFECT_FOR": "Large companies, startups, or tech projects that require custom functionalities to scale their business.",
       "PERFECT_FOR_COLOR": "text-orange-100 bg-orange-600/20",
       "FEATURES": [
         "100% custom design and development for your brand",
@@ -251,7 +252,7 @@
   "BECAUSE": [
     {
       "TITLE": "Experience",
-      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects. I've learned a lot and am part of the Platzi student community."
+      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects."
     },
     {
       "TITLE": "Exclusive Client Panel",

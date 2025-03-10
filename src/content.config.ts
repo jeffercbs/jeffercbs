@@ -31,8 +31,16 @@ const ProjectsCollection = defineCollection({
     cols: z.number().default(1).optional(),
     rows: z.number().default(1).optional(),
     tags: z.array(z.string()).optional(),
-    color: z.string().optional().default("gray"),
     type: z.string(),
+
+    stack: z.object({
+      framework: z.string(),
+      case: z.string(),
+      css: z.string(),
+      database: z.string(),
+      auth: z.string(),
+      others: z.string().optional(),
+    }),
     createdAt: z
       .string()
       .or(z.date())

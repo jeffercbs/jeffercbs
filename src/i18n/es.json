@@ -12,8 +12,8 @@
       "ACTIVE": true
     },
     {
-      "LABEL": "Servicios",
-      "LINK": "/services",
+      "LABEL": "Proyectos",
+      "LINK": "/#projects",
       "ACTIVE": true
     },
     {
@@ -60,7 +60,8 @@
 
   "QUOTE_TITLE": [
     "Software Engineer",
-    "Especializado en crear aplicaciones únicas."
+    "Especializado en crear",
+    "aplicaciones únicas."
   ],
   "QUOTE_Q": "Transformo ideas en soluciones digitales para negocios, marcas y empresas. Desarrollo web a medida, aplicaciones escalables y experiencias digitales que impulsan su crecimiento en el mundo online.",
   "YEAR_EXPERIENCE": "3+ años",
@@ -237,7 +238,7 @@
   "BECAUSE": [
     {
       "TITLE": "🚀 Experiencia",
-      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales. He aprendido y soy parte de la comunidad de estudiantes de Platzi."
+      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales."
     },
     {
       "TITLE": "📊 Panel de Cliente Exclusivo",
