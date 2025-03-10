@@ -11,7 +11,7 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 
 const { title, image = "/og-image.jpg" } = Astro.props;
-const template = `${i18n.TITLE_SEO} | ${title}`;
+const template = `${title} | ${i18n.TITLE_SEO}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
