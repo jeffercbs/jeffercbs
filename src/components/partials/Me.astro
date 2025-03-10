@@ -2,6 +2,7 @@
 import { TOTAL_CLIENTS, TOTAL_PROJECTS } from "@/constants";
 import { getI18n } from "@/i18n";
 import { Image } from "astro:assets";
+import Iam from "@/assets/yo.jpg";
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -14,7 +15,7 @@ const i18n = getI18n({ currentLocale });
         class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-green-400"
       >
         <Image
-          src="/images/experiencia.webp"
+          src={Iam}
           alt="Profile"
           width="64"
           height="64"
@@ -32,13 +33,16 @@ const i18n = getI18n({ currentLocale });
     </div>
 
     <h2
-      class="md:text-4xl text-3xl font-bold leading-tight *:text-pretty text-pretty"
+      class="md:text-5xl text-4xl font-bold leading-tight *:text-pretty text-pretty"
     >
       <span class="bg-yellow-200 pl-2 py-1 rounded-md text-black">
         {i18n.QUOTE_TITLE[0]}
       </span>
-      <span class="text-green-200">
+      <span>
         {i18n.QUOTE_TITLE[1]}
+      </span>
+      <span class="text-green-200">
+        {i18n.QUOTE_TITLE[2]}
       </span>
     </h2>
 
