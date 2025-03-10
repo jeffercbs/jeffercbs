@@ -1,6 +1,6 @@
 {
-  "TITLE_SEO": "Jeferson Barrero | Software Consultant & Digital Solutions Architect",
-  "DESCRIPTION_SEO": "Expert in software architecture and enterprise technology consulting. Development of scalable web solutions, systems optimization, and digital transformation. Over 5 years creating high-impact digital products for leading companies.",
+  "TITLE_SEO": "Jeferson Barrero | Software Engineer, Tech Consultant & Educator",
+  "DESCRIPTION_SEO": "Software Engineer based in Bogotá with over 3 years of experience in web development, software architecture, and scalable digital solutions. Tech consultant and content creator specializing in programming and technology. I help businesses and startups transform ideas into innovative digital products, optimizing systems and driving growth in the digital world.",
   "KEYWORD_SEO": "Software Architecture, Technology Consulting, Web Development, React, Next.js, Performance, Optimization, Digital Transformation",
   "AUTHOR": "Jeferson Barrero",
   "COPYRIGHT": "Jeferson Barrero",
@@ -11,7 +11,7 @@
       "LINK": "/en",
       "ACTIVE": true
     },
-     {
+    {
       "LABEL": "Services",
       "LINK": "/services",
       "ACTIVE": true
@@ -19,7 +19,7 @@
     {
       "LABEL": "Biography",
       "LINK": "/jeferson-barrero",
-      
+
       "ACTIVE": true
     },
     {
