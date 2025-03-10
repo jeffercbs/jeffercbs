@@ -4,16 +4,29 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Badge from "./Badge.astro";
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"blog"> & {
+  class?: string;
+  orientation?: "horizontal" | "vertical";
+};
 const {
   id,
-  data: { title, description, cover, created, tags },
+  class: className,
+  orientation = "vertical",
+  data: { title, description, cover, createdAt, tags },
 } = Astro.props;
 ---
 
-<a href={`/blog/p/${id}`} class="group">
+<a href={`/blog/p/${id}`} class:list={["group size-full", className]}>
   <article>
-    <div class="flex flex-col gap-8 h-fit items-start">
+    <div
+      class:list={[
+        "flex gap-8",
+        {
+          "flex-col": orientation == "vertical",
+          "flex-row": orientation == "horizontal",
+        },
+      ]}
+    >
       <div class="overflow-hidden rounded-lg shadow-lg">
         <Image
           src={cover}
@@ -21,15 +34,21 @@ const {
           fit="contain"
           width={250}
           height={250}
-          class="aspect-video size-full group-hover:scale-125 transition-transform duration-300"
+          class:list={[
+            "group-hover:scale-105 transition-transform duration-300",
+            {
+              "aspect-video size-full": orientation == "vertical",
+              "aspect-square size-40": orientation == "horizontal",
+            },
+          ]}
         />
       </div>
-      <div class="flex-1 flex flex-col justify-between space-y-4 relative">
+      <div class="flex-1 flex flex-col space-y-4 relative">
         <div class="flex items-center gap-4 text-sm text-neutral-300">
           <time
-            datetime={created.toDateString()}
+            datetime={createdAt.toDateString()}
             class="font-medium"
-            set:text={formatDate(created)}
+            set:text={formatDate(createdAt)}
           />
           <div>
             {
@@ -47,7 +66,7 @@ const {
             class="text-xl text-pretty font-bold tracking-tight group-hover:text-green-200 transition-colors ease-in-out duration-300"
             set:text={title}
           />
-          <p class="text-base text-neutral-300" set:text={description} />
+          <p class="text-base text-neutral-300 mt-1" set:text={description} />
         </div>
       </div>
     </div>

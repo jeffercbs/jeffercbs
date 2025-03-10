@@ -7,14 +7,14 @@ import "../global.css";
 
 interface Props {
   title: string;
+  description?: string;
 }
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={Astro.currentLocale}>
   <head>
-    <BaseHead title={title} />
+    <BaseHead {...Astro.props} />
     <ClientRouter />
   </head>
   <body class="bg-black text-neutral-200 antialiased relative">

@@ -3,6 +3,7 @@ import { getI18n } from "@/i18n";
 
 export type Props = {
   title: string;
+  description?: string;
   image?: string;
 };
 
@@ -16,7 +17,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <meta charset="UTF-8" />
 <title>{template}</title>
-<meta name="description" content={i18n.DESCRIPTION_SEO} />
+<meta
+  name="description"
+  content={!Astro.props.description
+    ? `${Astro.props.title} - ${i18n.DESCRIPTION_SEO}`
+    : Astro.props.description}
+/>
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 
@@ -24,7 +30,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:title" content={template} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:type" content="website" />
-<meta property="og:description" content={i18n.DESCRIPTION_SEO} />
+<meta
+  property="og:description"
+  content={!Astro.props.description
+    ? `${Astro.props.title} - ${i18n.DESCRIPTION_SEO}`
+    : Astro.props.description}
+/>
 <meta property="og:image" content={image} />
 <meta property="og:site_name" content={i18n.TITLE_SEO} />
 <meta property="og:locale" content={currentLocale} />
@@ -33,7 +44,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@yourtwitterhandle" />
 <meta name="twitter:title" content={template} />
-<meta name="twitter:description" content={i18n.DESCRIPTION_SEO} />
+<meta
+  name="twitter:description"
+  content={!Astro.props.description
+    ? `${Astro.props.title} - ${i18n.DESCRIPTION_SEO}`
+    : Astro.props.description}
+/>
 <meta name="twitter:image" content={image} />
 
 <!-- Canonical and Alternates -->

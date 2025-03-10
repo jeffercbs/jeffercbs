@@ -3,9 +3,13 @@ import { getCollection } from "astro:content";
 import Container from "./Container.astro";
 import CardArticle from "../CardArticle.astro";
 
-const posts = (
-  await getCollection("blog", (entry) => entry.data.published)
-).slice(0, 3);
+const posts = (await getCollection("blog", (entry) => entry.data.published))
+  .slice(0, 3)
+  .sort(
+    (a, b) =>
+      new Date(b.data.createdAt).getTime() -
+      new Date(a.data.createdAt).getTime()
+  );
 ---
 
 <Container

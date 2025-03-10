@@ -5,7 +5,10 @@ import ProjectCard from "../ProjectCard.astro";
 import Container from "./Container.astro";
 import Counter from "../Counter.astro";
 import { TOTAL_PROJECTS } from "@/constants";
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort(
+  (a, b) =>
+    new Date(b.data.createdAt).getTime() + new Date(a.data.createdAt).getTime()
+);
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
@@ -16,7 +19,7 @@ const i18n = getI18n({ currentLocale });
     class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense grid-rows-2 p-3 gap-2"
   >
     <div
-      class="text-center hover:shadow-2xl size-full bg-white/5 border border-white/10 hover:bg-white/10 rounded-lg md:order-3 grid place-content-center"
+      class="text-center hover:shadow-2xl size-full bg-white/5 border border-white/10 hover:bg-white/10 rounded-lg grid place-content-center"
     >
       <Counter value={TOTAL_PROJECTS} />
       <div
