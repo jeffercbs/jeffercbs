@@ -9,7 +9,7 @@ import icon from "astro-icon";
 import auth from "auth-astro";
 
 import vercel from "@astrojs/vercel";
-import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import markdownConfig from "./mardown.config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +22,11 @@ export default defineConfig({
   integrations: [
     sitemap(),
     icon(),
-    mdx(),
+    mdx({
+      gfm: false,
+      extendPlugins: false,
+      ...markdownConfig,
+    }),
     preact({ compat: true, devtools: true }),
     db(),
     auth(),
@@ -51,7 +55,8 @@ export default defineConfig({
   },
   adapter: vercel(),
   markdown: {
-    rehypePlugins: [rehypeHeadingIds],
+    gfm: true,
     syntaxHighlight: "prism",
+    ...markdownConfig,
   },
 });
