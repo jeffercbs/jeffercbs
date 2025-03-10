@@ -53,7 +53,11 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   markdown: {
     gfm: true,
     syntaxHighlight: "prism",
