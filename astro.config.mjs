@@ -9,6 +9,7 @@ import icon from "astro-icon";
 import auth from "auth-astro";
 
 import vercel from "@astrojs/vercel";
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,4 +50,8 @@ export default defineConfig({
     enabled: false,
   },
   adapter: vercel(),
+  markdown: {
+    rehypePlugins: [rehypeHeadingIds],
+    syntaxHighlight: "prism",
+  },
 });

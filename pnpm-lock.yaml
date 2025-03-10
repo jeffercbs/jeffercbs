@@ -48,6 +48,9 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^6.2.0
+        version: 6.2.0
       '@fontsource-variable/onest':
         specifier: ^5.2.5
         version: 5.2.5
