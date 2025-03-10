@@ -2,6 +2,7 @@
 title: "Mejores practicas para APIs Seguras en NestJS: Una Guía desde la Experiencia"
 description: "Descubre las mejores prácticas para mejorar la seguridad de tu backend en NestJS. En esta guía basada en mi experiencia real, exploraremos estrategias clave para proteger tus APIs."
 cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/i1jyqa8lr9iracq1nfdq"
+medium: "https://jeffercbs.medium.com/mejores-practicas-para-apis-seguras-en-nestjs-una-gu%C3%ADa-desde-la-experiencia-51b3915d637b
 createdAt: "03/09/2025"
 tags:
     - Desarrollo
@@ -218,7 +219,7 @@ export class UserService {
 ```
 
 
-## Consejos desde la Experiencia
+## Consejos
 
 1. **Separa responsabilidades**: Los servicios deben hacer una sola cosa y hacerla bien.
 2. **Actualiza dependencias**: Al menos una vez al mes revisa y actualiza tus dependencias.
