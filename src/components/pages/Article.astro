@@ -1,21 +1,44 @@
 ---
+import Auth from "@/components/Auth.astro";
+import LiteVideo from "@/components/LiteVideo.astro";
 import Layout from "@/layouts/Layout.astro";
+import "@/prism.css";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import LiteVideo from "@/components/LiteVideo.astro";
-import "@/prism.css";
+import ShareComponent from "../ShareComponent.astro";
+import { render } from "astro:content";
 
 export type Props = CollectionEntry<"blog">;
 const {
   data: { title, medium, cover, type, videoId, description },
 } = Astro.props;
+
+const { remarkPluginFrontmatter } = await render(Astro.props);
 ---
 
 <Layout title={title} description={description} image={cover}>
   <article>
-    <div class="relative w-full h-fit mb-8 p-2 z-[1]">
-      <div class="md:max-w-2/3 mx-auto">
+    <div class="w-full h-fit mb-8 p-2 z-[1]">
+      <div class="md:max-w-4xl w-full mx-auto">
+        <div class="md:px-8 py-6">
+          <h1 class="md:text-5xl text-4xl text-pretty font-bold">{title}</h1>
+          <p
+            class="font-medium mt-2 md:text-xl text-lg opacity-80"
+            set:text={description}
+          />
+          <div class="flex justify-between items-center mt-14">
+            <Auth
+              name="Jeferson Estiven Barrero"
+              username="jeffercbs"
+              medium={medium}
+              readingTime={remarkPluginFrontmatter.minutesRead}
+            />
+            <div>
+              <ShareComponent />
+            </div>
+          </div>
+        </div>
         {
           type == "youtube" ? (
             <LiteVideo videoId={videoId || ""} backgroundImage={cover} />
@@ -25,42 +48,15 @@ const {
               alt={title}
               width={1000}
               height={700}
-              class="object-cover aspect-video rounded-lg shadow-2xl shadow-secondary/1s0"
+              class="object-cover aspect-video rounded-2xl shadow-2xl shadow-secondary/40"
             />
           )
         }
-        <div class="flex justify-between items-center py-8">
-          <div class="flex items-center gap-4">
-            <div
-              class="size-10 grid place-content-center bg-gradient-to-br from-blue-600 to-indigo-300 rounded-full"
-            >
-              JB
-            </div>
-            <div class="flex flex-col font-medium text-white">
-              <strong> Jeferson Barrero </strong>
-              <em class="text-sm text-gray-400"> @jeffercbs </em>
-            </div>
-          </div>
-          <div>
-            {
-              !medium ? (
-                <Icon name="www" class="size-6" />
-              ) : (
-                <a
-                  href={medium}
-                  target="_blank"
-                  class="flex gap-2 bg-white rounded-full text-black px-8 py-1"
-                >
-                  <Icon name="medium" class="size-6" />
-                  <span>leer en medium</span>
-                </a>
-              )
-            }
-          </div>
-        </div>
       </div>
     </div>
-    <div class="prose prose-invert prose-lg mx-auto">
+    <div
+      class="md:px-0 px-5 prose prose-invert prose-lg mx-auto prose-h1:first:text-2xl prose-h1:md:first:text-4xl"
+    >
       <slot />
     </div>
   </article>

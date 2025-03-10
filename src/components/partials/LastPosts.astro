@@ -9,7 +9,7 @@ const posts = (await getCollection("blog", (entry) => entry.data.published))
       new Date(b.data.createdAt).getTime() -
       new Date(a.data.createdAt).getTime()
   )
-  .slice(0, 3);
+  .slice(0, 4);
 ---
 
 <Container
