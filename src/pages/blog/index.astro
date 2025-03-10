@@ -1,5 +1,6 @@
 ---
 import CardArticle from "@/components/CardArticle.astro";
+import CardArticleBase from "@/components/CardArticleBase.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { type CollectionEntry } from "astro:content";
@@ -15,6 +16,8 @@ const isNotPublished = await getCollection(
   "blog",
   (entry) => !entry.data.published
 );
+
+console.log(isNotPublished);
 ---
 
 <Layout title="blog">
@@ -43,8 +46,8 @@ const isNotPublished = await getCollection(
             <li>No hay proximo contanido</li>
           ) : (
             isNotPublished.map((entry) => (
-              <li class="opacity-80 underline">
-                <CardArticle {...entry} orientation="horizontal" />
+              <li class="opacity-80">
+                <CardArticleBase {...entry} orientation="horizontal" />
               </li>
             ))
           )

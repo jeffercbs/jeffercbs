@@ -1,76 +1,14 @@
 ---
-import { formatDate } from "@/utils/format_date";
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import Badge from "./Badge.astro";
+import CardArticleBase from "./CardArticleBase.astro";
 
 type Props = CollectionEntry<"blog"> & {
   class?: string;
   orientation?: "horizontal" | "vertical";
 };
-const {
-  id,
-  class: className,
-  orientation = "vertical",
-  data: { title, description, cover, createdAt, tags },
-} = Astro.props;
+const { id, class: className } = Astro.props;
 ---
 
 <a href={`/blog/p/${id}`} class:list={["group size-full", className]}>
-  <article class="pb-3">
-    <div
-      class:list={[
-        "flex",
-        {
-          "flex-col gap-8": orientation == "vertical",
-          "flex-row gap-2": orientation == "horizontal",
-        },
-      ]}
-    >
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <Image
-          src={cover}
-          alt="Blog post illustration"
-          fit="contain"
-          width={250}
-          height={250}
-          class:list={[
-            "group-hover:scale-105 transition-transform duration-300",
-            {
-              "aspect-video size-full": orientation == "vertical",
-              "aspect-square size-40": orientation == "horizontal",
-            },
-          ]}
-        />
-      </div>
-      <div class="flex-1 flex flex-col space-y-4 relative">
-        {
-          orientation !== "horizontal" && (
-            <div class="flex items-center gap-4 text-sm text-neutral-300">
-              <time
-                datetime={createdAt.toDateString()}
-                class="font-medium"
-                set:text={formatDate(createdAt)}
-              />
-              <div>
-                {tags.map((tag) => (
-                  <Badge>
-                    <small set:text={tag} />
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          )
-        }
-        <div>
-          <h3
-            transition:name={`title-${title}`}
-            class="text-xl text-pretty font-bold tracking-tight group-hover:text-green-200 transition-colors ease-in-out duration-300"
-            set:text={title}
-          />
-          <p class="text-base text-neutral-300 mt-1" set:text={description} />
-        </div>
-      </div>
-    </div>
-  </article>
+  <CardArticleBase {...Astro.props} />
 </a>
