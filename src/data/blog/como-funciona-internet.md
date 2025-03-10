@@ -1,5 +1,5 @@
 ---
-title: "Como Funciona Internet"
+title: "Cómo funciona Internet"
 description: "Descubre cómo funciona Internet: cables submarinos, servidores y DNS explicados de forma sencilla. Aprende cómo la información viaja instantáneamente por la red global que conecta nuestro mundo."
 cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/nmvmulb2fn7fkq2ec8vn"
 createdAt: "02/18/2025"
@@ -8,8 +8,6 @@ videoId: "w9jel3IC8fY"
 tags:
     - internet
 ---
-
-# Cómo funciona Internet: una explicación sencilla
 
 Internet es una de las creaciones humanas más impresionantes, conectando el mundo entero y permitiéndonos hacer infinidad de actividades diarias. Desde ver videos en YouTube hasta enviar mensajes por WhatsApp o disfrutar de tu pelicula favorita en Netflix, todo funciona gracias a esta red global. Pero, **¿alguna vez te has preguntado cómo funciona realmente?** Vamos a explorar los elementos fundamentales que hacen posible Internet.
 

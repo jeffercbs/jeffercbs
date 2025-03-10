@@ -7,15 +7,13 @@ tags:
     - Desarrollo
 ---
 
-# Mejores Prácticas para APIs Seguras en NestJS: Una Guía desde la Experiencia
-
 Después de varios proyectos backends y microservicios para e-commerce y plataformas web con **NestJS**, quiero compartir algunas de las lecciones que he aprendido sobre cómo desarrollar APIs seguras, un factor muy importante cuando las amenazas cibernéticas son cada vez más comunes.
 
 ## ¿Por qué NestJS?
 
 Una de las grandes ventajas de este framework es su arquitectura modular, que nos permite desarrollar módulos con funcionalidades específicas e independientes. Esto no solo mantiene el código organizado, sino que también facilita la escalabilidad y el mantenimiento en proyectos grandes. Al estar basado en Express y usar TypeScript por defecto, la transición es bastante natural para quienes ya trabajan con Node.js.
 
-## 1. Uso de DTOs para Validación y Seguridad
+## Uso de DTOs para Validación y Seguridad
 
 > *Un DTO **(Data Transfer Object)** es un objeto que define la estructura y formato de los datos esperados en una solicitud. Se usa para garantizar que los datos sean correctos y facilitar su validación.*
 
@@ -60,7 +58,7 @@ export class UsersController {
 
 De esta forma, si los datos enviados no cumplen con las validaciones definidas en el DTO, NestJS responderá con un error 400 indicando los problemas en la solicitud.
 
-## 2. usa los Guards y mejora la seguridad
+## usa los Guards y mejora la seguridad
 
 > *Un Guard en NestJS es un mecanismo que controla el acceso a rutas antes de que el controlador procese la solicitud. Se usa comúnmente para autenticación y autorización.*
 
@@ -91,19 +89,19 @@ export class AuthGuard implements CanActivate {
 
 Podemos aplicar Guards de tres maneras:
 
-1. **Globalmente** (se aplica a toda la aplicación):
+**Globalmente** (se aplica a toda la aplicación):
    ```typescript
    app.useGlobalGuards(new AuthGuard());
    ```
 
-2. **A nivel de controlador**:
+**A nivel de controlador**:
    ```typescript
    @UseGuards(AuthGuard)
    @Controller('users')
    export class UsersController {
    ```
 
-3. **A nivel de una ruta específica**:
+ **A nivel de una ruta específica**:
    ```typescript
    @UseGuards(AuthGuard)
    @Get('profile')
@@ -112,7 +110,7 @@ Podemos aplicar Guards de tres maneras:
    }
    ```
 
-## 3. Comprende el ciclo de vida de una solicitud en NestJS
+## Comprende el ciclo de vida de una solicitud en NestJS
 
 Para que comprendamos mejor cómo se relacionan los Guards, Pipes y Middleware, es útil entender el ciclo de vida de una petición en NestJS:
 
@@ -126,7 +124,7 @@ Para que comprendamos mejor cómo se relacionan los Guards, Pipes y Middleware, 
 8. **Filters**: Manejan excepciones en caso de errores.
 
 
-### 4. Implementa Limitación de Solicitudes (Rate Limiting)
+### Implementa Limitación de Solicitudes (Rate Limiting)
 
 He visto cómo los ataques de fuerza bruta pueden colapsar un servidor. El rate limiting es crucial:
 
@@ -151,23 +149,21 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 export class AppModule {}
 ```
 
-### 5. Configura Encabezados de Seguridad HTTP
+### Configura Encabezados de Seguridad HTTP
 
 Un consejo que me hubiera gustado recibir cuando empecé: configurar los headers HTTP adecuados es sorprendentemente efectivo:
 
-```typescript
+```typescript:lib/main.ts
 import helmet from 'helmet';
 
-// En main.ts
 app.use(helmet());
 ```
 
-### 6. Usa Variables de Entorno para Datos Sensibles
+### Usa Variables de Entorno para Datos Sensibles
 
 Nunca, jamás, guardes secretos en tu código:
 
-```typescript
-// En app.module.ts
+```typescript:lib/app.module.ts
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -189,12 +185,11 @@ export class AuthService {
 }
 ```
 
-### 7. Implementa CORS Correctamente
+### Implementa CORS Correctamente
 
 En mis primeros proyectos, me encontré con problemas por no configurar CORS adecuadamente:
 
-```typescript
-// En main.ts
+```typescript:main.ts
 app.enableCors({
   origin: ['https://tudominio.com', 'https://admin.tudominio.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -203,7 +198,7 @@ app.enableCors({
 ```
 
 
-### 8. Implementa Registro de Actividad (Logging)
+### Implementa Registro de Actividad (Logging)
 
 No subestimes el valor de un buen sistema de logs:
 

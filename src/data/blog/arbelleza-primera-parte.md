@@ -9,7 +9,6 @@ tags:
     - Desarrollo
 ---
 
-# Cómo construimos Arbelleza
 
 Hace un tiempo, mi socia y yo nos embarcamos en crear Arbelleza, una tienda online especializada en productos de salud y belleza. Este proyecto no solo representó una oportunidad de negocio, sino también un desafío técnico que me permitió aplicar mis conocimientos en desarrollo web para construir una plataforma escalable, rápida y eficiente.
 
@@ -57,7 +56,7 @@ Para hacer que Arbelleza destacara, implementamos algunas tecnologías adicional
 
 Construir Arbelleza fue un proceso estructurado que fue mucho más allá de simplemente escribir código:
 
-### 1. Diseño y planificación
+### Diseño y planificación
 
 Antes de escribir una sola línea de código, definimos claramente:
 - La experiencia que queríamos ofrecer a nuestros usuarios
@@ -66,7 +65,7 @@ Antes de escribir una sola línea de código, definimos claramente:
 
 Esta fase fue crucial para tener una visión clara y evitar retrabajos posteriores.
 
-### 2. Desarrollo del frontend
+### Desarrollo del frontend
 
 Una vez con el diseño claro, construimos la interfaz con Next.js:
 - Implementamos la navegación principal
@@ -74,7 +73,7 @@ Una vez con el diseño claro, construimos la interfaz con Next.js:
 - Desarrollamos el carrito de compras y el proceso de checkout
 - Integramos el diseño responsivo para que funcione perfectamente en dispositivos móviles
 
-### 3. Implementación del backend
+### Implementación del backend
 
 Paralelamente, trabajamos en la parte del servidor:
 - Creamos los endpoints necesarios en NestJS
@@ -82,14 +81,14 @@ Paralelamente, trabajamos en la parte del servidor:
 - Implementamos la autenticación y seguridad
 - Desarrollamos la lógica para gestionar inventario y pedidos
 
-### 4. Integraciones especiales
+### Integraciones especiales
 
 Para mejorar la experiencia del usuario:
 - Conectamos Algolia para ofrecer búsquedas rápidas y precisas
 - Configuramos Cloudinary para optimizar automáticamente las imágenes
 - Implementamos pasarelas de pago seguras
 
-### 5. Despliegue y pruebas
+### Despliegue y pruebas
 
 Finalmente, llegó el momento de poner Arbelleza en línea:
 - Desplegamos el backend en contenedores Docker
