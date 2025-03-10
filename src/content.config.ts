@@ -6,11 +6,13 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    published: z.boolean(),
+    published: z.boolean().default(true),
+    videoId: z.string().optional(),
     cover: z.string(),
-    medium: z.string(),
+    medium: z.string().optional(),
     tags: z.array(z.string()),
-    created: z
+    type: z.string().default("article"),
+    createdAt: z
       .string()
       .or(z.date())
       .transform((val) => new Date(val)),

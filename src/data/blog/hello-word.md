@@ -1,9 +1,8 @@
 ---
 title: "Hola Mundo"
 description: "articulo de bienvenida al blog"
-published: true
 cover: "/banner.webp"
-created: "01/12/2023"
+createdAt: "01/12/2023"
 medium: "https://medium.com/@jeffercbs/hola-mundo-fd1508be7289"
 tags:
     - programación
