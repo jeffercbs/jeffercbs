@@ -26,7 +26,6 @@ export default function FormContent() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      console.log(e.key);
       switch (e.key) {
         case "ArrowRight":
           handleNext();

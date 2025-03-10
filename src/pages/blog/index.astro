@@ -16,8 +16,6 @@ const isNotPublished = await getCollection(
   "blog",
   (entry) => !entry.data.published
 );
-
-console.log(isNotPublished);
 ---
 
 <Layout title="blog">

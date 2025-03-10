@@ -3,11 +3,10 @@ import Auth from "@/components/Auth.astro";
 import LiteVideo from "@/components/LiteVideo.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/prism.css";
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import ShareComponent from "../ShareComponent.astro";
 import { render } from "astro:content";
+import ShareComponent from "../ShareComponent.astro";
 
 export type Props = CollectionEntry<"blog">;
 const {

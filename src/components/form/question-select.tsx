@@ -40,7 +40,7 @@ export function QuestionSelect({
         role={isMulti ? "group" : "radiogroup"}
         aria-label={question}
       >
-        {options.map((option, index) => (
+        {options.map((option) => (
           <button
             key={option}
             type="button"
