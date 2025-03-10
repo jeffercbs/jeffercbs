@@ -89,11 +89,15 @@ body {
 }
 .hero {
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (width >= 64rem /* 1024px */) {
   .hero {
     max-width: 80rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
