@@ -20,10 +20,10 @@ const {
   <article class="pb-3">
     <div
       class:list={[
-        "flex gap-8",
+        "flex",
         {
-          "flex-col": orientation == "vertical",
-          "flex-row": orientation == "horizontal",
+          "flex-col gap-8": orientation == "vertical",
+          "flex-row gap-2": orientation == "horizontal",
         },
       ]}
     >
@@ -44,22 +44,24 @@ const {
         />
       </div>
       <div class="flex-1 flex flex-col space-y-4 relative">
-        <div class="flex items-center gap-4 text-sm text-neutral-300">
-          <time
-            datetime={createdAt.toDateString()}
-            class="font-medium"
-            set:text={formatDate(createdAt)}
-          />
-          <div>
-            {
-              tags.map((tag) => (
-                <Badge>
-                  <small set:text={tag} />
-                </Badge>
-              ))
-            }
-          </div>
-        </div>
+        {
+          orientation !== "horizontal" && (
+            <div class="flex items-center gap-4 text-sm text-neutral-300">
+              <time
+                datetime={createdAt.toDateString()}
+                class="font-medium"
+                set:text={formatDate(createdAt)}
+              />
+              <div>
+                {tags.map((tag) => (
+                  <Badge>
+                    <small set:text={tag} />
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )
+        }
         <div>
           <h3
             transition:name={`title-${title}`}

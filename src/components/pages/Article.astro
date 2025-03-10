@@ -22,6 +22,11 @@ const { remarkPluginFrontmatter } = await render(Astro.props);
     <div class="w-full h-fit mb-8 p-2 z-[1]">
       <div class="md:max-w-4xl w-full mx-auto">
         <div class="md:px-8 py-6">
+          <div class="flex justify-start pb-5">
+            <a href="/blog" class="hover:underline font-medium">
+              <small> 👈 regresar </small>
+            </a>
+          </div>
           <h1 class="md:text-5xl text-4xl text-pretty font-bold">{title}</h1>
           <p
             class="font-medium mt-2 md:text-xl text-lg opacity-80"
