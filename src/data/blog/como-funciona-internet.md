@@ -7,6 +7,7 @@ type: "youtube"
 videoId: "w9jel3IC8fY"
 tags:
     - internet
+    - youtube
 ---
 
 Internet es una de las creaciones humanas más impresionantes, conectando el mundo entero y permitiéndonos hacer infinidad de actividades diarias. Desde ver videos en YouTube hasta enviar mensajes por WhatsApp o disfrutar de tu pelicula favorita en Netflix, todo funciona gracias a esta red global. Pero, **¿alguna vez te has preguntado cómo funciona realmente?** Vamos a explorar los elementos fundamentales que hacen posible Internet.

@@ -2,17 +2,16 @@ import { createContext } from "preact";
 import type { ReactElement } from "preact/compat";
 import { useState, useEffect, useMemo, useCallback } from "preact/hooks";
 import type { ChangeEvent } from "preact/compat";
-import type { FormData } from "@/components/form/types";
 import { questions } from "@/components/form/const";
 import { formSchema } from "@/components/form/schema";
 import { z } from "zod";
+import { actions } from "astro:actions";
 
 interface FormContextProps {
   isLoading: boolean;
   currentStep: number;
   formId: string;
-  rating: number;
-  formData: Partial<FormData>;
+  formData: z.infer<typeof formSchema>;
   errors: Partial<Record<keyof FormData, string>>;
   direction: "up" | "down";
   currentQuestion: (typeof questions)[number] | null;
@@ -26,15 +25,24 @@ interface FormContextProps {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   handleSubmit: () => Promise<void>;
-  setRating: (rating: number) => void;
 }
+
+const DEFAULT_DATA_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  affair: "",
+  additionalInfo: "",
+  referenceLink: "",
+  estimatedBudget: "",
+};
 
 export const FormContext = createContext<FormContextProps>({
   isLoading: true,
   currentStep: -1,
   formId: "",
-  rating: 0,
-  formData: {},
+  formData: DEFAULT_DATA_FORM,
   errors: {},
   direction: "down",
   currentQuestion: null,
@@ -45,7 +53,6 @@ export const FormContext = createContext<FormContextProps>({
   handlePrevious: () => {},
   handleSelectChange: () => {},
   handleInputChange: () => {},
-  setRating: () => {},
   handleSubmit: async () => {},
 });
 
@@ -55,12 +62,8 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
   const [formId] = useState(
     () => `form_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
   );
-  const [rating, setRating] = useState(0);
-  const [formData, setFormData] = useState<Partial<FormData>>({
-    project: "",
-    feactures: [],
-    preferredTechnology: [],
-  });
+  const [formData, setFormData] =
+    useState<z.infer<typeof formSchema>>(DEFAULT_DATA_FORM);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(
     {}
   );
@@ -78,7 +81,7 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
 
   const validateField = useCallback((field: keyof FormData, value: any) => {
     try {
-      (formSchema.shape as Record<keyof FormData, any>)[field].parse(value);
+      formSchema.shape[field as keyof typeof formSchema.shape].parse(value);
       setErrors((prev) => ({ ...prev, [field]: undefined }));
       return true;
     } catch (error) {
@@ -93,13 +96,12 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
 
   const isCurrentQuestionValid = useCallback((): boolean => {
     if (currentStep === -1) return true;
-    if (currentStep === questions.length) return rating > 0;
     if (!currentQuestion) return false;
 
     const field = currentQuestion.id as keyof FormData;
-    const value = formData[field];
+    const value = formData?.[field as keyof typeof formData] ?? undefined;
     return validateField(field, value);
-  }, [currentStep, currentQuestion, formData, validateField, rating]);
+  }, [currentStep, currentQuestion, formData, validateField]);
 
   const handleStartForm = useCallback(() => {
     setCurrentStep(0);
@@ -120,7 +122,7 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
   }, [currentStep]);
 
   const handleSelectChange = useCallback(
-    (value: string | string[]) => {
+    (value: any) => {
       if (!currentQuestion) return;
       const field = currentQuestion.id as keyof FormData;
       setFormData((prev) => ({ ...prev, [field]: value }));
@@ -145,7 +147,7 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
 
     if (result.success) {
       try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await actions.contact({ ...result.data, id: formId });
         handleNext();
       } catch (error) {
         console.error("Error al enviar el formulario:", error);
@@ -156,7 +158,7 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
         result.error.flatten().fieldErrors
       );
     }
-  }, [formData, formId, rating]);
+  }, [formData, formId]);
 
   return (
     <FormContext.Provider
@@ -164,12 +166,11 @@ export const FormProvider = ({ children }: { children: ReactElement }) => {
         isLoading,
         currentStep,
         formId,
-        rating,
         formData,
         errors,
         direction,
         currentQuestion,
-        setRating,
+
         validateField,
         isCurrentQuestionValid,
         handleStartForm,

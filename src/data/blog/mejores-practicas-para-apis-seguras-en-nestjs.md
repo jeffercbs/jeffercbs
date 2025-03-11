@@ -164,7 +164,7 @@ app.use(helmet());
 
 Nunca, jamás, guardes secretos en tu código:
 
-```typescript:lib/app.module.ts
+```typescript
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -190,7 +190,7 @@ export class AuthService {
 
 En mis primeros proyectos, me encontré con problemas por no configurar CORS adecuadamente:
 
-```typescript:main.ts
+```typescript
 app.enableCors({
   origin: ['https://tudominio.com', 'https://admin.tudominio.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

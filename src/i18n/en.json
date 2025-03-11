@@ -26,16 +26,6 @@
       "LABEL": "Blog",
       "LINK": "/blog",
       "ACTIVE": true
-    },
-    {
-      "LABEL": "Mentoring",
-      "LINK": "/en/mentoring",
-      "ACTIVE": false
-    },
-    {
-      "LABEL": "Courses",
-      "LINK": "/en/courses",
-      "ACTIVE": false
     }
   ],
   "INTRO_TITLE": [
@@ -60,8 +50,7 @@
   ],
   "QUOTE_TITLE": [
     "Software Engineer",
-    "Specialized in creating",
-    "unique applications."
+    "specialized in creating unique applications."
   ],
   "QUOTE_Q": "I transform ideas into digital solutions for businesses, brands, and companies. Custom web development, scalable applications, and digital experiences that drive your growth in the online world.",
   "YEAR_EXPERIENCE": "3+ years",
