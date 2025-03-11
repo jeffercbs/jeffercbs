@@ -42,13 +42,15 @@ export function QuestionInput({
       {type === "textarea" ? (
         <textarea
           {...inputProps}
+          autofocus
+          style="field-sizing: content;"
           className={clsx(
-            "w-full min-h-[300px] border text-secondary p-6 placeholder:text-secondary/50 focus:outline-none resize-none transition-colors duration-300",
-            { "border-yellow-900": error }
+            "w-full border-b-2 border-b-secondary text-secondary text-xl font-medium focus:outline-none resize-none transition-colors duration-300",
+            { "border-yellow-500": error }
           )}
         />
       ) : (
-        <input type={type} {...inputProps} />
+        <input type={type} autofocus {...inputProps} />
       )}
     </div>
   );

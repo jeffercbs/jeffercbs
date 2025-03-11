@@ -34,7 +34,7 @@ export function NavigationArrows() {
           <path d="m15 18-6-6 6-6" />
         </svg>
       </button>
-      {currentStep == 6 ? (
+      {currentStep == questions.length - 1 ? (
         <button
           onClick={handleSubmit}
           disabled={currentStep === questions.length}

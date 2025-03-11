@@ -6,7 +6,6 @@ import { NavigationArrows } from "./navigation";
 import { QuestionInput } from "./question-input";
 import { QuestionSelect } from "./question-select";
 import type { FormData } from "./schema";
-import { SearchableSelect } from "./searchable-select";
 import { SummaryView } from "./summary-view";
 import Welcome from "./welcome";
 
@@ -78,34 +77,17 @@ export default function FormContent() {
 
               {currentQuestion.type === "single-select" ||
               currentQuestion.type === "multi-select" ? (
-                currentQuestion.id === "feactures" ||
-                currentQuestion.id === "preferredTechnology" ? (
-                  <SearchableSelect
-                    options={currentQuestion.options || []}
-                    selected={
-                      (formData[
-                        currentQuestion.id as keyof FormData
-                      ] as unknown as string[]) || []
-                    }
-                    onChange={handleSelectChange}
-                    description={currentQuestion.description}
-                    question={currentQuestion.question}
-                    error={errors[currentQuestion.id as keyof FormData]}
-                  />
-                ) : (
-                  <QuestionSelect
-                    options={currentQuestion.options || []}
-                    selected={
-                      formData[currentQuestion.id as keyof FormData] ||
-                      (currentQuestion.type === "multi-select" ? [] : "")
-                    }
-                    onChange={handleSelectChange}
-                    isMulti={currentQuestion.type === "multi-select"}
-                    description={currentQuestion.description}
-                    question={currentQuestion.question}
-                    error={errors[currentQuestion.id as keyof FormData]}
-                  />
-                )
+                <QuestionSelect
+                  options={currentQuestion.options || []}
+                  selected={
+                    formData[currentQuestion.id as keyof FormData] || ""
+                  }
+                  onChange={handleSelectChange}
+                  isMulti={currentQuestion.type === "multi-select"}
+                  description={currentQuestion.description}
+                  question={currentQuestion.question}
+                  error={errors[currentQuestion.id as keyof typeof errors]}
+                />
               ) : (
                 <QuestionInput
                   id={currentQuestion.id}
@@ -120,16 +102,16 @@ export default function FormContent() {
                   placeholder={currentQuestion.placeholder}
                   description={currentQuestion.description}
                   question={currentQuestion.question}
-                  error={errors[currentQuestion.id as keyof FormData]}
+                  error={errors[currentQuestion.id as keyof typeof errors]}
                 />
               )}
 
-              {errors[currentQuestion.id as keyof FormData] && (
+              {errors[currentQuestion.id as keyof typeof errors] && (
                 <small
                   id={`error-${name}`}
                   className="rounded-lg bg-white text-red-800 shadow-2xl px-3 py-1 text-sm animate-slide-up"
                 >
-                  {errors[currentQuestion.id as keyof FormData]}
+                  {errors[currentQuestion.id as keyof typeof errors]}
                 </small>
               )}
             </div>

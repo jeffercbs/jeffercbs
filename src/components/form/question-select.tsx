@@ -8,7 +8,7 @@ interface QuestionSelectProps {
   isMulti?: boolean;
   description?: string;
   question: string;
-  error?: string;
+  error?: any;
 }
 
 export function QuestionSelect({
@@ -47,7 +47,7 @@ export function QuestionSelect({
             onClick={() => handleSelect(option)}
             className={clsx(
               "px-6 py-2 md:max-w-2/5 w-full border-2 border-white rounded-lg text-left text-lg transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98] animate-fade-in delay-150",
-              { "bg-white/30 text-black": selected === option },
+              { "bg-indigo-100 text-black": selected === option },
               {
                 "bg-black/30 text-inherial hover:bg-inherial/20":
                   selected !== option,

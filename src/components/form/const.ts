@@ -30,7 +30,7 @@ export const questions: QuestionType[] = [
     description: "El nombre de tu empresa o proyecto",
   },
   {
-    id: "project",
+    id: "affair",
     question: "¿Qué tipo de proyecto necesitas?",
     type: "single-select",
     options: [
@@ -39,9 +39,17 @@ export const questions: QuestionType[] = [
       "Aplicación Web",
       "Landing Page",
       "Blog",
+      "Mentoria",
     ],
     description:
       "Selecciona el tipo de proyecto que mejor se ajuste a tus necesidades",
+  },
+  {
+    id: "additionalInfo",
+    question: "Cuentanos más sobre lo que necesitas",
+    type: "textarea",
+    placeholder:
+      "Ej: Necesito un sitio web para mi negocio, con una estructura clara y fácil de navegar",
   },
   {
     id: "estimatedBudget",

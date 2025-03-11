@@ -1,5 +1,6 @@
+import { formSchema } from "./schema";
 export interface QuestionType {
-  id: keyof FormData;
+  id: keyof typeof formSchema.shape;
   type:
     | "text"
     | "email"
@@ -9,26 +10,11 @@ export interface QuestionType {
     | "single-select"
     | "multi-select"
     | "date"
-    | "number"
-    | "lexical";
+    | "number";
   question: string;
   options?: string[];
   description?: string;
   placeholder?: string;
-}
-
-export interface FormData {
-  id?: string;
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  project: string;
-  projectDescription: string;
-  referenceLink: string;
-  feactures: string[];
-  preferredTechnology: string[];
-  estimatedBudget: string;
 }
 
 export interface QuestionSelectProps {
