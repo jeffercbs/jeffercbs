@@ -21,7 +21,7 @@ const {
     <article class="hero min-h-dvh pt-6">
       <div class="flex md:flex-row flex-col gap-5">
         <aside
-          class="flex flex-col gap-y-4 md:h-dvh h-full border-r border-r-white/40 pt-8 md:sticky inset-y-0 left-0 md:w-1/3 w-full justify-start px-4"
+          class="flex flex-col gap-y-4 md:pr-4 md:h-dvh h-full md:border-r border-r-white/40 pt-8 md:sticky inset-y-0 left-0 md:w-1/3 w-full justify-start"
         >
           <h1 class="text-5xl font-bold text-gray-200 leading-tight mb-6">
             {title}
@@ -35,7 +35,7 @@ const {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-gradient-to-tl rounded-full px-4 py-3 text-lg text-center hover:scale-105 transition-transform ease-in-out hover:shadow-blue-600/30 shadow-2xl from-blue-700 font-medium via-cyan-700 to-green-700 w-full"
+            class="bg-gradient-to-br rounded-full py-3 text-lg text-center hover:scale-105 transition-transform ease-in-out hover:shadow-blue-600/30 shadow-2xl from-primary font-medium to-indigo-400 w-full"
           >
             Visitar
           </a>
@@ -44,7 +44,7 @@ const {
               <a
                 href={repo}
                 target="_blank"
-                class="w-full rounded-full px-4 py-3 text-lg text-center hover:scale-105 transition-transform ease-in-out bg-black border border-white/30"
+                class="w-full rounded-full py-3 text-lg text-center hover:scale-105 transition-transform ease-in-out bg-black border border-white/30"
                 rel="noopener noreferrer"
               >
                 repositorio
@@ -82,7 +82,7 @@ const {
             }
           </div>
         </aside>
-        <div class="flex-1 w-full md:px-4">
+        <div class="flex-1 w-full">
           <div class="prose prose-invert prose-lg *:text-pretty">
             <Image
               src={cover}
