@@ -34,6 +34,7 @@ export default function Welcome() {
           height={1000}
           width={600}
           loading="lazy"
+          decoding="async"
           className="aspect-auto object-cover"
           alt="Personas trabajando en una oficina"
         />

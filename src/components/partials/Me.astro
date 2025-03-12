@@ -31,9 +31,11 @@ const i18n = getI18n({ currentLocale });
         />
       </div>
       <div>
-        <div class="bg-zinc-800 px-4 py-1 rounded-full inline-block mb-2">
+        <div
+          class="bg-black/40 backdrop-blur-md px-4 py-1 rounded-full inline-block mb-2"
+        >
           <span class="text-secondary font-semibold">{TOTAL_PROJECTS}+</span>
-          <span class="text-zinc-200 text-sm ml-1">
+          <span class="text-sm ml-1">
             {i18n.PROJECTS_COMPLETED}
           </span>
         </div>
@@ -48,7 +50,7 @@ const i18n = getI18n({ currentLocale });
     </div>
 
     <blockquote
-      class="text-xl text-white/80 border-l-4 border-indigo-400 pl-4 my-8"
+      class="text-xl text-white/95 border-l-4 border-secondary pl-4 my-8"
     >
       "{i18n.QUOTE_Q}"
     </blockquote>

@@ -14,20 +14,19 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<Container id="projects" title={i18n.PROJECTS_TITLE} class="hero">
+<Container id="projects" class="hero">
   <div
     class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 grid-rows-5 p-3 gap-2"
   >
     <div
-      class="text-center hover:shadow-2xl size-full bg-white/5 border border-white/10 hover:bg-white/10 rounded-lg grid place-content-center"
+      class="text-center hover:shadow-2xl size-full rounded-lg grid place-content-center"
+      style="background: var(--gradient);"
     >
       <Counter value={TOTAL_PROJECTS} />
       <div
         class="flex flex-col gap-2 *:w-full *:font-medium *:md:text-3xl text-2xl"
       >
-        <span class="py-1 px-5 text-primary bg-green-300 rounded-full">
-          Proyectos
-        </span>
+        <span class="py-1 px-5 text-secondary rounded-full"> Proyectos </span>
         <span class="py-1 px-5 bg-indigo-300 text-indigo-800 rounded-full">
           Desarrollados
         </span>
