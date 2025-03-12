@@ -7,8 +7,8 @@
   --animate-slide-up: fadeInUp 0.5s ease-in-out;
   --animate-slide-up-out: slideUpOut 0.5s ease-in-out;
 
-  --color-primary: #362fd9;
-  --color-secondary: #FFB762ff;
+  --color-primary: #5356ff;
+  --color-secondary: #ffc947;
 }
 
 @layer components {
@@ -57,11 +57,11 @@
 
 :root {
   color-scheme: light dark;
-  --gradient: radial-gradient(at 36% 26%, #362fd9 0px, transparent 50%),
-    radial-gradient(at 82% 68%, #1aacac 0px, transparent 50%),
-    radial-gradient(at 96% 6%, #2e97a7 0px, transparent 50%),
-    radial-gradient(at 80% 44%, #eeeeee 0px, transparent 50%),
-    #362fd9;
+  --gradient: radial-gradient(at 30% 12%, #5356ff 0px, transparent 50%),
+    radial-gradient(at 96% 58%, #378ce7 0px, transparent 50%),
+    radial-gradient(at 24% 18%, #ffc947 0px, transparent 50%),
+    radial-gradient(at 9% 5%, #dff5ff 0px, transparent 50%), #5356ff;
+
   --text-shadow: 0 0 0.5rem var(--color-green-400),
     0 0 1rem var(--color-green-400), 0 0 2rem var(--color-green-400),
     0 0 4rem var(--color-green-400);
@@ -100,7 +100,7 @@ body {
 
 @media (width >= 64rem /* 1024px */) {
   .hero {
-    max-width: 65rem;
+    max-width: 75rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -112,7 +112,7 @@ body {
     animation-timeline: scroll();
     animation-range: 0 150px;
   }
-  
+
   @keyframes reduce-header {
     to {
       box-shadow: 0 5px 50px -5px hsla(0, 0%, 100%, 0.1),
