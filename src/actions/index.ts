@@ -9,14 +9,12 @@ export const server = {
       id: z.string(),
     }),
     handler: async (input) => {
-      await db
-        .insert(Clients)
-        .values(input)
-        .run()
-        .catch((err) => {
-          console.log(err);
-        });
-      console.log(input);
+      try {
+        await db.insert(Clients).values(input);
+      } catch (error) {
+        console.error(error);
+        throw new Error("Upps un error");
+      }
     },
   }),
 };
