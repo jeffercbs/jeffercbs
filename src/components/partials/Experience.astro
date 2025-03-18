@@ -1,0 +1,22 @@
+---
+import { getI18n } from "@/i18n";
+import ListItem from "../ListItem.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container id="experience" title={i18n.EXPERIENCE_TITLE} class="hero">
+  <div class="relative">
+    <div
+      class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#5356ff] via-[#ffc947] to-[#5356ff]/30 z-0 hidden md:block"
+    >
+    </div>
+    {
+      i18n.EXPERIENCE.map((experiencie, i) => (
+        <ListItem {...experiencie} index={i} />
+      ))
+    }
+  </div>
+</Container>

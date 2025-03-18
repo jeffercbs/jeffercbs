@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { MarkdownInstance } from "astro";
+
+interface Frontmatter {
+  title: string;
+  description?: string;
+}
+
+const entry = Object.values(
+  import.meta.glob<MarkdownInstance<Frontmatter>>("./About.mdx", {
+    eager: true,
+  })
+);
+
+const { Content } = entry[0];
+---
+
+<Layout title="sobre mi - about me">
+  <main>
+    <h3
+      class="text-3xl md:text-5xl mx-auto my-12 font-bold md:max-w-2xl text-center"
+    >
+      ¿Quien es Jeferson Barrero?
+    </h3>
+    <article
+      class="md:max-w-4xl mx-auto px-2 w-full prose-img:md:aspect-[3/2] prose-img:aspect-video prose-lg prose-img:object-cover prose-img:h-full prose prose-invert prose-h1:text-center prose-h1:py-10 prose-h1:text-4xl prose-h1:md:text-7xl"
+    >
+      <Content />
+    </article>
+  </main>
+</Layout>

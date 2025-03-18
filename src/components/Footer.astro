@@ -1,0 +1,36 @@
+---
+import firma from "@/assets/jeffercbs-f-black.png";
+import { getI18n } from "@/i18n";
+import { Image } from "astro:assets";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<footer class="py-8 flex">
+  <div
+    class="hero flex md:flex-row flex-col-reverse justify-between items-end w-full"
+  >
+    <p class="flex w-full text-sm opacity-80 md:text-left text-center">
+      <span> &copy; {`2025 ${i18n.FOOTER_MSG}`}</span>
+    </p>
+
+    <div class="w-full">
+      <a
+        href="https://github.com/jeffercbs"
+        class="flex flex-col justify-center md:items-end items-center"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src={firma}
+          alt="firma the jeffercbs"
+          class="md:size-24 size-20"
+        />
+        <span class="font-medium">
+          Diseñado y desarrollado por <em>jeffercbs</em>
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>

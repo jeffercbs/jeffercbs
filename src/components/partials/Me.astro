@@ -1,0 +1,108 @@
+---
+import { TOTAL_CLIENTS, TOTAL_PROJECTS } from "@/constants";
+import { getI18n } from "@/i18n";
+import { Image } from "astro:assets";
+import Iam from "@/assets/yo.jpg";
+import { SOCIAL_LINKS } from "@/constants";
+import { Icon } from "astro-icon/components";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section
+  id="me"
+  class="min-h-dvh h-fit grid place-content-center md:py-12 pb-16 pt-20 relative"
+  style="background: var(--gradient);"
+>
+  <div
+    class="flex flex-col my-auto space-y-2 w-full md:max-w-4xl mx-auto md:px-0 px-2"
+  >
+    <div class="flex items-center gap-4 mb-10">
+      <div
+        class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20"
+      >
+        <Image
+          src={Iam}
+          alt="Profile"
+          width="64"
+          height="64"
+          class="object-cover"
+        />
+      </div>
+      <div>
+        <div
+          class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full inline-block mb-2"
+        >
+          <span class="text-secondary font-semibold">{TOTAL_PROJECTS}+</span>
+          <span class="text-sm ml-1">
+            {i18n.PROJECTS_COMPLETED}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:text-7xl text-4xl *:text-balance">
+      <span class="bg-primary px-2 rounded-md">
+        {i18n.QUOTE_TITLE[0]}
+      </span>
+      <h1
+        class="text-blue-100 text-pretty font-bold"
+        set:text={i18n.QUOTE_TITLE[1]}
+      />
+    </div>
+
+    <blockquote
+      class="text-xl text-white/95 border-l-4 border-secondary pl-4 my-8"
+    >
+      "{i18n.QUOTE_Q}"
+    </blockquote>
+
+    <div class="flex flex-wrap gap-x-4 py-4">
+      {
+        SOCIAL_LINKS.map((item) => (
+          <a
+            href={item.url}
+            aria-label={`${item.name} social link`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon
+              name={item.name}
+              class="size-7 text-white/80 hover:scale-105 transition-transform ease-in-out"
+            />
+          </a>
+        ))
+      }
+    </div>
+
+    <div
+      class="grid grid-cols-3 bg-zinc-800/50 p-4 rounded-xl *:text-center mt-10"
+    >
+      <div class="flex flex-col items-center border-r-2 border-white/50">
+        <h3 class="font-bold text-xl md:text-2xl mb-1">
+          {i18n.YEAR_EXPERIENCE}
+        </h3>
+        <small class="text-white/80">
+          {i18n.YEAR_EXPERIENCE_DESC}
+        </small>
+      </div>
+
+      <div class="flex flex-col items-center border-r-2 border-white/50">
+        <h3 class="font-bold text-xl md:text-2xl mb-1">
+          {TOTAL_CLIENTS}+
+        </h3>
+        <small class="text-white/80">
+          {i18n.HAPPY_CLIENTS}
+        </small>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <h3 class="font-bold text-xl md:text-2xl mb-1">100%</h3>
+        <small class="text-white/80">
+          {i18n.SATISFACTION}
+        </small>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import Container from "./Container.astro";
+import CardArticle from "../CardArticle.astro";
+
+const posts = (await getCollection("blog", (entry) => !entry.data.draft))
+  .sort(
+    (a, b) =>
+      new Date(b.data.createdAt).getTime() -
+      new Date(a.data.createdAt).getTime()
+  )
+  .slice(0, 4);
+---
+
+<Container
+  id="lastposts"
+  class="hero"
+  title="Ultimos Articulos"
+  redirect="blog"
+  redirectText="Ver todos"
+>
+  <div
+    class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+  >
+    {posts.map((post) => <CardArticle {...post} />)}
+  </div>
+</Container>

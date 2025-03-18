@@ -1,0 +1,14 @@
+---
+import type { CollectionEntry } from "astro:content";
+import CardArticleBase from "./CardArticleBase.astro";
+
+type Props = CollectionEntry<"blog"> & {
+  class?: string;
+  orientation?: "horizontal" | "vertical";
+};
+const { id, class: className } = Astro.props;
+---
+
+<a href={`/blog/p/${id}`} class:list={["group size-full", className]}>
+  <CardArticleBase {...Astro.props} />
+</a>

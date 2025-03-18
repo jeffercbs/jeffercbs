@@ -1,0 +1,217 @@
+{
+  "TITLE_SEO": "Jeferson Barrero | Ingeniero de Software, Consultor Tecnológico & Educador",
+  "DESCRIPTION_SEO": "Ingeniero de Software en Bogotá con más de 3 años de experiencia en desarrollo web, arquitectura de software y soluciones digitales escalables. Consultor tecnológico y creador de contenido sobre programación y tecnología. Ayudo a empresas y startups a transformar ideas en productos digitales innovadores, optimizando sistemas y potenciando su crecimiento en el mundo digital.",
+  "KEYWORD_SEO": "Arquitectura de Software, Consultoría Tecnológica, Desarrollo Web, React, Next.js, Performance, Optimización, Transformación Digital",
+  "AUTHOR": "Jeferson Barrero",
+  "COPYRIGHT": "Jeferson Barrero",
+  "HEADER_PROX": "¡Próximamente!",
+  "HEADER": [
+    {
+      "LABEL": "Inicio",
+      "LINK": "/",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Proyectos",
+      "LINK": "/#projects",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Biografia",
+      "LINK": "/jeferson-barrero",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Blog",
+      "LINK": "/blog",
+      "ACTIVE": true
+    }
+  ],
+  "INTRO_TITLE": [
+    "TODO ",
+    "LO QUE ",
+    "NECESITAS ",
+    "PARA ",
+    "POTENCIAR TU ",
+    "PRESENCIA ",
+    "DIGITAL "
+  ],
+  "INTRO_DETAILS": [
+    "SERVICIOS",
+    "Desarrollo sitios web y productos digitales para empresas negocios y marcas.",
+    "Desde <span> blogs </span> y <span> tiendas online </span> hasta <span> aplicaciones web </span> y <span> sistemas personalizados. </span>"
+  ],
+  "INTRO_TAGS": [
+    "SITIOS WEB A MEDIDA",
+    "TIENDAS ONLINE",
+    "APLICACIONES WEB",
+    "TU PRESENCIA ONLINE"
+  ],
+  "QUOTE_TITLE": [
+    "Software Engineer",
+    "especializado en crear aplicaciones únicas."
+  ],
+  "QUOTE_Q": "Transformo ideas en soluciones digitales para negocios, marcas y empresas. Desarrollo web a medida, aplicaciones escalables y experiencias digitales que impulsan su crecimiento en el mundo online.",
+  "YEAR_EXPERIENCE": "3+ años",
+  "YEAR_EXPERIENCE_DESC": "Experiencia",
+  "HAPPY_CLIENTS": "Clientes satisfechos",
+  "SATISFACTION": "Satisfacción",
+  "PROJECTS_COMPLETED": "Proyectos completados",
+  "ABOUT_TITLE": "Sobre mi",
+  "ABOUT_DESC": "<p>Me llamo <strong>Jeferson Barrero</strong>, pero mis amigos me llaman <strong>Jef</strong>. Empecé en la programación a la edad de <strong>14 años</strong> de manera autodidacta, inspirado por figuras como <strong>Freddy Vegas</strong> y explorando la web.</p> <p>Como estudiante de <strong>PLATZI</strong> y participante en el proyecto '<strong>MisiónTIC2022</strong>' desde su fase piloto, respaldado por el <strong>gobierno colombiano</strong> y el <strong>MINTIC</strong>, he consolidado sólidos conocimientos en <strong>programación</strong> y <strong>desarrollo web</strong>. Participar activamente en proyectos personales y colaborativos con clientes ha sido clave para fortalecer mis habilidades como programador.</p> <p>Complementando este camino con <strong>cursos virtuales adicionales del SENA</strong>, aspiro a destacar en el ámbito del <strong>desarrollo web</strong> y la <strong>programación</strong>. Mi visión incluye no solo el crecimiento personal, sino también contribuir activamente a la comunidad. Como colaborador en <strong>GitHub</strong>, participo en proyectos destinados a fomentar el aprendizaje <strong>gratuito y abierto</strong> de programación.</p>",
+  "EXPERIENCE_TITLE": "Experiencia",
+  "EXPERIENCE": [
+    {
+      "ICON": "default",
+      "TITLE": "Desarrollador web independiente",
+      "PERIOD": "Actualmente...",
+      "DESCRIPTION": "<p>Me especializo en <strong>crear aplicaciones</strong> únicas para <strong>marcas y empresas</strong/>, abarcando un espectro completo de necesidades, desde sitios estáticos hasta tiendas en línea. Mi enfoque se centra en proporcionar soluciones tecnológicas innovadoras y funcionales que se adapten a las metas y requerimientos específicos de cada cliente.</p>",
+      "SKILLS": [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Node.js"
+      ],
+      "CURRENT": true
+    },
+    {
+      "ICON": "default",
+      "TITLE": "DISSRETT SAS",
+      "PERIOD": "Software Engineer - Remote",
+      "DESCRIPTION": "<p>En mi rol, fui responsable del diseño y desarrollo de soluciones web adaptadas a las necesidades del cliente. Realicé análisis de software para optimizar procesos y mejorar la funcionalidad de las aplicaciones. Tambien administre bases de datos, asegurando su integración y disponibilidad.</p>",
+      "SKILLS": [
+        "Desarrollo Web",
+        "Análisis de Software",
+        "Bases de Datos"
+      ],
+      "CURRENT": false
+    },
+    {
+      "ICON": "default",
+      "TITLE": "Gestion Documental",
+      "PERIOD": "Jun 2022 - Oct 2022",
+      "DESCRIPTION": "<p>Me desempeñe en la gestión documental. Durante este periodo, desempeñe funciones en la clasificación y organizar documentos importantes de la empresa. Además del almacenamiento del archivo más antiguo de la empresa.</p>",
+      "SKILLS": [
+        "Gestión Documental",
+        "Excel"
+      ],
+      "CURRENT": false
+    }
+  ],
+  "EDUCATION_TAG": "Educación",
+  "EDUCATION_TITLE": "Educación cerficada",
+  "EDUCATION": [
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Curso de Frontend Developer",
+      "DATE": "Oct 2021",
+      "DESCRIPTION": "<p>Profundicé en los fundamentos de HTML y CSS, explorando su estructura, elementos, y propiedades de CSS. Adquirí destrezas avanzadas en maquetación y diseño responsive.</p>",
+      "CREDENTIALS": "Credencial ID 5f6e5de5-5717-4bcd-96c2-32071fdef27f",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Fundamentos de Ingenieria de Software",
+      "DATE": "Aug 2021",
+      "DESCRIPTION": "<p>Exploré las bases de la electrónica, profundicé en el conocimiento de diversos sistemas operativos y comprendí las redes que sustentan el funcionamiento de Internet.</p>",
+      "CREDENTIALS": "Credencial ID e3037410-94bf-40e9-9755-2e677e1d729a",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/1098-ingenieria/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Curso Profesional de Git y GitHub",
+      "DATE": "Apr 2022",
+      "DESCRIPTION": "<p>Adquirí conocimientos esenciales que abarcan desde los conceptos fundamentales hasta la gestión avanzada de proyectos. Desarrollé la capacidad de clonar repositorios y gestionar eficazmente mis proyectos, tanto a nivel local como en plataformas colaborativas como GitHub.</p>",
+      "CREDENTIALS": "Credencial ID 4f045261-e515-48be-ae32-7068b833be7",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Python Challenge",
+      "DATE": "Oct 2022",
+      "DESCRIPTION": "<p>Seguí una ruta optimizada para fortalecer mis bases en la programación con Python, centrándome especialmente en el desarrollo backend.</p>",
+      "CREDENTIALS": "Credencial ID 2a474433-8298-474a-b82d-3c5d4b75472a",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2613-python-challenge-final-exam/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Curso de Next.js Avanzado",
+      "TITLE": "Next.js Avanzado",
+      "DATE": "Marzo 2025",
+      "DESCRIPTION": "<p>Aprendí a optimizar <strong>Next.js 15</strong>, mejorando rendimiento, seguridad y despliegue de aplicaciones escalables con prácticas avanzadas.</p>",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/11553-nextjs15/diploma/detalle/"
+    },
+    {
+      "ICON": "default",
+      "PLATFORM": "Misión TIC 2022",
+      "TITLE": "Participación en Misión TIC 2022",
+      "DATE": "septiembre 2021",
+      "DESCRIPTION": "<p>Desarrollé proyectos web con <strong>Node.js, JavaScript, CSS, HTML y React</strong> y asistí a <strong>charlas con expertos</strong>, obteniendo una visión práctica del sector tecnológico.</p>"
+    }
+  ],
+  "SKILLS_TITLE": "Habilidades",
+  "TESTIMONIES_TAG": "Testimonios",
+  "TESTIMONIES_TITLE": "Más que palabras, resultados",
+  "TESTIMONIES_DESCRIPTION": "Testimonios de clientes, colegas y colaboradores que reflejan el impacto de mi trabajo en cada proyecto. 🚀",
+  "PROJECTS_TAG": "Proyectos",
+  "PROJECTS_TITLE": "Proyectos que hablan por sí solos",
+  "PROJECTS_DESCRIPTION": "Descubre los proyectos en los que he trabajado, creando soluciones innovadoras con impacto real. 🚀",
+  "PROJECT_CASE": "caso de estudio",
+  "CLIENTS_TITLE": "Clientes",
+  "CLIENTS_DESC": "",
+  "TOOLS_TITLE": "Integra lo último en tecnología a tu próximo proyecto",
+  "TOOLS_DESCRIPTION": "Las herramientas más modernas para crear soluciones innovadoras, escalables y seguras adaptadas a tus necesidades. 🚀",
+  "TOOLS_TAG": "Tecnologias",
+  "FOOTER_MSG": "Casi todos los derechos reservados.",
+  "FOOTER_LINK": "Sobre mi",
+  "MENTORING_DESC": "Acelera tu crecimiento profesional con mentorías personalizadas en tecnología. Ya seas estudiante universitario o profesional con un proyecto en marcha, te ofrezco orientación práctica y conocimientos específicos para superar desafíos técnicos. Invierte en tu desarrollo y obtén resultados tangibles con sesiones adaptadas a tus necesidades. ¡Agenda tu primera consulta hoy!",
+  "SERVICES_TAG": "Servicios",
+  "SERVICES_TITLE": "Soluciones Digitales Profesionales",
+  "SERVICES_DESCRIPTION": "Te acompaño en cada paso para impulsar tu proyecto al siguiente nivel. Desde desarrollar tu sitio web hasta mentorías en TI. ¿Listo para hacer crecer tu negocio o agendar una mentoria? ¡Contáctame ahora y comencemos!",
+  "SERVICES": [
+    {
+      "TITLE": "Desarrollo Web Profesional",
+      "DESCRIPTION": "Te ayudo a crear el sitio web perfecto para tu marca o negocio. Diseño soluciones a medida que reflejan tu identidad y atraen a tus clientes ideales. ¿Listo para destacar en línea?",
+      "ICON": "code"
+    },
+    {
+      "TITLE": "Mentorías Tecnológicas",
+      "DESCRIPTION": "¿Necesitas apoyo en tu proyecto TI o profundizar en temas específicos? Te brindo asesoría tanto para proyectos empresariales como para estudiantes universitarios que desean mejorar sus conocimientos. ¡Avanza con confianza!",
+      "ICON": "lightbulb",
+      "LINK": "/services/mentoring"
+    },
+    {
+      "TITLE": "Contacto Directo",
+      "DESCRIPTION": "¿Tienes un proyecto en mente o necesitas asesoría especializada? Déjame tus datos y conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos. ¡El primer paso es contactarme!",
+      "ICON": "handshake",
+      "LINK": "/contact"
+    }
+  ],
+  "BECAUSE": [
+    {
+      "TITLE": "🚀 Experiencia",
+      "DESCRIPTION": "He tenido el privilegio de compartir conocimientos con expertos en tecnología en conferencias, charlas y meetups, además de haber desarrollado proyectos tanto para clientes como personales."
+    },
+    {
+      "TITLE": "📊 Panel de Cliente Exclusivo",
+      "DESCRIPTION": "Tendrás acceso a un portal donde podrás ver avances en tiempo real, descargar el contrato, revisar funcionalidades implementadas y hacer seguimiento a tiempos de entrega."
+    },
+    {
+      "TITLE": "⚡ Diseño Optimizado y Responsivo",
+      "DESCRIPTION": "Creo sitios web modernos, atractivos y adaptables a cualquier dispositivo, asegurando una experiencia fluida tanto en computadoras como en móviles."
+    },
+    {
+      "TITLE": "💼 Paquetes Adaptados a tu Negocio",
+      "DESCRIPTION": "Ofrezco planes flexibles y personalizados según las necesidades de tu empresa, negocio o marca, asegurando que obtengas la mejor solución para tu proyecto."
+    },
+    {
+      "TITLE": "🛠️ Soporte y Atención Continua",
+      "DESCRIPTION": "Siempre estaré disponible para responder tus preguntas y resolver cualquier duda durante el desarrollo de tu proyecto."
+    }
+  ]
+}

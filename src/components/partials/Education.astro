@@ -1,0 +1,27 @@
+---
+import { getI18n } from "@/i18n";
+import CardEducation from "../CardPrimary.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container
+  id="education"
+  tag={i18n.EDUCATION_TAG}
+  title={i18n.EDUCATION_TITLE}
+  class="hero"
+>
+  <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+    {
+      i18n.EDUCATION.map((education, i) => (
+        <CardEducation
+          {...education}
+          custom={{ button: "ver credencial" }}
+          index={i}
+        />
+      ))
+    }
+  </div>
+</Container>

@@ -1,0 +1,106 @@
+---
+import { getI18n } from "@/i18n";
+import CodeDeco from "../CodeDeco.astro";
+import { Icon } from "astro-icon/components";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section
+  class="flex relative items-start py-16 h-dvh w-full max-w-dvw overflow-x-hidden"
+>
+  <CodeDeco
+    class="absolute lg:flex flex-col hidden right-1 lg:top-14 top-0 text-sm"
+    codelines={[
+      "/**",
+      " * HTML",
+      " * CSS",
+      " * JavaScript",
+      " * Responsive Design",
+      " * User Experience",
+      "**/",
+    ]}
+  />
+  <div class="hero w-full">
+    <h1
+      class="flex lg:max-w-4xl w-full mx-auto flex-wrap justify-center gap-x-2 text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight relative"
+    >
+      <span
+        class="absolute -left-3 -top-8 bg-purple-500 size-8 flex justify-center items-center text-white text-lg rounded-full"
+      >
+        ✦
+      </span>
+      <span class="relative" set:text={i18n.INTRO_TITLE[0]} />
+      <span class="text-white" set:text={i18n.INTRO_TITLE[1]} />
+      <span set:text={i18n.INTRO_TITLE[2]} />
+      <span
+        class="bg-purple-300 px-4 rounded-full text-black"
+        set:text={i18n.INTRO_TITLE[3]}
+      />
+      <span set:text={i18n.INTRO_TITLE[4]} />
+      <span class="text-white" set:text={i18n.INTRO_TITLE[5]} />
+      <span class="relative bg-green-500 px-3 rounded-lg mx-2">
+        {i18n.INTRO_TITLE[6]}
+      </span>
+      <span
+        class="absolute -bottom-5 right-1 bg-yellow-400 size-8 flex justify-center items-center text-black text-xl rounded-full"
+      >
+        ✦
+      </span>
+    </h1>
+
+    <div
+      class="grid lg:grid-cols-4 grid-cols-1 place-content-center lg:gap-4 gap-1 pt-12"
+    >
+      <div
+        class="flex flex-col w-full lg:max-w-56 items-start text-center md:text-left"
+      >
+        <div
+          class="mb-4 bg-green-500 rounded-full size-8 lg:size-16 lg:grid hidden place-content-center"
+        >
+          <Icon name="start" class="lg:size-10 size-5 text-yellow-100" />
+        </div>
+        <h2
+          class="text-green-400 font-bold mb-2 text-lg lg:block hidden"
+          set:text={i18n.INTRO_DETAILS[0]}
+        />
+        <p set:text={i18n.INTRO_DETAILS[1]} />
+      </div>
+
+      <div
+        class="lg:col-span-2 col-span-3 flex justify-center h-fit lg:mt-auto mt-8 lg:mb-0 mb-6 flex-wrap gap-2 text-black *:text-sm font-bold"
+      >
+        <span class="bg-green-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[0]}
+        </span>
+        <span class="bg-yellow-300 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[1]}
+        </span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[2]}
+        </span>
+        <span class="bg-blue-200 px-4 py-2 rounded-full">
+          {i18n.INTRO_TAGS[3]}
+        </span>
+      </div>
+
+      <div
+        class="flex justify-end lg:items-start items-center text-center lg:text-right"
+      >
+        <p
+          class="*:text-white *:font-semibold *:text-balance text-balance w-full lg:max-w-56"
+          set:html={i18n.INTRO_DETAILS[2]}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  p,
+  h1,
+  span {
+    text-wrap: pretty;
+  }
+</style>

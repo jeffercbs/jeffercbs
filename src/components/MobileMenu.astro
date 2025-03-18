@@ -1,0 +1,43 @@
+---
+import { getI18n } from "@/i18n";
+import LanguageSelector from "./LanguageSelector.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<nav
+  id="mobile-menu"
+  class="bg-black -translate-y-full -z-[1] transition-transform md:hidden w-full text-center grid fixed inset-0 h-dvh place-content-center"
+>
+  <ul class="flex flex-col gap-y-4 *:font-semibold">
+    {
+      i18n.HEADER.map(({ LINK, LABEL, ACTIVE }) => (
+        <li
+          class:list={[
+            "group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out",
+            {
+              "opacity-80 hover:opacity-100 hover:border border-transparent hover:bg-white/5 hover:border-white/10":
+                ACTIVE,
+            },
+            { "opacity-50 disabled:cursor-none": !ACTIVE },
+          ]}
+        >
+          <a
+            href={!ACTIVE ? "#" : LINK}
+            aria-disabled={!ACTIVE}
+            class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
+          >
+            <span class="text-3xl">{LABEL}</span>
+            {!ACTIVE && <small class="mx-auto">¡Próximamente!</small>}
+          </a>
+        </li>
+      ))
+    }
+    <li
+      class="group rounded-lg py-2 px-3 mx-2 transition-border transition-opacity ease-in-out"
+    >
+      <LanguageSelector />
+    </li>
+  </ul>
+</nav>

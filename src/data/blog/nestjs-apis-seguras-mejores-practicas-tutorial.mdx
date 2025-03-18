@@ -1,0 +1,227 @@
+---
+title: "Mejores practicas para APIs Seguras en NestJS: Una Guía desde la Experiencia"
+description: "Descubre las mejores prácticas para mejorar la seguridad de tu backend en NestJS. En esta guía basada en mi experiencia real, exploraremos estrategias clave para proteger tus APIs."
+cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/i1jyqa8lr9iracq1nfdq"
+medium: "https://jeffercbs.medium.com/mejores-practicas-para-apis-seguras-en-nestjs-una-gu%C3%ADa-desde-la-experiencia-51b3915d637b"
+createdAt: "03/09/2025"
+tags:
+    - Desarrollo
+---
+
+Después de varios proyectos backends y microservicios para e-commerce y plataformas web con **NestJS**, quiero compartir algunas de las lecciones que he aprendido sobre cómo desarrollar APIs seguras, un factor muy importante cuando las amenazas cibernéticas son cada vez más comunes.
+
+## ¿Por qué NestJS?
+
+Una de las grandes ventajas de este framework es su arquitectura modular, que nos permite desarrollar módulos con funcionalidades específicas e independientes. Esto no solo mantiene el código organizado, sino que también facilita la escalabilidad y el mantenimiento en proyectos grandes. Al estar basado en Express y usar TypeScript por defecto, la transición es bastante natural para quienes ya trabajan con Node.js.
+
+## Uso de DTOs para Validación y Seguridad
+
+> *Un DTO **(Data Transfer Object)** es un objeto que define la estructura y formato de los datos esperados en una solicitud. Se usa para garantizar que los datos sean correctos y facilitar su validación.*
+
+En NestJS, los DTOs se crean como clases TypeScript y permiten definir la estructura de los datos que nuestra API espera recibir. Un ejemplo de DTO para crear un usuario podría ser:
+
+```typescript
+import { IsString, IsEmail, IsNotEmpty } from 'class-validator';
+
+export class CreateUserDTO {
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  password: string;
+}
+```
+
+Aquí usamos **decoradores** de la librería `class-validator` para aplicar reglas de validación.
+
+### Validación con `ValidationPipe`
+
+> `ValidationPipe` nos ofrece un mecanismo eficiente para validar y transformar los datos de entrada, asegurando que cumplan con las reglas definidas en los DTOs mediante `class-validator`.
+
+```typescript
+import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';
+import { CreateUserDTO } from './dto/create-user.dto';
+
+@Controller('users')
+export class UsersController {
+  @Post()
+  @UsePipes(new ValidationPipe({ transform: true }))
+  createUser(@Body() createUserDTO: CreateUserDTO) {
+    return { message: 'Usuario creado', data: createUserDTO };
+  }
+}
+```
+
+De esta forma, si los datos enviados no cumplen con las validaciones definidas en el DTO, NestJS responderá con un error 400 indicando los problemas en la solicitud.
+
+## usa los Guards y mejora la seguridad
+
+> *Un Guard en NestJS es un mecanismo que controla el acceso a rutas antes de que el controlador procese la solicitud. Se usa comúnmente para autenticación y autorización.*
+
+Los Guards permiten definir reglas de acceso a los endpoints. Se ejecutan **antes** de que la solicitud llegue al controlador. Un ejemplo de Guard para autenticar usuarios mediante un token JWT sería:
+
+```typescript
+import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Request } from 'express';
+import { verify } from 'jsonwebtoken';
+
+@Injectable()
+export class AuthGuard implements CanActivate {
+  canActivate(context: ExecutionContext): boolean {
+    const request: Request = context.switchToHttp().getRequest();
+    const token = request.headers['authorization'];
+    if (!token) return false;
+    try {
+      verify(token, 'SECRET_KEY'); // Verifica el token JWT
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
+```
+
+### Aplicando Guards en rutas
+
+Podemos aplicar Guards de tres maneras:
+
+**Globalmente** (se aplica a toda la aplicación):
+   ```typescript
+   app.useGlobalGuards(new AuthGuard());
+   ```
+
+**A nivel de controlador**:
+   ```typescript
+   @UseGuards(AuthGuard)
+   @Controller('users')
+   export class UsersController {
+   ```
+
+ **A nivel de una ruta específica**:
+   ```typescript
+   @UseGuards(AuthGuard)
+   @Get('profile')
+   getProfile() {
+     return { message: 'Perfil del usuario' };
+   }
+   ```
+
+## Comprende el ciclo de vida de una solicitud en NestJS
+
+Para que comprendamos mejor cómo se relacionan los Guards, Pipes y Middleware, es útil entender el ciclo de vida de una petición en NestJS:
+
+1. **Middleware**: Se ejecutan antes de los Guards y pueden modificar la solicitud.
+2. **Guards**: Determinan si la solicitud puede continuar.
+3. **Interceptors (pre-controller)**: Modifican la solicitud antes de que llegue al controlador.
+4. **Pipes**: Transforman y validan la entrada de datos.
+5. **Controlador**: Procesa la lógica de la solicitud.
+6. **Servicio**: Contiene la lógica de negocio.
+7. **Interceptors (post-controller)**: Modifican la respuesta antes de enviarla.
+8. **Filters**: Manejan excepciones en caso de errores.
+
+
+### Implementa Limitación de Solicitudes (Rate Limiting)
+
+He visto cómo los ataques de fuerza bruta pueden colapsar un servidor. El rate limiting es crucial:
+
+```typescript
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+
+@Module({
+  imports: [
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 10,
+    }),
+  ],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
+})
+export class AppModule {}
+```
+
+### Configura Encabezados de Seguridad HTTP
+
+Un consejo que me hubiera gustado recibir cuando empecé: configurar los headers HTTP adecuados es sorprendentemente efectivo:
+
+```typescript
+import helmet from 'helmet';
+
+app.use(helmet());
+```
+
+### Usa Variables de Entorno para Datos Sensibles
+
+Nunca, jamás, guardes secretos en tu código:
+
+```typescript
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    // ...otros módulos
+  ],
+})
+export class AppModule {}
+
+// En otros servicios
+@Injectable()
+export class AuthService {
+  constructor(private configService: ConfigService) {
+    // Accede a las variables de entorno de manera segura
+    const jwtSecret = this.configService.get<string>('JWT_SECRET');
+  }
+}
+```
+
+### Implementa CORS Correctamente
+
+En mis primeros proyectos, me encontré con problemas por no configurar CORS adecuadamente:
+
+```typescript
+app.enableCors({
+  origin: ['https://tudominio.com', 'https://admin.tudominio.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+});
+```
+
+
+### Implementa Registro de Actividad (Logging)
+
+No subestimes el valor de un buen sistema de logs:
+
+```typescript
+import { Logger } from '@nestjs/common';
+
+@Injectable()
+export class UserService {
+  private readonly logger = new Logger(UserService.name);
+
+  async createUser(createUserDto: CreateUserDto) {
+    this.logger.log(`Creando usuario: ${createUserDto.username}`);
+    // Lógica para crear usuario
+    this.logger.verbose(`Usuario creado con ID: ${userId}`);
+  }
+}
+```
+
+
+## Consejos
+
+1. **Separa responsabilidades**: Los servicios deben hacer una sola cosa y hacerla bien.
+2. **Actualiza dependencias**: Al menos una vez al mes revisa y actualiza tus dependencias.
+3. **Menos es más**: Expón solo los endpoints absolutamente necesarios.
+4. **Monitorea tu aplicación**: Herramientas como New Relic o Datadog son invaluables.

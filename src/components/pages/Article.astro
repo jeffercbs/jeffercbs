@@ -1,0 +1,100 @@
+---
+import Auth from "@/components/Auth.astro";
+import LiteVideo from "@/components/LiteVideo.astro";
+import Layout from "@/layouts/Layout.astro";
+import "@/prism.css";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import ShareComponent from "../ShareComponent.astro";
+import { Icon } from "astro-icon/components";
+
+export type Props = CollectionEntry<"blog">;
+const {
+  data: {
+    title = "",
+    medium,
+    cover,
+    type,
+    tags,
+    videoId,
+    description,
+    createdAt,
+  },
+} = Astro.props;
+
+const { remarkPluginFrontmatter } = await render(Astro.props);
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={cover.src}
+  publishedTime={createdAt.toISOString()}
+  type="article"
+  tags={tags}
+>
+  <article>
+    <div class="w-full h-fit mb-8 p-2 z-[1]">
+      <div class="md:max-w-4xl w-full mx-auto">
+        <div class="md:px-8 py-6">
+          <div class="flex justify-start pb-5">
+            <a href="/blog" class="hover:underline font-medium">
+              <small> 👈 regresar </small>
+            </a>
+          </div>
+          <h1 class="md:text-5xl text-3xl text-pretty font-bold">{title}</h1>
+          <p
+            class="font-medium mt-2 md:text-xl text-lg opacity-80"
+            set:text={description}
+          />
+          <div
+            class="flex md:flex-row flex-col justify-between md:items-center items-start mt-14"
+          >
+            <Auth
+              name="Jeferson Estiven Barrero"
+              username="jeffercbs"
+              medium={medium}
+              readingTime={remarkPluginFrontmatter.minutesRead}
+            />
+            <div
+              class="flex gap-x-2 md:justify-end justify-evenly items-center"
+            >
+              {
+                medium && (
+                  <a
+                    href={medium}
+                    target="_blank"
+                    class="flex items-center text-sm gap-x-2 opacity-80 hover:opacity-100 ease-in-out transition-opacity"
+                  >
+                    <span class="md:hidden flex">Medium</span>
+                    <Icon name="medium" class="size-8" />
+                  </a>
+                )
+              }
+              <ShareComponent />
+            </div>
+          </div>
+        </div>
+        {
+          type == "youtube" ? (
+            <LiteVideo videoId={videoId || ""} backgroundImage={cover.src} />
+          ) : (
+            <Image
+              src={cover}
+              alt={title}
+              width={1000}
+              height={700}
+              class="object-cover aspect-video rounded-2xl shadow-2xl shadow-primary/20"
+            />
+          )
+        }
+      </div>
+    </div>
+    <div
+      class="md:px-0 px-5 prose prose-invert md:prose-lg prose-base mx-auto prose-h1:first:text-2xl prose-h1:md:first:text-4xl"
+    >
+      <slot />
+    </div>
+  </article>
+</Layout>

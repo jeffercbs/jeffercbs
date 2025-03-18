@@ -1,0 +1,79 @@
+---
+type Props = {
+  value?: number;
+  duration?: number;
+};
+
+const { value = 10, duration = 2 } = Astro.props;
+---
+
+<counter-up data-value={value} data-duration={duration}>
+  <span class="flex items-start justify-center my-5 gap-4 *:font-extrabold">
+    <span id="icon-plus" class="md:text-9xl text-7xl"> + </span>
+    <span
+      id="counter"
+      class="md:text-9xl text-7xl transition-transform ease-in-out"></span>
+  </span>
+</counter-up>
+
+<script>
+  class ContadorAnimado extends HTMLElement {
+    private _counter: number = 0;
+    private _finalValue: number = 0;
+    private _duration: number = 2;
+    private _startTime: number = 0;
+    private _frameId: number | null = null;
+    private _observer: IntersectionObserver;
+    private _container: HTMLElement =
+      document.getElementById("counter") || document.createElement("span");
+
+    constructor() {
+      super();
+
+      this._observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.initAnimation();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+    }
+
+    connectedCallback() {
+      this._finalValue = Number(this.dataset.value) || 0;
+      this._duration = Number(this.dataset.duration) || 2;
+
+      this.render();
+      this._observer.observe(this);
+    }
+
+    render() {
+      this._container.textContent = this._counter.toString() || "";
+    }
+
+    initAnimation() {
+      this._startTime = performance.now();
+
+      const animate = (currentTime: number) => {
+        const timeElapsed = (currentTime - this._startTime) / 1000;
+        const progress = Math.min(timeElapsed / this._duration, 1);
+        this._counter = this._finalValue * progress;
+
+        this._container.textContent = this._counter.toFixed(0);
+
+        if (progress < 1) {
+          this._frameId = requestAnimationFrame(animate);
+        } else {
+          cancelAnimationFrame(this._frameId!);
+        }
+      };
+
+      this._frameId = requestAnimationFrame(animate);
+    }
+  }
+
+  customElements.define("counter-up", ContadorAnimado);
+</script>

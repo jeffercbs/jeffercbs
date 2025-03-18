@@ -1,0 +1,142 @@
+---
+import { Icon } from "astro-icon/components";
+import Badge from "./Badge.astro";
+
+export interface Props {
+  TITLE: string;
+  DESCRIPTION: string;
+  LINK?: string;
+  CODE?: string;
+  PERIOD?: string;
+  CURRENT?: boolean;
+  ICON?: string;
+  SKILLS?: string[];
+  COMPANY?: string;
+  external?: boolean;
+  columns?: 1 | 2;
+  index: number;
+}
+
+const {
+  TITLE,
+  DESCRIPTION,
+  SKILLS = [],
+  COMPANY,
+  PERIOD,
+  CURRENT,
+  ICON,
+  index,
+} = Astro.props;
+---
+
+<div
+  class="relative mb-16 last:mb-0 animate-fade-in group"
+  style={{ animationDelay: `${index * 200 + 200}ms` }}
+>
+  <div
+    class:list={[
+      "flex flex-col items-start gap-8",
+      {
+        "md:flex-row": index % 2 === 0,
+        "md:flex-row-reverse": index % 2 !== 0,
+      },
+    ]}
+  >
+    <div
+      class="absolute left-0 md:left-1/2 top-0 w-6 h-6 rounded-full bg-primary border-4 border-black transform -translate-x-1/2 z-10 hidden md:block"
+    >
+    </div>
+
+    <div
+      class={`md:w-1/2 ${index % 2 === 0 ? "md:text-right md:pr-8" : "md:pl-8"} mb-4 md:mb-0`}
+    >
+      <span
+        class="inline-block bg-primary/20 text-[#dff5ff] px-3 py-1 rounded-full text-sm border border-primary/30"
+      >
+        {PERIOD}
+      </span>
+    </div>
+
+    <div
+      class:list={[
+        "md:w-1/2",
+        {
+          "md:pr-8": index % 2 !== 0,
+          "md:pl-8": index % 2 === 0,
+        },
+      ]}
+    >
+      <div
+        class:list={[
+          "rounded-xl p-6",
+          {
+            "bg-gradient-to-r from-primary/10 to-transparent border border-primary/30":
+              CURRENT,
+            "bg-black/40 backdrop-blur-sm border border-gray-800": !CURRENT,
+          },
+          "hover:border-primary/50 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/10",
+        ]}
+      >
+        <div class="relative">
+          <div class="flex gap-x-2">
+            {
+              ICON === "default" ? (
+                <svg
+                  class=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.5 11.75a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm1.444-.75a5.001 5.001 0 00-9.888 0H2.75a.75.75 0 100 1.5h4.306a5.001 5.001 0 009.888 0h4.306a.75.75 0 100-1.5h-4.306z"
+                    fill="currentColor"
+                  />
+                </svg>
+              ) : (
+                <Icon name={ICON} class="absolute size-10 -start-4" />
+              )
+            }
+            <h3
+              class={`text-xl font-bold mb-1 ${CURRENT ? "text-secondary" : "text-white"}`}
+            >
+              {TITLE}
+            </h3>
+          </div>
+          {COMPANY && <p class="text-[#dff5ff]/80 text-sm">{COMPANY}</p>}
+
+          {
+            CURRENT && (
+              <span class="absolute -top-8 -right-3 bg-secondary text-black px-3 py-1 rounded-full text-xs font-semibold animate-pulse-subtle">
+                Actual
+              </span>
+            )
+          }
+        </div>
+
+        <div set:html={DESCRIPTION} class="*:text-pretty" />
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          {
+            SKILLS.map((skill, i) => (
+              <Badge
+                key={i}
+                class={`
+                            ${
+                              CURRENT
+                                ? "bg-[#5356ff]/20 text-[#dff5ff] hover:bg-[#5356ff]/30"
+                                : "bg-gray-800/50 text-gray-300 hover:bg-gray-800/80"
+                            }
+                            transition-all duration-300 hover:scale-105
+                          `}
+              >
+                {skill}
+              </Badge>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

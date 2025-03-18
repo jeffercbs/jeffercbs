@@ -1,0 +1,24 @@
+---
+import "@fontsource-variable/onest";
+
+import { ClientRouter } from "astro:transitions";
+import BaseHead from "../components/BaseHead.astro";
+import "../global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale}>
+  <head>
+    <BaseHead {...Astro.props} />
+    <ClientRouter />
+  </head>
+  <body class="bg-black text-neutral-200 antialiased relative">
+    <slot />
+  </body>
+</html>

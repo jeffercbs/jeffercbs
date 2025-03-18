@@ -1,0 +1,41 @@
+---
+import Link from "../Link.astro";
+import Container from "./Container.astro";
+---
+
+<Container id="contact">
+  <div
+    class="relative overflow-hidden bg-green-900 grid place-content-center h-[600px] w-full"
+  >
+    <div
+      class="relative z-[2] md:max-w-xl md:px-16 px-6 w-full flex flex-col justify-center h-full gap-y-3"
+    >
+      <h2 class="text-4xl font-bold text-pretty mb-5">
+        ¡Hablemos sobre tu proyecto! 🚀
+      </h2>
+      <p class="opacity-80 text-pretty font-medium text-lg">
+        Agenda una cita y revisaremos <strong>
+          tus necesidades y objetivos
+        </strong> para encontrar la mejor solución. Ya sea que necesites una <strong
+          >web o aplicación
+        </strong> para ti o tu negocio, definiremos la estrategia y el desarrollo
+        más adecuados para tu proyecto.
+      </p>
+
+      <p class="opacity-80 text-pretty font-medium text-lg">
+        📅 <strong>Reserva tu cita ahora</strong> y llevemos tu idea al siguiente
+        nivel. 💻✨
+      </p>
+
+      <Link
+        href="https://calendar.app.google/cu1kgfTpDhHMWQzJA"
+        variant="secondary"
+        external
+        wfull
+        class="mt-9 font-semibold"
+      >
+        Reservar cita</Link
+      >
+    </div>
+  </div>
+</Container>

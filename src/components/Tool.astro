@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+
+export type Props = {
+  tool: string;
+};
+
+const { tool } = Astro.props;
+---
+
+<div
+  class="h-fitbg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl transition-colors ease-in-out py-10 hover:shadow-green-300/10 shadow-2xl"
+>
+  <div class="flex flex-col justify-center items-center size-full">
+    <Icon name={tool} class="md:size-14 size-9 mb-3" />
+    <small class="pt-4 font-medium">
+      {tool}
+    </small>
+  </div>
+</div>

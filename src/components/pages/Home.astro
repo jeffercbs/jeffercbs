@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Me from "../partials/Me.astro";
+import Projects from "../partials/Projects.astro";
+import Testimonies from "../partials/Testimonies.astro";
+import LastPosts from "../partials/LastPosts.astro";
+import Newsletter from "../Newsletter.astro";
+import Services from "../partials/Services.astro";
+
+const { props } = Astro;
+---
+
+<Layout title={props.title}>
+  <main>
+    <Me />
+    <Projects />
+    <Services />
+    <Testimonies />
+    <LastPosts />
+    <Newsletter />
+  </main>
+</Layout>

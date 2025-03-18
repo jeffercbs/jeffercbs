@@ -1,0 +1,82 @@
+---
+title: "TypeScript: Nuevo compilador nativo en Go"
+description: "Nuevo compilador nativo de TypeScript implementado en Go, que promete reducir los tiempos de compilación hasta 10 veces. Analizamos por qué el equipo de desarrollo eligió este lenguaje frente a otras alternativas y detallamos el calendario de lanzamiento hacia TypeScript 7.0."
+cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/yuder91ssszbnqz1wyio"
+createdAt: "03/16/2025"
+medium: "https://jeffercbs.medium.com/nuevo-compilador-nativo-en-go-promete-velocidades-10x-m%C3%A1s-r%C3%A1pidas-c2454bc5deea"
+tags:
+  - TypeScript
+  - Go
+---
+
+import Aside from "@/components/mdx/Aside.astro"
+import LinkCard from "@/components/mdx/LinkCard.astro"
+
+Mucho se ha estado hablando del recientemente anuncio de un nuevo compilador nativo en Go para TypeScript que mejorara significativamente el rendimiento del lenguaje. A medida que las bases de código crecen, TypeScript no siempre ha sido especialmente bueno a la hora de escalar eficientemente.
+
+El nuevo compilador nativo ya esta sorprendiendo con sus resultados en pruebas preliminares, los tiempos de compilación se han reducido hasta 10 veces en la mayoría de los proyectos. Esto al final solo significa que hará una compilación más rápido, y ya en una gráfica comparativa publicada podemos ver como se mejoran estos tiempo.
+
+| **Base de código** | **Tamaño (LOC)** | **Actual** | **Nativo** | **Aceleración** |
+| --- | --- | --- | --- | --- |
+| VS Code | 1.505.000 | 77.8s | 7.5s | 10.4x |
+| Angular | 356.000 | 11.1s | 1.1s | 10.1x |
+| TypeORM | 270.000 | 17.5s | 1.3s | 13.5x |
+| date-fns | 104.000 | 6.5s | 0.7s | 9.5x |
+| tRPC (servidor + cliente) | 18.000 | 5.5s | 0.6s | 9.1x |
+| rxjs (observable) | 2.100 | 1.1s | 0.1s | 11.0x |
+
+Información
+Datos de la tabla tomados desde la página oficial de Microsoft, referencia al final del artículo
+
+Eso sí, algunos proyectos si se beneficiarán de este anuncio, como el editor Visual Studio Code, que internamente se beneficiara de una compilación más rápida en ciertos procesos y se mencionan mejoras desde el primer momento al cargar un proyecto: donde antes tomaba 9.6 segundos, ahora se reducirá a solo 1.2 segundos—¡una mejora de 8x! Además, promete mejoras en la detección de errores y otras características claves que tendrán un impacto significativo, haciendo que el flujo de trabajo sea más rápido y eficiente.
+
+## **¿Por qué Go?, se preguntan muchos**
+
+Luego de leer la issue del repositorio en GitHub del proyecto sobre `why go?` **(que, por cierto, les dejaré al final),** la elección de Go no parece casual. Elegir un lenguaje de programación debe responder a un propósito claro—no deberíamos aferrarnos a una sola tecnología, ya que, al final, los lenguajes son solo herramientas. 
+
+El equipo de TypeScript lo tiene muy claro y mencionan como hicieron una evaluación minuciosa con múltiples lenguajes y exploraron diferentes enfoques antes de tomar su decisión, llegando incluso a considerar implementaciones híbridas donde solo ciertos componentes fueran portados.
+
+Mencionan que una de las razones fundamentales para elegir Go fue la necesidad de mantener una estructura de código y una semántica similar a la implementación actual, lo que impactaría notablemente a la hora de portar cambios entre ambas bases de código. 
+
+> Tiene todo el sentido. Hubiera sido un desafío—y poco lógico—mantener dos implementaciones simultáneas con estructuras radicalmente diferentes, especialmente considerando que ambas implementaciones coexistirán por mucho tiempo, ya que no todos los proyectos podrán migrar completamente a la versión nativa. Por ello, para el equipo de TypeScript, resulta más razonable mantener ambas bases de código lo más similares posible.
+> 
+
+El hecho de haber usado otro lenguaje que no cumpliera con esta condición habría requerido un replanteamiento total de la estructuración de los datos, la gestión de memoria y otros aspectos fundamentales del lenguaje, complicando enormemente portar y mantener en paralelo ambas bases de código. 
+
+> Mucha gente abogó por haber usado Rust o C# en lugar de Go, y habiendo experimentado personalmente con ambos lenguajes en proyectos personales, los tres me parecen excelentes. Sin embargo, siempre hay que considerar que la elección de un lenguaje depende del caso de uso, y en este caso, para el equipo de TypeScript, implementar Go encajaba para este proyecto.
+> 
+
+Otro factor determinante en esta decisión fue la gestión de memoria. Go ofrece un excelente equilibrio, proporcionando buen control sobre la asignación de memoria sin obligar a los desarrolladores a preocuparse constantemente por ella como ocurre en lenguajes de más bajo nivel. Aunque Go utiliza un sistema de **`garbage collector`**, esto no impacta significativamente en la ejecución real para este caso.
+
+Por ultimo también mencionan que TypeScript realiza mucho procesamiento de árboles con recorridos ascendentes y descendentes que involucran nodos polimórficos, algo que Go maneja muy bien y de forma ergonómica.
+
+## No todo son ventajas
+
+El equipo de TypeScript menciona que existen algunas limitaciones importantes en su decisión. La interoperabilidad entre Go y JavaScript no es tan robusta como en otras alternativas que consideraron, lo que podría complicar ciertos aspectos de integración. Sin embargo, tienen planes para mitigar este problema y están comprometidos a ofrecer una API para JavaScript que sea tanto eficiente como ergonómica.
+
+Una ventaja adicional de esta reimplementación es que les permitirá alejarse del actual modelo de API, donde los usuarios pueden acceder (e incluso modificar) prácticamente cualquier cosa, lo que ha limitado las posibilidades de optimización.
+
+Esta transición hacia un diseño de API más inteligente y controlado, que también considera la interoperabilidad, les permitirá evolucionar el ecosistema mientras entregan estas mejoras.
+
+## **Calendario de lanzamiento**
+
+El plan es tener una vista previa de la implementación nativa para mediados de 2025, con una solución completa de caracteristicas. Mientras tanto, la versión actual seguirá evolucionando en la serie 6.x. Eventualmente, cuando la implementación nativa alcance paridad de características con la version actual, se convertirá en TypeScript 7.0.
+
+Ambas versiones coexistirán por un buen tiempo. El equipo reconoce que algunos proyectos podrán migrar rápidamente a TypeScript 7, mientras que otros dependerán de APIs específicas o configuraciones heredadas que requerirán seguir usando la versión 6.x por más tiempo.
+## Referencias
+
+<LinkCard title="Leer articulo en Medium" href={frontmatter.medium} target="_blank">
+  ¿ Sabias que puedes leer este articulo en Medium ?, puedes hacer clic aqui para leerlo.
+</LinkCard>
+
+<LinkCard title="Anuncio oficial en el blog de Microsoft" href="https://devblogs.microsoft.com/typescript/typescript-native-port/" target="_blank">
+  Puedes leer el anuncio oficial en el blog de Microsoft, haciendo clic aquí.
+</LinkCard>
+
+<LinkCard title="Repositorio del proyecto en GitHub" href="https://github.com/microsoft/typescript-go">
+  Puedes visitar el repositorio del proyecto en GitHub.
+</LinkCard>
+
+<LinkCard title="¿Por qué Go?" href="https://github.com/microsoft/typescript-go/discussions/411" target="_blank">
+  Puedes leer más sobre la elección de Go en la issue del proyecto.
+</LinkCard>

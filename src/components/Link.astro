@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+export type Props = {
+  variant?: "primary" | "secondary" | "link";
+  href: string;
+  external?: boolean;
+  icon?: string;
+  class?: string;
+  wfull?: boolean;
+};
+const {
+  variant = "primary",
+  href,
+  external = false,
+  icon,
+  wfull = false,
+  class: classes,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    classes,
+    "flex justify-center items-center text-base gap-x-2 rounded-lg py-3 px-6",
+    { "w-full md:px-4": wfull },
+    { "w-fit": !wfull },
+    {
+      "bg-black/30 hover:bg-black/10 border border-white/20 text-white/80 hover:text-white transition-opacity":
+        variant === "primary",
+    },
+    {
+      "bg-secondary text-black py-2 transitio ease-in-out hover:shadow-white/20 hover:shadow-2xl":
+        variant === "secondary",
+    },
+  ]}
+  target={external ? "_blank" : null}
+  rel={external ? "noopener noreferrer" : null}
+>
+  {icon && <Icon name={icon} class="size-6" />}
+  <slot />
+</a>

@@ -1,0 +1,55 @@
+---
+export type Props = {
+  title?: string;
+  id: string;
+  tag?: string;
+  description?: string;
+  class?: string;
+  redirect?: string;
+  redirectText?: string;
+};
+
+const {
+  title,
+  id,
+  description,
+  tag,
+  class: classes,
+  redirect,
+  redirectText,
+} = Astro.props;
+---
+
+<section class:list={["relative py-16 h-fit", classes]} id={id}>
+  <div
+    class="flex md:flex-row flex-col items-start md:items-center justify-between px-2 pb-6"
+  >
+    <div class="container text-left md:max-w-2xl w-full mb-4 md:px-0">
+      {
+        tag && (
+          <span class="text-white bg-gradient-to-tl from-primary to-blue-400 capitalize px-4 py-1 rounded-full inline-block mb-4 font-medium">
+            {tag}
+          </span>
+        )
+      }
+      {title && <h2 class="text-5xl font-bold text-balance">{title}</h2>}
+      {
+        description && (
+          <p class="mt-4 opacity-70 text-lg text-pretty">{description}</p>
+        )
+      }
+    </div>
+    <div>
+      {
+        redirect && (
+          <a
+            href={redirect}
+            class="underline hover:text-green-100"
+            set:text={redirectText}
+          />
+        )
+      }
+    </div>
+  </div>
+  <slot />
+</section>

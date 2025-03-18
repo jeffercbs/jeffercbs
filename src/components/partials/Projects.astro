@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../ProjectCard.astro";
+import Container from "./Container.astro";
+import Counter from "../Counter.astro";
+import { TOTAL_PROJECTS } from "@/constants";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) =>
+    new Date(b.data.createdAt).getTime() + new Date(a.data.createdAt).getTime()
+);
+---
+
+<Container id="projects" class="hero">
+  <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 grid-rows-5 gap-2">
+    {projects.map((project) => <ProjectCard {...project} />)}
+    <div
+      class="text-center hover:shadow-2xl size-full rounded-lg grid place-content-center"
+      style="background: var(--gradient);"
+    >
+      <Counter value={TOTAL_PROJECTS} />
+      <div class="flex flex-col *:w-full *:font-medium *:md:text-3xl text-2xl">
+        <span class="py-1 px-5 text-secondary rounded-full"> Proyectos </span>
+        <span class="py-1 px-5 bg-indigo-300 text-indigo-800 rounded-full">
+          Desarrollados
+        </span>
+      </div>
+    </div>
+  </div>
+</Container>

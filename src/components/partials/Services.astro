@@ -1,0 +1,24 @@
+---
+import { getI18n } from "@/i18n";
+import CardService from "../CardPrimary.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container
+  id="services"
+  title={i18n.SERVICES_TITLE}
+  description={i18n.SERVICES_DESCRIPTION}
+  tag={i18n.SERVICES_TAG}
+  class="hero"
+>
+  <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
+    {
+      i18n.SERVICES.map((service, i) => (
+        <CardService {...service} custom={{ button: "Descubrir" }} index={i} />
+      ))
+    }
+  </div>
+</Container>

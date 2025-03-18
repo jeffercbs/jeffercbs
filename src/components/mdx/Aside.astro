@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+const asideVariants = ["note", "tip", "caution", "danger"] as const;
+const types = {
+  note: "Información",
+  tip: "recomendación",
+  caution: "advertencia",
+  danger: "peligro",
+} as const;
+
+interface Props {
+  type?: (typeof asideVariants)[number];
+  title?: string;
+}
+
+let { type = "note", title } = Astro.props;
+---
+
+<aside
+  aria-label={title}
+  class:list={[
+    "px-3 relative py-3 space-y-2 flex flex-col justify-center h-fit border-l-4 rounded-md not-prose",
+    {
+      "bg-primary border-l-indigo-300 text-blue-100": type === "note",
+      "bg-green-500 border-l-green-300 text-green-100": type === "tip",
+      "bg-yellow-500 border-l-yellow-300 text-yellow-100": type === "caution",
+      "bg-red-500 border-l-red-300 text-red-100": type === "danger",
+    },
+  ]}
+>
+  <div class="text-xl flex items-center *:font-semibold" aria-hidden="true">
+    <Icon name={type == "note" ? "lightbulb" : "code"} class="size-6 mr-2" />
+    <span>
+      {title || types[type]}
+    </span>
+  </div>
+  <div class="text-white *:text-base">
+    <slot />
+  </div>
+</aside>

@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+type Props = {
+  ICON: string;
+  PLATFORM?: string;
+  TITLE: string;
+  DATE?: string;
+  DESCRIPTION: string;
+  CREDENTIALS?: string;
+  LINK?: string;
+  index: number;
+  custom?: {
+    button: string;
+  };
+};
+
+const { PLATFORM, DATE, TITLE, DESCRIPTION, ICON, LINK, index, custom } =
+  Astro.props;
+---
+
+<article
+  class="animate-fade-in rounded-lg size-full group hover:border-primary/50 border-primary/25 border overflow-hidden"
+  style={`animation-delay: ${index * 200 + 200}ms`}
+>
+  <div class="p-6 relative h-full">
+    <div
+      class="absolute inset-0 opacity-5 group-hover:opacity-20 duration-500 -z-[1] size-full transition-opacity duration-700"
+      style="background: var(--gradient);"
+    >
+    </div>
+
+    <div class="flex gap-2 items-center justify-between mb-6">
+      <div
+        class="size-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform duration-300 relative overflow-hidden"
+      >
+        {
+          ICON === "default" ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 relative z-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+          ) : (
+            <Icon name={ICON} class="size-6" />
+          )
+        }
+      </div>
+      <span
+        class="font-bold text-white flex-1"
+        set:text={PLATFORM ? PLATFORM : TITLE}
+      />
+      {DATE && <small class="text-white/60" set:text={DATE} />}
+    </div>
+
+    {
+      !!PLATFORM && (
+        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-secondary transition-colors duration-300">
+          {TITLE}
+        </h3>
+      )
+    }
+    <div set:html={DESCRIPTION} class="*:text-pretty text-pretty *:space-y-1" />
+
+    {
+      LINK && (
+        <div class="mt-auto pt-4 relative">
+          <Link href={LINK} class="w-full rounded-lg" external>
+            <span set:text={custom?.button} />
+          </Link>
+        </div>
+      )
+    }
+  </div>
+</article>

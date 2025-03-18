@@ -1,0 +1,72 @@
+---
+import { formatDate } from "@/utils/format_date";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Badge from "./Badge.astro";
+
+type Props = CollectionEntry<"blog"> & {
+  orientation?: "horizontal" | "vertical";
+};
+
+const {
+  orientation = "vertical",
+
+  data: { title, description, cover, createdAt, tags },
+} = Astro.props;
+---
+
+<article class="pb-3">
+  <div
+    class:list={[
+      "flex",
+      {
+        "flex-col gap-4": orientation == "vertical",
+        "md:flex-row flex-col gap-2": orientation == "horizontal",
+      },
+    ]}
+  >
+    <div class="overflow-hidden rounded-lg shadow-lg">
+      <Image
+        src={cover}
+        alt="Blog post illustration"
+        fit="contain"
+        width={200}
+        height={200}
+        class:list={[
+          "group-hover:scale-105 transition-transform duration-300",
+          {
+            "aspect-video size-full": orientation == "vertical",
+            "md:aspect-square aspect-video md:size-32 size-full":
+              orientation == "horizontal",
+          },
+        ]}
+      />
+    </div>
+    <div class="flex-1 flex flex-col relative">
+      {
+        orientation !== "horizontal" && (
+          <div class="flex flex-wrap items-center gap-2 text-xs text-neutral-300">
+            <time
+              datetime={createdAt.toDateString()}
+              class="font-medium text-xs"
+              set:text={formatDate(createdAt)}
+            />
+            {tags.map((tag) => (
+              <Badge>
+                <small set:text={tag} />
+              </Badge>
+            ))}
+          </div>
+        )
+      }
+      <div>
+        <h3
+          transition:name={`title-${title}`}
+          class="text-xl text-pretty font-bold tracking-tight group-hover:text-secondary transition-colors ease-in-out duration-300"
+          set:text={title}
+        />
+        <p class="text-neutral-300 mt-1" set:text={description} />
+      </div>
+    </div>
+  </div>
+</article>

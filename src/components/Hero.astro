@@ -1,0 +1,24 @@
+---
+type Props = {
+  title: string;
+  description?: string;
+  extend?: boolean;
+};
+const { title, description, extend = false } = Astro.props;
+---
+
+<div
+  class="rounded-lg pt-24 pb-12 mb-10 bg-center bg-cover"
+  style="background: var(--gradient);"
+>
+  <div
+    class:list={[
+      "w-full md:px-0 px-3 space-y-3",
+      { "md:max-w-1/2 mx-auto": !extend, hero: extend },
+    ]}
+  >
+    <h3 class="text-3xl md:text-5xl text-pretty font-bold" set:text={title} />
+    {description && <p class="text-lg opacity-80" set:text={description} />}
+    <slot />
+  </div>
+</div>

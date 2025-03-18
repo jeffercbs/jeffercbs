@@ -1,0 +1,72 @@
+---
+import { actions } from "astro:actions";
+import { z } from "zod";
+import Hero from "./Hero.astro";
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const email = formData.get("email");
+    const schema = z.string().email().min(5).max(100);
+
+    await Astro.callAction(actions.subscribeNewsletter, {
+      email: schema.parse(email),
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+---
+
+<Hero title="Descubre nuevo contenido cada semana">
+  <div class="h-full pb-8">
+    <form
+      method="POST"
+      class="flex md:flex-row flex-col md:items-end my-16 gap-4"
+    >
+      <div class="flex-1">
+        <label
+          for="email-address-icon"
+          class="block mb-2 text-sm font-medium text-white"
+        >
+          Ingresa tu correo
+        </label>
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="size-5 text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 16"
+            >
+              <path
+                d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+              ></path>
+              <path
+                d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="border rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="tucorreo@gmail.com"
+            required
+          />
+        </div>
+      </div>
+      <button class="bg-primary p-2.5 w-full md:max-w-1/4 rounded-lg">
+        subscribirme
+      </button>
+    </form>
+    <p>
+      Al subscribirte, recibiras un correo de confirmación para empezar a
+      recibir contenido exclusivo.
+    </p>
+  </div>
+</Hero>

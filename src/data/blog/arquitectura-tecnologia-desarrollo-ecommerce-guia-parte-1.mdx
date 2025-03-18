@@ -1,0 +1,112 @@
+---
+title: "Part 1: Tecnología, Arquitectura y Desarrollo"
+description: "Exploramos la arquitectura técnica de Arbelleza: Next.js, NestJS, Algolia y PostgreSQL. Conoce cómo construimos un e-commerce de belleza escalable y de alto rendimiento con Docker y Vercel."
+cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/pimnb2x7xmzebuaqry9z"
+createdAt: "02/06/2025"
+type: "youtube"
+videoId: "vvv3hn_w72M"
+tags:
+    - Desarrollo
+    - Youtube
+---
+
+
+Hace un tiempo, mi socia y yo nos embarcamos en crear Arbelleza, una tienda online especializada en productos de salud y belleza. Este proyecto no solo representó una oportunidad de negocio, sino también un desafío técnico que me permitió aplicar mis conocimientos en desarrollo web para construir una plataforma escalable, rápida y eficiente.
+
+En este post, quiero compartir contigo la arquitectura, las tecnologías que elegimos y el proceso que seguimos para llevar Arbelleza de una simple idea a una tienda online completamente funcional.
+
+## La arquitectura detrás de Arbelleza
+
+Cuando diseñamos la estructura técnica de Arbelleza, teníamos claro que queríamos crear algo más que una simple tienda. Buscábamos una plataforma robusta, escalable y con excelente rendimiento. Aquí están las tecnologías clave que elegimos y por qué:
+
+### Frontend: Next.js y Tailwind CSS
+
+Para el frontend (la parte que ven los usuarios), optamos por **Next.js** por varias razones:
+- Nos ofrece Server-Side Rendering (SSR) y Static Site Generation (SSG), lo que se traduce en tiempos de carga mucho más rápidos
+- Mejora considerablemente el SEO, algo crucial para un e-commerce
+- Su sistema de rutas dinámicas simplifica la navegación entre categorías y productos
+
+Para los estilos, implementamos **Tailwind CSS**, que nos permitió:
+- Diseñar de forma rápida y consistente
+- Mantener un código limpio y reutilizable
+- Adaptarnos fácilmente a diferentes tamaños de pantalla
+
+### Backend: NestJS y PostgreSQL
+
+El motor que hace funcionar todo lo que no se ve decidimos construirlo con **NestJS** porque:
+- Su estructura modular facilita la organización del código
+- Se integra perfectamente con TypeScript, añadiendo una capa de seguridad tipo
+- Es altamente escalable, lo que nos permite crecer sin problemas
+
+Para la base de datos elegimos **PostgreSQL**:
+- Ofrece un rendimiento excelente incluso con grandes volúmenes de datos
+- Su estructura relacional es ideal para manejar catálogos de productos, pedidos y usuarios
+- Tiene características avanzadas de seguridad y respaldo
+
+### Características especiales
+
+Para hacer que Arbelleza destacara, implementamos algunas tecnologías adicionales:
+
+- **Algolia para búsquedas**: Implementamos este potente motor de búsqueda que ofrece resultados instantáneos, filtros avanzados y una experiencia de búsqueda excepcional para nuestros usuarios.
+
+- **AWS S3 y Cloudinary para imágenes**: Las imágenes son fundamentales en una tienda de productos de belleza. Utilizamos AWS S3 para el almacenamiento y Cloudinary para la optimización automática, lo que mejora significativamente los tiempos de carga.
+
+- **Docker y Vercel para el despliegue**: El backend corre en contenedores Docker, facilitando la escalabilidad, mientras que el frontend está alojado en Vercel, permitiendo actualizaciones continuas sin interrumpir el servicio.
+
+## El proceso de desarrollo paso a paso
+
+Construir Arbelleza fue un proceso estructurado que fue mucho más allá de simplemente escribir código:
+
+### Diseño y planificación
+
+Antes de escribir una sola línea de código, definimos claramente:
+- La experiencia que queríamos ofrecer a nuestros usuarios
+- Los wireframes y maquetas de las diferentes páginas
+- Las funcionalidades esenciales vs las que podrían implementarse después
+
+Esta fase fue crucial para tener una visión clara y evitar retrabajos posteriores.
+
+### Desarrollo del frontend
+
+Una vez con el diseño claro, construimos la interfaz con Next.js:
+- Implementamos la navegación principal
+- Creamos las páginas de categorías y productos
+- Desarrollamos el carrito de compras y el proceso de checkout
+- Integramos el diseño responsivo para que funcione perfectamente en dispositivos móviles
+
+### Implementación del backend
+
+Paralelamente, trabajamos en la parte del servidor:
+- Creamos los endpoints necesarios en NestJS
+- Establecimos la estructura de la base de datos en PostgreSQL
+- Implementamos la autenticación y seguridad
+- Desarrollamos la lógica para gestionar inventario y pedidos
+
+### Integraciones especiales
+
+Para mejorar la experiencia del usuario:
+- Conectamos Algolia para ofrecer búsquedas rápidas y precisas
+- Configuramos Cloudinary para optimizar automáticamente las imágenes
+- Implementamos pasarelas de pago seguras
+
+### Despliegue y pruebas
+
+Finalmente, llegó el momento de poner Arbelleza en línea:
+- Desplegamos el backend en contenedores Docker
+- Configuramos el frontend en Vercel
+- Realizamos pruebas exhaustivas de carga, seguridad y rendimiento para garantizar una experiencia sin problemas
+
+## Lecciones aprendidas
+
+El desarrollo de Arbelleza nos dejó varias enseñanzas importantes:
+
+1. **La planificación es crucial**: Dedicar tiempo al diseño y la arquitectura antes de comenzar a programar nos ahorró muchos dolores de cabeza.
+
+2. **Elegir las tecnologías adecuadas marca la diferencia**: Next.js, NestJS y PostgreSQL demostraron ser una combinación potente para un e-commerce.
+
+3. **La experiencia del usuario es prioritaria**: Implementar Algolia para las búsquedas y optimizar las imágenes con Cloudinary mejoró notablemente la usabilidad.
+
+4. **La escalabilidad debe considerarse desde el inicio**: Gracias a Docker y nuestra arquitectura modular, podemos crecer sin problemas.
+
+
+> En próximos posts, profundizaré en aspectos específicos del desarrollo, como la implementación de Next.js, la estructura de la base de datos o cómo optimizamos el rendimiento. ¡No te los pierdas!

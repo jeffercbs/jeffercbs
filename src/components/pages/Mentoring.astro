@@ -1,0 +1,71 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "../partials/AboutMe.astro";
+import Experience from "../partials/Experience.astro";
+import Education from "../partials/Education.astro";
+import Badge from "../Badge.astro";
+import Link from "../Link.astro";
+import Hero from "../Hero.astro";
+import { Icon } from "astro-icon/components";
+import { getI18n } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+const MENTORING_HOME =
+  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ00eisO0NmZdKuDZ5Eh09WW9dO7lAj9AM4FuLRCX7Z8Xr0gSt3svRIX2M4K4Q1RP66vk-eyi6sE";
+---
+
+<Layout title="Agenda tu mentoria">
+  <main class="hero">
+    <section class="flex md:flex-row flex-col-reverse md:py-24 py-16 relative">
+      <div class="flex-1 block gap-12">
+        <div class="space-y-8 w-full">
+          <div class="duration-700 ease-out animate-fade-in">
+            <Badge> Disponible para ayudarte</Badge>
+          </div>
+
+          <h1 class="text-4xl text-pretty md:text-6xl lg:text-7xl font-bold">
+            Agenda tu
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-200"
+            >
+              mentoría personalizada
+            </span>
+          </h1>
+
+          <p class="text-lg" set:text={i18n.MENTORING_DESC} />
+
+          <div class="pt-4">
+            <Link href={MENTORING_HOME} variant="secondary" external>
+              Agenda una sesión gratuita
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid md:place-content-center place-content-start md:w-1/3 w-full md:pb-0 pb-8"
+      >
+        <div
+          class="rounded-full md:size-60 size-30 flex justify-center items-center p-8"
+          style="background: var(--gradient-secondary);"
+        >
+          <Icon name="braces" class="md:size-30 size-14" />
+        </div>
+      </div>
+    </section>
+
+    <AboutMe />
+    <Experience />
+    <Education />
+    <Hero
+      title="Agenda  tu mentoria ahora mismo"
+      description="Agenda una sesión de mentoría gratuita de 30 minutos para discutir tus objetivos y cómo puedo ayudarte a alcanzarlos."
+    >
+      <Link href={MENTORING_HOME} variant="secondary" class="mt-8" external>
+        Agenda una sesión gratuita
+      </Link>
+    </Hero>
+  </main>
+</Layout>

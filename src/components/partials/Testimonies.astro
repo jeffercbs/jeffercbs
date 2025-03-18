@@ -1,0 +1,58 @@
+---
+import { getI18n } from "@/i18n";
+import CardTestimony from "../CardTestimony.astro";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Container
+  title={i18n.TESTIMONIES_TITLE}
+  description={i18n.TESTIMONIES_DESCRIPTION}
+  tag={i18n.TESTIMONIES_TAG}
+  id="testimonies"
+  class="hero"
+>
+  <div
+    data-testimonials=""
+    class="relative data-[testimonials-closed]:mb-0 duration-1000 transition-all testimonials-mask"
+  >
+    <ul class="mt-10 columns-1 gap-5 sm:columns-2 sm:gap-3 md:columns-3">
+      {
+        [
+          {
+            name: "Argermiro Remodelaciones",
+            position: "emprendedor y cliente",
+            company: "argermiroremodelaciones",
+
+            text: "El sitio web desarrollado para mi empresa de remodelaciones ha sido clave para atraer más clientes. Desde su lanzamiento, el alcance de nuestros servicios crecido significativamente. El proceso fue profesional y se ajustó perfectamente a nuestras necesidades.",
+          },
+          {
+            name: "Camilo Davila",
+            position: "Ingeniero de sistemas",
+            company: "MINTIC",
+            text: "Es un programador altamente capacitado, con gran dominio de diversas tecnologías y excelente habilidad para resolver problemas. Siempre profesional y eficiente. Totalmente recomendable.",
+          },
+          {
+            name: "Angie Rey",
+            position: "CEO de ar belleza",
+            company: "Company",
+            text: "Jeferson es una persona comprometida, dedicada e inteligente. Disfruta el trabajo en equipo, siendo esto soft skills muy atrayente para las empresas a la vanguardia, tiene toda la disposición para ayudar a los demás y se ve que disfruta cuando lo hace. ",
+          },
+        ].map((testimonial) => (
+          <li class=" break-inside-avoid mb-7">
+            <CardTestimony {...testimonial} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- <div
+    class="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t pt-32 pb-8 pointer-events-none backdrop-blur-sm absolute"
+  >
+   <button type="button" class="relative bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 text-sm text-white font-semibold h-12 px-6 rounded-lg flex items-center dark:bg-slate-700 dark:hover:bg-slate-600 pointer-events-auto">
+      Show more...
+    </button> 
+  </div> -->
+</Container>

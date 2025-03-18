@@ -1,0 +1,27 @@
+---
+type Props = {
+  name: string;
+  username: string;
+  image?: string;
+  medium?: string;
+  readingTime?: string;
+};
+
+const { name, username, readingTime } = Astro.props;
+---
+
+<div class="flex items-center gap-4 py-3">
+  <div
+    class="size-10 grid place-content-center bg-gradient-to-br from-primary to-secondary rounded-full"
+  >
+    <span class="font-medium"> JB </span>
+  </div>
+  <div class="flex flex-col justify-center items-start font-medium text-white">
+    <strong set:text={name} />
+    <div class="flex items-center flex-wrap gap-x-1">
+      <small class="text-sm text-gray-400" set:text={username} />
+      <span> * </span>
+      <small set:text={readingTime} />
+    </div>
+  </div>
+</div>

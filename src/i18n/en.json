@@ -1,0 +1,232 @@
+{
+  "TITLE_SEO": "Jeferson Barrero | Software Engineer, Tech Consultant & Educator",
+  "DESCRIPTION_SEO": "Software Engineer based in Bogotá with over 3 years of experience in web development, software architecture, and scalable digital solutions. Tech consultant and content creator specializing in programming and technology. I help businesses and startups transform ideas into innovative digital products, optimizing systems and driving growth in the digital world.",
+  "KEYWORD_SEO": "Software Architecture, Technology Consulting, Web Development, React, Next.js, Performance, Optimization, Digital Transformation",
+  "AUTHOR": "Jeferson Barrero",
+  "COPYRIGHT": "Jeferson Barrero",
+  "HEADER_PROX": "¡Coming soon!",
+  "HEADER": [
+    {
+      "LABEL": "Home",
+      "LINK": "/en",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Projects",
+      "LINK": "/#projects",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Biography",
+      "LINK": "/jeferson-barrero",
+      "ACTIVE": true
+    },
+    {
+      "LABEL": "Blog",
+      "LINK": "/blog",
+      "ACTIVE": true
+    }
+  ],
+  "INTRO_TITLE": [
+    "EVERYTHING",
+    "YOU NEED",
+    "TO",
+    "BOOST",
+    "YOUR",
+    "DIGITAL",
+    "PRESENCE"
+  ],
+  "INTRO_DETAILS": [
+    "SERVICES",
+    "I develop websites and digital products for companies, businesses, and brands.",
+    "From <span> blogs </span> and <span> online stores </span> to <span> web applications </span> and <span> custom systems. </span>"
+  ],
+  "INTRO_TAGS": [
+    "CUSTOM WEBSITES",
+    "ONLINE STORES",
+    "WEB APPLICATIONS",
+    "DIGITAL PRODUCTS"
+  ],
+  "QUOTE_TITLE": [
+    "Software Engineer",
+    "specialized in creating unique applications."
+  ],
+  "QUOTE_Q": "I transform ideas into digital solutions for businesses, brands, and companies. Custom web development, scalable applications, and digital experiences that drive your growth in the online world.",
+  "YEAR_EXPERIENCE": "3+ years",
+  "YEAR_EXPERIENCE_DESC": "Experience",
+  "HAPPY_CLIENTS": "Happy clients",
+  "SATISFACTION": "Success rate",
+  "PROJECTS_COMPLETED": "Projects completed",
+  "ABOUT_TITLE": "About me",
+  "ABOUT_DESC": "<p>My name is <strong>Jeferson Barrero</strong>, but my friends call me <strong>Jef</strong>. I started programming at the age of <strong>14</strong> as a self-taught enthusiast, inspired by figures like <strong>Freddy Vegas</strong> and by exploring the web. This early dive into the fascinating world of programming shaped my journey.</p> <p>As a <strong>PLATZI</strong> student and a participant in the '<strong>MisiónTIC2022</strong>' project since its pilot phase, backed by the <strong>Colombian government</strong> and <strong>MINTIC</strong>, I have built a solid foundation in <strong>programming</strong> and <strong>web development</strong>. Actively participating in personal and collaborative projects with clients has been essential to honing my skills as a developer.</p> <p>Adding to this journey with <strong>virtual courses from SENA</strong> and my current studies in <strong>3D modeling for industry</strong> and <strong>administrative assistance</strong>, I aim to stand out in the field of <strong>web development</strong> and <strong>programming</strong>. My vision includes not only personal growth but also actively contributing to the community. As a contributor on <strong>GitHub</strong>, I participate in projects aimed at promoting free and open programming education.</p>",
+  "EXPERIENCE_TITLE": "Experience",
+  "EXPERIENCE": [
+    {
+      "ICON": "default",
+      "COMPANY": "Freelance",
+      "TITLE": "Freelance Web Developer",
+      "PERIOD": "Currently...",
+      "DESCRIPTION": "<p>As an <strong>independent web developer</strong>, I specialize in crafting unique applications for brands and businesses, spanning a full spectrum of needs, from static websites to online stores. My focus is on delivering innovative and functional technological solutions tailored to the specific goals and requirements of each client.</p>",
+      "SKILLS": [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Node.js"
+      ],
+      "CURRENT": false,
+      "LINK": "/services/web"
+    },
+    {
+      "ICON": "default",
+      "COMPANY": "Freelance",
+      "TITLE": "DISSRETT SAS",
+      "PERIOD": "Software Engineer - Remote",
+      "DESCRIPTION": "<p>In my role, I was responsible for the design and development of web solutions adapted to the client's needs. I performed software analysis to optimize processes and improve the functionality of the applications. I also managed databases, ensuring their integration and availability.</p>",
+      "SKILLS": [
+        "Desarrollo Web",
+        "Análisis de Software",
+        "Bases de Datos"
+      ],
+      "CURRENT": false
+    },
+    {
+      "ICON": "default",
+      "COMPANY": "Freelance",
+      "TITLE": "Eco Star Hotel ",
+      "PERIOD": "Jun 2022 - Oct 2022",
+      "DESCRIPTION": "<p>Me desempeñe en la gestión documental. Durante este periodo, desempeñe funciones en la clasificación y organizar documentos importantes de la empresa. Además del almacenamiento del archivo más antiguo de la empresa.</p>",
+      "SKILLS": [
+        "Gestión Documental",
+        "Excel"
+      ],
+      "CURRENT": false
+    },
+    {
+      "ICON": "default",
+      "COMPANY": "Freelance",
+      "TITLE": "MisionTIC2022",
+      "PERIOD": "September 2022",
+      "DESCRIPTION": "<p>My participation in <strong>Misión TIC 2022</strong>, since its pilot phase in August 2020, was characterized by comprehensive training in web projects with a specific focus on <strong>Node.js</strong>. Actively collaborating with young individuals from across the country on joint projects not only expanded my technical skills but also provided a valuable experience of nationwide teamwork.</p> <p>Complementary activities, such as <strong>professional talks</strong> and the visit to the <strong>Entrepreneurs' Park</strong>, added significant value to my education. The talks offered enriching perspectives and practical advice, while the park visit provided a tangible insight into the technological needs of the country. These complementary elements enhanced my overall understanding and offered a deeper vision of the practical application of technology in the national context.</p>",
+      "SKILLS": [
+        ""
+      ],
+      "CURRENT": false
+    }
+  ],
+  "EDUCATION_TAG": "Education",
+  "EDUCATION_TITLE": "Educación cerficada",
+  "EDUCATION": [
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Frontend Developer Course",
+      "DATE": "Oct 2022",
+      "DESCRIPTION": "<p>I delved into the basics of HTML and CSS, exploring its structure, elements, and CSS properties. I acquired advanced skills in layout and responsive design.</p>",
+      "CREDENTIALS": "Credential ID 5f6e5de5-5717-4bcd-96c2-32071fdef27f",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Fundamentals of Software Engineering",
+      "DATE": "Oct 2022",
+      "DESCRIPTION": "<p>I explored the basics of electronics, deepened my knowledge of various operating systems and understood the networks that support the operation of the Internet.</p>",
+      "CREDENTIALS": "Credential ID e3037410-94bf-40e9-9755-2e677e1d729a",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/1098-ingenieria/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Git and GitHub Professional Course",
+      "DATE": "Apr 2022",
+      "DESCRIPTION": "<p>I acquired essential knowledge ranging from fundamental concepts to advanced project management. I developed the ability to clone repositories and efficiently manage my projects, both locally and on collaborative platforms such as GitHub.</p>",
+      "CREDENTIALS": "Credential ID 4f045261-e515-48be-ae32-7068b833be7",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2467-frontend-developer/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Platzi",
+      "TITLE": "Python Challenge",
+      "DATE": "Oct 2022",
+      "DESCRIPTION": "<p>I followed an optimized path to strengthen my foundation in Python programming, focusing especially on backend development.</p>",
+      "CREDENTIALS": "Credential ID 2a474433-8298-474a-b82d-3c5d4b75472a",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/2613-python-challenge-final-exam/diploma/detalle/"
+    },
+    {
+      "ICON": "platzi",
+      "PLATFORM": "Advanced Next.js Course",
+      "TITLE": "Advanced Next.js",
+      "DATE": "January 2025",
+      "DESCRIPTION": "<p>Learned to optimize <strong>Next.js 15</strong>, enhancing performance, security, and deployment of scalable applications with advanced practices.</p>",
+      "CREDENTIALS": "",
+      "LINK": "https://platzi.com/p/jeffercbs/curso/11553-nextjs15/diploma/detalle/"
+    },
+    {
+      "ICON": "default",
+      "PLATFORM": "Misión TIC 2022",
+      "TITLE": "Participation in Misión TIC 2022",
+      "DATE": "September 2021",
+      "DESCRIPTION": "<p>I developed web projects using <strong>Node.js, JavaScript, CSS, HTML, and React</strong> and attended <strong>talks with experts</strong>, gaining practical insights into the tech industry.</p>",
+      "CREDENTIALS": ""
+    }
+  ],
+  "TESTIMONIES_TAG": "Testimonies",
+  "TESTIMONIES_TITLE": "More Than Words, Results",
+  "TESTIMONIES_DESCRIPTION": "Testimonials from clients, colleagues, and collaborators that reflect the impact of my work on every project. 🚀",
+  "PROJECTS_TAG": "Projects",
+  "PROJECTS_TITLE": "Projects that speak for themselves",
+  "PROJECTS_DESCRIPTION": "Discover the projects I've worked on, creating innovative solutions with real impact. 🚀",
+  "PROJECT_CASE": "Case study",
+  "CLIENTS_TITLE": "Clients",
+  "CLIENTS_DESC": "",
+  "TOOLS_TITLE": "Integrate the latest technology into your next project",
+  "TOOLS_DESCRIPTION": "The most modern tools to create innovative, scalable, and secure solutions tailored to your needs. 🚀",
+  "TOOLS_TAG": "Tools",
+  "MENTORING_DESC": "Accelerate your professional growth with personalized technology mentoring. Whether you're a university student or a professional with an ongoing project, I offer practical guidance and specific knowledge to overcome technical challenges. Invest in your development and achieve tangible results with sessions tailored to your needs. Schedule your first consultation today!",
+  "FOOTER_MSG": "Almost all rights reserved",
+  "SERVICES_TAG": "Services",
+  "SERVICES_TITLE": "Professional Digital Solutions",
+  "SERVICES_DESCRIPTION": "I'll guide you every step of the way to take your project to the next level. From developing your website to IT mentoring. Ready to grow your business or schedule a mentoring session? Contact me now and let's get started!",
+  "SERVICES": [
+    {
+      "TITLE": "Professional Web Development",
+      "DESCRIPTION": "I help you create the perfect website for your brand or business. I design custom solutions that reflect your identity and attract your ideal customers. Ready to stand out online?",
+      "ICON": "code"
+    },
+    {
+      "TITLE": "Tech Mentoring",
+      "DESCRIPTION": "Need support with your IT project or want to deepen your knowledge? I provide guidance for business projects and university students looking to improve their technical skills. Move forward with confidence!",
+      "ICON": "lightbulb",
+      "LINK": "/services/mentoring"
+    },
+    {
+      "TITLE": "Direct Contact",
+      "DESCRIPTION": "Do you have a project in mind or need specialized advice? Share your details and let's talk about how I can help you achieve your goals. Taking the first step is just a click away!",
+      "ICON": "handshake",
+      "LINK": "/contact"
+    }
+  ],
+  "BECAUSE": [
+    {
+      "TITLE": "Experience",
+      "DESCRIPTION": "I've had the chance to share knowledge with tech experts at conferences, talks, and meetups, and I've worked on both client and personal projects."
+    },
+    {
+      "TITLE": "Exclusive Client Panel",
+      "DESCRIPTION": "You'll have access to a portal where you can see real-time progress, download contracts, review implemented features, and track delivery timelines."
+    },
+    {
+      "TITLE": "Optimized and Responsive Design",
+      "DESCRIPTION": "I create modern, attractive, and responsive websites that work smoothly on both computers and mobile devices."
+    },
+    {
+      "TITLE": "Tailored Packages for Your Business",
+      "DESCRIPTION": "I offer flexible and customized plans based on the needs of your business or brand, ensuring you get the best solution for your project."
+    },
+    {
+      "TITLE": "🛠️ Continuous Support and Assistance",
+      "DESCRIPTION": "I’ll always be available to answer your questions and address any concerns during your project’s development."
+    }
+  ]
+}
