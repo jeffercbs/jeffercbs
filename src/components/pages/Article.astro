@@ -3,11 +3,12 @@ import Auth from "@/components/Auth.astro";
 import LiteVideo from "@/components/LiteVideo.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/prism.css";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import ShareComponent from "../ShareComponent.astro";
-import { Icon } from "astro-icon/components";
+import Topics from "../Topics.astro";
 
 export type Props = CollectionEntry<"blog">;
 const {
@@ -29,11 +30,12 @@ const { remarkPluginFrontmatter } = await render(Astro.props);
 <Layout
   title={title}
   description={description}
-  image={cover.src}
+  image={cover}
   publishedTime={createdAt.toISOString()}
   type="article"
   tags={tags}
 >
+  <Topics />
   <article>
     <div class="w-full h-fit mb-8 p-2 z-[1]">
       <div class="md:max-w-4xl w-full mx-auto">
@@ -43,7 +45,12 @@ const { remarkPluginFrontmatter } = await render(Astro.props);
               <small> 👈 regresar </small>
             </a>
           </div>
-          <h1 class="md:text-5xl text-3xl text-pretty font-bold">{title}</h1>
+          <h1
+            transition:name={`article-${title}`}
+            class="md:text-5xl text-3xl text-pretty font-bold"
+          >
+            {title}
+          </h1>
           <p
             class="font-medium mt-2 md:text-xl text-lg opacity-80"
             set:text={description}
@@ -67,8 +74,8 @@ const { remarkPluginFrontmatter } = await render(Astro.props);
                     target="_blank"
                     class="flex items-center text-sm gap-x-2 opacity-80 hover:opacity-100 ease-in-out transition-opacity"
                   >
-                    <span class="md:hidden flex">Medium</span>
                     <Icon name="medium" class="size-8" />
+                    <span class="md:hidden flex">Medium</span>
                   </a>
                 )
               }
@@ -78,14 +85,14 @@ const { remarkPluginFrontmatter } = await render(Astro.props);
         </div>
         {
           type == "youtube" ? (
-            <LiteVideo videoId={videoId || ""} backgroundImage={cover.src} />
+            <LiteVideo videoId={videoId || ""} backgroundImage={cover} />
           ) : (
             <Image
-              src={cover}
+              src={cover || ""}
               alt={title}
               width={1000}
               height={700}
-              class="object-cover aspect-video rounded-2xl shadow-2xl shadow-primary/20"
+              class="object-cover aspect-video rounded-2xl"
             />
           )
         }

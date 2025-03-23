@@ -12,7 +12,7 @@ const i18n = getI18n({ currentLocale });
 
 <section
   id="me"
-  class="min-h-dvh h-fit grid place-content-center md:py-12 pb-16 pt-20 relative"
+  class="min-h-dvh h-fit grid place-content-center md:pt-24 pb-16 pt-20 relative"
   style="background: var(--gradient);"
 >
   <div
@@ -47,7 +47,7 @@ const i18n = getI18n({ currentLocale });
         {i18n.QUOTE_TITLE[0]}
       </span>
       <h1
-        class="text-blue-100 text-pretty font-bold"
+        class="text-blue-100 text-pretty font-bold animate-fade-in"
         set:text={i18n.QUOTE_TITLE[1]}
       />
     </div>

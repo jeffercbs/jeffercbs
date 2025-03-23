@@ -111,7 +111,7 @@ export default function FormContent() {
 
               {errors[currentQuestion.id as keyof typeof errors] && (
                 <small
-                  id={`error-${name}`}
+                  id={`error-${currentQuestion.id}`}
                   className="rounded-lg bg-white text-red-800 shadow-2xl px-3 py-1 text-sm animate-slide-up"
                 >
                   {errors[currentQuestion.id as keyof typeof errors]}

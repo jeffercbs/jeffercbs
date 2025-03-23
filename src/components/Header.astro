@@ -15,7 +15,7 @@ const isPathAbsolute = ["/", "/en/"].includes(pathname);
 
 <header
   class:list={[
-    "h-16 flex items-center z-[10000]",
+    "h-14 flex items-center z-[10000]",
     { "absolute inset-x-0": isPathAbsolute },
     { relative: !isPathAbsolute },
   ]}
@@ -50,9 +50,9 @@ const isPathAbsolute = ["/", "/en/"].includes(pathname);
               <a
                 href={!item.ACTIVE ? "#" : item.LINK}
                 aria-disabled={!item.ACTIVE}
-                class="flex flex-col font-medium text-base group-hover:text__glowing relative ease-out duration-300"
+                class="flex flex-col font-medium group-hover:text__glowing relative ease-out duration-300"
               >
-                <small class="text-sm">{item.LABEL}</small>
+                <span class="text-sm">{item.LABEL}</span>
                 {!item.ACTIVE && (
                   <small class="mx-auto" set:text={i18n.HEADER_PROX} />
                 )}

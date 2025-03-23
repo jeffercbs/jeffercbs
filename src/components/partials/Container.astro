@@ -20,19 +20,29 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={["relative py-16 h-fit", classes]} id={id}>
+<section
+  class:list={[
+    "relative py-12 [animation:linear_reveal_both] ![animation-range:entry_5%_cover_30%] ![animation-timeline:view()] h-fit",
+    classes,
+  ]}
+  id={id}
+>
   <div
     class="flex md:flex-row flex-col items-start md:items-center justify-between px-2 pb-6"
   >
     <div class="container text-left md:max-w-2xl w-full mb-4 md:px-0">
       {
         tag && (
-          <span class="text-white bg-gradient-to-tl from-primary to-blue-400 capitalize px-4 py-1 rounded-full inline-block mb-4 font-medium">
+          <span class="capitalize px-4 py-0.5 bg-primary text-white rounded-full inline-block mb-4 font-medium">
             {tag}
           </span>
         )
       }
-      {title && <h2 class="text-5xl font-bold text-balance">{title}</h2>}
+      {
+        title && (
+          <h2 class="text-4xl capitalize font-bold text-balance">{title}</h2>
+        )
+      }
       {
         description && (
           <p class="mt-4 opacity-70 text-lg text-pretty">{description}</p>

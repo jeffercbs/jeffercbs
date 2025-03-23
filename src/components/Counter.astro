@@ -2,78 +2,184 @@
 type Props = {
   value?: number;
   duration?: number;
+  easing?: "linear" | "easeOutExpo" | "easeOutQuint" | "easeOutCubic";
+  precision?: number;
 };
 
-const { value = 10, duration = 2 } = Astro.props;
+const {
+  value = 10,
+  duration = 4,
+  easing = "easeOutCubic",
+  precision = 0,
+} = Astro.props;
 ---
 
-<counter-up data-value={value} data-duration={duration}>
-  <span class="flex items-start justify-center my-5 gap-4 *:font-extrabold">
-    <span id="icon-plus" class="md:text-9xl text-7xl"> + </span>
-    <span
-      id="counter"
-      class="md:text-9xl text-7xl transition-transform ease-in-out"></span>
-  </span>
+<counter-up
+  data-value={value}
+  data-duration={duration}
+  data-easing={easing}
+  data-precision={precision}
+>
+  <div class="flex flex-col items-center justify-center my-5 gap-2">
+    <div class="md:text-9xl text-6xl font-extrabold text-center">
+      <div id="digits-container" class="flex"></div>
+    </div>
+  </div>
 </counter-up>
 
 <script>
+  type EasingType = "linear" | "easeOutExpo" | "easeOutQuint" | "easeOutCubic";
+
   class ContadorAnimado extends HTMLElement {
-    private _counter: number = 0;
     private _finalValue: number = 0;
-    private _duration: number = 2;
-    private _startTime: number = 0;
-    private _frameId: number | null = null;
+    private _duration: number = 4;
+    private _frameId: ReturnType<typeof setTimeout> | null = null;
     private _observer: IntersectionObserver;
-    private _container: HTMLElement =
-      document.getElementById("counter") || document.createElement("span");
+    private _digitsContainer: HTMLElement;
+    private _easing: EasingType = "easeOutCubic";
+    private _precision: number = 0;
+    private _hasAnimated: boolean = false;
+    private _currentValue: number = 0;
+    private _label: string = "";
 
     constructor() {
       super();
-
+      this._digitsContainer =
+        this.querySelector("#digits-container") ||
+        document.createElement("div");
       this._observer = new IntersectionObserver(
-        (entries) => {
+        (entries: IntersectionObserverEntry[]) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !this._hasAnimated) {
               this.initAnimation();
+              this._hasAnimated = true;
             }
           });
         },
-        { threshold: 0.5 }
+        { threshold: 0.1, rootMargin: "0px 0px 50px 0px" }
       );
     }
 
-    connectedCallback() {
+    connectedCallback(): void {
       this._finalValue = Number(this.dataset.value) || 0;
-      this._duration = Number(this.dataset.duration) || 2;
+      this._duration = Number(this.dataset.duration) || 4;
+      this._easing = (this.dataset.easing as EasingType) || "easeOutCubic";
+      this._precision = Number(this.dataset.precision) || 0;
+      this._label = this.dataset.label || "Proyectos Realizados";
+      this._currentValue = 0;
 
-      this.render();
+      this.updateDigits(0);
       this._observer.observe(this);
+
+      const labelElement = this.querySelector("#counter-label");
+      if (labelElement) {
+        labelElement.textContent = this._label;
+      }
     }
 
-    render() {
-      this._container.textContent = this._counter.toString() || "";
+    disconnectedCallback(): void {
+      this._observer.disconnect();
+      if (this._frameId) {
+        clearTimeout(this._frameId);
+      }
     }
 
-    initAnimation() {
-      this._startTime = performance.now();
+    easingFunctions = {
+      linear: (t: number): number => t,
+      easeOutExpo: (t: number): number =>
+        t === 1 ? 1 : 1 - Math.pow(2, -10 * t),
+      easeOutQuint: (t: number): number => 1 - Math.pow(1 - t, 5),
+      easeOutCubic: (t: number): number => 1 - Math.pow(1 - t, 3),
+    };
 
-      const animate = (currentTime: number) => {
-        const timeElapsed = (currentTime - this._startTime) / 1000;
-        const progress = Math.min(timeElapsed / this._duration, 1);
-        this._counter = this._finalValue * progress;
+    updateDigits(value: number): void {
+      const formattedValue = new Intl.NumberFormat("es-ES", {
+        minimumFractionDigits: this._precision,
+        maximumFractionDigits: this._precision,
+      }).format(value);
 
-        this._container.textContent = this._counter.toFixed(0);
+      const digits = formattedValue.split("");
+      this._digitsContainer.innerHTML = "";
 
-        if (progress < 1) {
-          this._frameId = requestAnimationFrame(animate);
+      digits.forEach((digit: string, index: number) => {
+        const digitElement = document.createElement("span");
+        digitElement.textContent = digit;
+
+        if (digit !== "." && digit !== ",") {
+          digitElement.className = "inline-block digit-animate";
+          digitElement.style.animationDelay = `${index * 0.1}s`;
         } else {
-          cancelAnimationFrame(this._frameId!);
+          digitElement.className = "inline-block";
+        }
+
+        this._digitsContainer.appendChild(digitElement);
+      });
+    }
+
+    initAnimation(): void {
+      const easingFunction =
+        this.easingFunctions[
+          this._easing as keyof typeof this.easingFunctions
+        ] || this.easingFunctions.easeOutCubic;
+
+      const totalSteps = Math.min(this._finalValue, 50);
+      const stepInterval = (1000 * this._duration) / totalSteps;
+      let currentStep = 0;
+
+      const stepAnimation = (): void => {
+        currentStep++;
+        const progress = currentStep / totalSteps;
+        const easedProgress = easingFunction(Math.min(progress, 1));
+
+        const newValue =
+          Math.floor(
+            this._finalValue * easedProgress * Math.pow(10, this._precision)
+          ) / Math.pow(10, this._precision);
+
+        if (newValue !== this._currentValue) {
+          this._currentValue = newValue;
+          this.updateDigits(newValue);
+        }
+
+        if (currentStep < totalSteps) {
+          this._frameId = setTimeout(() => {
+            requestAnimationFrame(stepAnimation);
+          }, stepInterval);
+        } else {
+          this.updateDigits(this._finalValue);
         }
       };
 
-      this._frameId = requestAnimationFrame(animate);
+      this._frameId = setTimeout(() => {
+        requestAnimationFrame(stepAnimation);
+      }, 300);
     }
   }
+
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes count-slide {
+      0% { 
+        transform: translateY(30%);
+        opacity: 0;
+      }
+      100% { 
+        transform: translateY(0);
+        opacity: 1; 
+      }
+    }
+    
+    .digit-animate {
+      animation: count-slide 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      opacity: 0;
+      transform: translateY(30%);
+    }
+    
+    #digits-container {
+      min-height: 1.2em;
+    }
+  `;
+  document.head.appendChild(style);
 
   customElements.define("counter-up", ContadorAnimado);
 </script>

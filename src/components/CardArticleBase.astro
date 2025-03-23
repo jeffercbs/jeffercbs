@@ -2,70 +2,72 @@
 import { formatDate } from "@/utils/format_date";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import Badge from "./Badge.astro";
 
 type Props = CollectionEntry<"blog"> & {
-  orientation?: "horizontal" | "vertical";
+  orientation?: "horizontal" | "vertical" | "minimal";
 };
 
 const {
   orientation = "vertical",
 
-  data: { title, description, cover, createdAt, tags },
+  data: { title, description, cover, createdAt },
 } = Astro.props;
 ---
 
-<article class="pb-3">
+<article class="pb-8 border-b border-b-white/30">
   <div
     class:list={[
       "flex",
       {
         "flex-col gap-4": orientation == "vertical",
-        "md:flex-row flex-col gap-2": orientation == "horizontal",
+        "md:flex-row flex-col gap-4": orientation == "horizontal",
       },
     ]}
   >
-    <div class="overflow-hidden rounded-lg shadow-lg">
-      <Image
-        src={cover}
-        alt="Blog post illustration"
-        fit="contain"
-        width={200}
-        height={200}
-        class:list={[
-          "group-hover:scale-105 transition-transform duration-300",
-          {
-            "aspect-video size-full": orientation == "vertical",
-            "md:aspect-square aspect-video md:size-32 size-full":
-              orientation == "horizontal",
-          },
-        ]}
-      />
-    </div>
+    {
+      orientation !== "minimal" && (
+        <div
+          class:list={[
+            "overflow-hidden rounded-lg grid place-content-center shadow-lg",
+            { "py-2": orientation == "horizontal" },
+          ]}
+        >
+          <Image
+            src={cover || "/images/placeholder.jpg"}
+            alt="Blog post illustration"
+            width={200}
+            height={200}
+            class:list={[
+              "object-cover rounded-lg",
+              {
+                "aspect-video size-full min-h-42": orientation == "vertical",
+                "aspect-video md:w-52 w-full md:h-32":
+                  orientation == "horizontal",
+              },
+            ]}
+          />
+        </div>
+      )
+    }
     <div class="flex-1 flex flex-col relative">
-      {
-        orientation !== "horizontal" && (
-          <div class="flex flex-wrap items-center gap-2 text-xs text-neutral-300">
-            <time
-              datetime={createdAt.toDateString()}
-              class="font-medium text-xs"
-              set:text={formatDate(createdAt)}
-            />
-            {tags.map((tag) => (
-              <Badge>
-                <small set:text={tag} />
-              </Badge>
-            ))}
-          </div>
-        )
-      }
-      <div>
+      <div class="mb-2 text-neutral-300">
+        <time
+          datetime={createdAt.toDateString()}
+          class="font-medium text-xs"
+          set:text={formatDate(createdAt)}
+        />
+      </div>
+
+      <div class="mt-2">
         <h3
-          transition:name={`title-${title}`}
+          transition:name={`article-${title}`}
           class="text-xl text-pretty font-bold tracking-tight group-hover:text-secondary transition-colors ease-in-out duration-300"
           set:text={title}
         />
-        <p class="text-neutral-300 mt-1" set:text={description} />
+        <p
+          class="text-neutral-300 text-pretty mt-1 line-clamp-3"
+          set:text={description}
+        />
       </div>
     </div>
   </div>
