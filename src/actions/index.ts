@@ -54,8 +54,6 @@ export const server = {
           .from(Newsletters)
           .where(eq(Newsletters.email, email));
 
-        console.log(!foundEmail, !!formSchema, foundEmail, email);
-
         if (!foundEmail.length) {
           const idHash = createHash("sha256").update(email).digest("hex");
           await db.insert(Newsletters).values({ id: idHash, email });

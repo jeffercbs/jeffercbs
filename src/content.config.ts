@@ -3,21 +3,20 @@ import { defineCollection, z } from "astro:content";
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: "*.mdx", base: "./src/data/blog" }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      draft: z.boolean().default(false),
-      videoId: z.string().optional(),
-      cover: image(),
-      medium: z.string().optional(),
-      tags: z.array(z.string()),
-      type: z.string().default("article"),
-      createdAt: z
-        .string()
-        .or(z.date())
-        .transform((val) => new Date(val)),
-    }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    draft: z.boolean().default(false),
+    videoId: z.string().optional(),
+    cover: z.string().optional(),
+    medium: z.string().optional(),
+    tags: z.array(z.string()),
+    type: z.string().default("article"),
+    createdAt: z
+      .string()
+      .or(z.date())
+      .transform((val) => new Date(val)),
+  }),
 });
 
 const ProjectsCollection = defineCollection({
