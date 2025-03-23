@@ -31,6 +31,7 @@ export default defineConfig({
     icon(),
     mdx({
       gfm: true,
+      syntaxHighlight: "prism",
       extendMarkdownConfig: false,
       ...markdownConfig,
     }),
