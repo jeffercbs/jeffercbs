@@ -1,0 +1,40 @@
+---
+export const prerender = true;
+import CardArticle from "@/components/CardArticle.astro";
+import Container from "@/components/partials/Container.astro";
+import Topics from "@/components/Topics.astro";
+import Layout from "@/layouts/Layout.astro";
+import { filterArticlesByTags, filterUniqueTopics } from "@/utils/get-tags";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const articles = await getCollection("blog", (entry) => !entry.data.draft);
+  const tags = filterUniqueTopics(articles);
+
+  return tags.map((tag) => {
+    const entries = filterArticlesByTags(tag, articles);
+
+    return {
+      params: { topic: tag },
+      props: { entries },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { topic } = Astro.params;
+const { entries } = Astro.props;
+---
+
+<Layout title={topic}>
+  <Topics />
+  <Container id={`topic-${topic}`} class="hero" title={topic} tag="topic">
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-4 grid-cols-1">
+      {
+        entries.map((entry) => (
+          <CardArticle {...entry} orientation="vertical" />
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

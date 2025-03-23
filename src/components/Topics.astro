@@ -1,0 +1,22 @@
+---
+import { filterUniqueTopics } from "@/utils/get-tags";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("blog", (entry) => !entry.data.draft);
+const topics = filterUniqueTopics(entries);
+---
+
+<div class="bg-primary mb-8 md:overflow-x-hidden overflow-x-auto">
+  <nav class="flex justify-between items-center py-2 gap-x-12 hero">
+    {
+      topics.map((topic) => (
+        <a
+          href={`/topics/${topic}`}
+          class="font-medium hover:underline md:text-base text-sm capitalize"
+        >
+          {topic}
+        </a>
+      ))
+    }
+  </nav>
+</div>
