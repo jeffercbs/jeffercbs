@@ -1,11 +1,12 @@
 ---
 title: "Mejores practicas para APIs Seguras en NestJS: Una Guía desde la Experiencia"
-description: "Descubre las mejores prácticas para mejorar la seguridad de tu backend en NestJS. En esta guía basada en mi experiencia real, exploraremos estrategias clave para proteger tus APIs."
+description: "Descubre prácticas efectivas para proteger tu backend en NestJS con estrategias probadas que he implementado en proyectos reales."
 cover: "https://res.cloudinary.com/jeffercbs/image/upload/f_auto,q_auto/v1/jeffercbs/i1jyqa8lr9iracq1nfdq"
 medium: "https://jeffercbs.medium.com/mejores-practicas-para-apis-seguras-en-nestjs-una-gu%C3%ADa-desde-la-experiencia-51b3915d637b"
 createdAt: "03/09/2025"
 tags:
-    - Desarrollo
+    - desarrollo
+    - nestjs
 ---
 
 Después de varios proyectos backends y microservicios para e-commerce y plataformas web con **NestJS**, quiero compartir algunas de las lecciones que he aprendido sobre cómo desarrollar APIs seguras, un factor muy importante cuando las amenazas cibernéticas son cada vez más comunes.
@@ -125,7 +126,7 @@ Para que comprendamos mejor cómo se relacionan los Guards, Pipes y Middleware, 
 8. **Filters**: Manejan excepciones en caso de errores.
 
 
-### Implementa Limitación de Solicitudes (Rate Limiting)
+## Implementa Limitación de Solicitudes (Rate Limiting)
 
 He visto cómo los ataques de fuerza bruta pueden colapsar un servidor. El rate limiting es crucial:
 
@@ -150,7 +151,7 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 export class AppModule {}
 ```
 
-### Configura Encabezados de Seguridad HTTP
+## Configura Encabezados de Seguridad HTTP
 
 Un consejo que me hubiera gustado recibir cuando empecé: configurar los headers HTTP adecuados es sorprendentemente efectivo:
 
@@ -160,7 +161,7 @@ import helmet from 'helmet';
 app.use(helmet());
 ```
 
-### Usa Variables de Entorno para Datos Sensibles
+## Usa Variables de Entorno para Datos Sensibles
 
 Nunca, jamás, guardes secretos en tu código:
 
@@ -186,7 +187,7 @@ export class AuthService {
 }
 ```
 
-### Implementa CORS Correctamente
+## Implementa CORS Correctamente
 
 En mis primeros proyectos, me encontré con problemas por no configurar CORS adecuadamente:
 
@@ -199,7 +200,7 @@ app.enableCors({
 ```
 
 
-### Implementa Registro de Actividad (Logging)
+## Implementa Registro de Actividad (Logging)
 
 No subestimes el valor de un buen sistema de logs:
 
