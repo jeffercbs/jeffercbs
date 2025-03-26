@@ -2,13 +2,16 @@
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-up: fadeInUp 0.5s ease-in-out;
   --animate-slide-up-out: slideUpOut 0.5s ease-in-out;
 
-  --color-primary: #5356ff;
-  --color-secondary: #1def8b;
+  --color-primary: var(--primary);
+  --color-primary-forground: var(--primary-forground);
+  --color-secondary: var(--secondary);
 }
 
 @layer components {
@@ -54,26 +57,37 @@
     }
   }
 }
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --primary: #068fff;
+    --secondary: #4e4feb;
+    --primary-forground: #d0eaff;
+    --secondary-forground: #a8a8d0;
+    --scroll: rgba(62, 70, 92, 0.3);
 
-:root {
-  color-scheme: light dark;
-  --gradient: radial-gradient(at 70% 40%, #000000 0%, transparent 60%),
-    radial-gradient(at 28% 66%, #4e4feb 0%, transparent 50%),
-    radial-gradient(at 98% 9%, #068fff 0%, transparent 40%),
-    radial-gradient(at 48% 67%, #eeeeee 0%, transparent 30%);
+    --gradient: radial-gradient(at 73% 68%, transparent 0%, transparent 60%),
+      radial-gradient(at 41% 7%, #4e4feb 0%, transparent 50%),
+      radial-gradient(at 25% 92%, #068fff 0%, transparent 40%),
+      radial-gradient(at 49% 95%, #eeeeee 0%, transparent 30%);
 
-  --gradient-secondary: radial-gradient(
-      at 30% 12%,
-      #5356ff 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 96% 58%, #378ce7 0px, transparent 50%),
-    radial-gradient(at 24% 18%, #ffc947 0px, transparent 50%),
-    radial-gradient(at 9% 5%, #dff5ff 0px, transparent 50%), #5356ff;
+    --gradient-secondary: radial-gradient(
+        at 40% 38%,
+        transparent 0%,
+        transparent 60%
+      ),
+      radial-gradient(at 91% 55%, #09a8fa 0%, transparent 50%),
+      radial-gradient(at 27% 63%, #41c5d3 0%, transparent 40%),
+      radial-gradient(at 76% 35%, #d0f1cf 0%, transparent 30%);
 
-  --text-shadow: 0 0 0.5rem var(--color-green-400),
-    0 0 1rem var(--color-green-400), 0 0 2rem var(--color-green-400),
-    0 0 4rem var(--color-green-400);
+    --text-shadow: 0 0 0.5rem var(--color-green-400),
+      0 0 1rem var(--color-green-400), 0 0 2rem var(--color-green-400),
+      0 0 4rem var(--color-green-400);
+  }
+
+  .dark {
+    --scroll: rgba(255, 255, 255, 0.432);
+  }
 }
 *,
 html,
@@ -95,12 +109,9 @@ body {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--scroll);
   backdrop-filter: blur(10px);
   border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
 }
 .hero {
   margin: 0 auto;
@@ -118,19 +129,18 @@ body {
 
 @layer components {
   @keyframes reveal {
-      0% {
-        opacity: 0;
-        translate: 0 100px
-      }
-  
-      50% {
-        opacity: .1
-      }
-  
-      to {
-        opacity: 1;
-        translate: 0 0
-      }
+    0% {
+      opacity: 0;
+      translate: 0 100px;
     }
 
+    50% {
+      opacity: 0.1;
+    }
+
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
 }

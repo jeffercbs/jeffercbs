@@ -1,5 +1,5 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: "*.mdx", base: "./src/data/blog" }),
@@ -17,6 +17,17 @@ const blogCollection = defineCollection({
       .or(z.date())
       .transform((val) => new Date(val)),
   }),
+});
+
+const groupCollections = defineCollection({
+  loader: glob({ pattern: "*.mdx", base: "./src/data/collections" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      cover: image(),
+      relatedPosts: z.array(reference("blog")),
+    }),
 });
 
 const ProjectsCollection = defineCollection({
@@ -60,4 +71,5 @@ export const collections = {
   blog: blogCollection,
   projects: ProjectsCollection,
   courses: coursesCollection,
+  groupCollections,
 };
