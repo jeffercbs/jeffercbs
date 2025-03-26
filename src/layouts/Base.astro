@@ -18,7 +18,9 @@ interface Props {
     <BaseHead {...Astro.props} />
     <ClientRouter />
   </head>
-  <body class="bg-black text-neutral-200 antialiased relative">
+  <body
+    class="dark:bg-neutral-900 bg-sky-50 dark:text-white text-black antialiased relative"
+  >
     <slot />
   </body>
 </html>

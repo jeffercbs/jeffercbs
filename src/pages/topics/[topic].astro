@@ -28,13 +28,20 @@ const { entries } = Astro.props;
 
 <Layout title={topic}>
   <Topics />
-  <Container id={`topic-${topic}`} class="hero" title={topic} tag="topic">
-    <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-4 grid-cols-1">
+  <Container
+    id={`topic-${topic}`}
+    class="hero"
+    title={`Topic: ${topic}`}
+    tag="topic"
+  >
+    <ul class="columns-1 md:columns-2">
       {
         entries.map((entry) => (
-          <CardArticle {...entry} orientation="vertical" />
+          <li class="break-inside-avoid md:p-6 p-0">
+            <CardArticle {...entry} />
+          </li>
         ))
       }
-    </div>
+    </ul>
   </Container>
 </Layout>
