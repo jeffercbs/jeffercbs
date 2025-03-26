@@ -14,13 +14,13 @@ const projects = (await getCollection("projects")).sort(
 <Container id="projects" class="hero">
   <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 grid-rows-5 gap-2">
     <div
-      class="text-center hover:shadow-2xl size-full rounded-lg grid place-content-center"
+      class="text-center hover:shadow-2xl size-full rounded-lg grid place-content-center border dark:border-white/10 border-black/10"
       style="background: var(--gradient-secondary);"
     >
       <Counter value={TOTAL_PROJECTS} />
       <div class="flex flex-col *:w-full *:font-medium *:md:text-3xl text-2xl">
         <span class="py-1 px-5 rounded-full"> Proyectos </span>
-        <span class="py-1 px-5 bg-indigo-300 text-indigo-800 rounded-full">
+        <span class="py-1 px-5 bg-primary text-primary-forground rounded-full">
           Desarrollados
         </span>
       </div>

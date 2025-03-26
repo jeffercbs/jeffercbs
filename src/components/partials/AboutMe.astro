@@ -6,11 +6,11 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<section id="about" class="h-fit py-14">
+<section id="about" class="h-fit">
   <div class="flex md:flex-row gap-8 flex-col">
     <div class="md:w-2/5 w-full px-6">
       <CodeDeco
-        class="text-secondary opacity-100"
+        class="text-secondary dark:text-secondary-forground opacity-100"
         codelines={[
           "/**",
           " * HTML",
@@ -24,7 +24,7 @@ const i18n = getI18n({ currentLocale });
     </div>
     <div class="flex-1 flex md:flex-row flex-col gap-x-8 gap-y-4 my-4">
       <div
-        class="flex flex-col flex-1 gap-y-4 md:order-1 order-2 [&>p]:text-[17px] [&>p]:text-pretty [&>p>em]:italic [&>p>strong]:font-mono [&>p>strong]:px-1 [&>p>strong]:text-yellow-100"
+        class="flex flex-col flex-1 gap-y-4 md:order-1 order-2 [&>p]:text-[17px] [&>p]:text-pretty [&>p>em]:italic [&>p>strong]:font-mono [&>p>strong]:px-1 [&>p>strong]:text-primary dark:[&>p>strong]:text-primary-forground"
         set:html={i18n.ABOUT_DESC}
       />
     </div>

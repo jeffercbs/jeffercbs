@@ -3,6 +3,7 @@ import { getI18n } from "@/i18n";
 import { Icon } from "astro-icon/components";
 import LanguageSelector from "./LanguageSelector.astro";
 import MobileMenu from "./MobileMenu.astro";
+import ToggleTheme from "./ToggleTheme.astro";
 
 const {
   currentLocale,
@@ -27,15 +28,18 @@ const isPathAbsolute = ["/", "/en/"].includes(pathname);
         class="hover:scale-105 transition-transform ease-in-out duration-300 flex justify-start items-center gap-x-2"
       >
         <span class="font-semibold"> jeffercbs </span>
-        <small class="bg-secondary text-black rounded-full px-2"> beta </small>
+        <small class="bg-secondary text-white rounded-full px-2"> beta </small>
       </a>
       <div class="md:mx-2 md:inline hidden">
         <LanguageSelector />
       </div>
     </div>
 
-    <nav>
-      <ul class="md:flex hidden gap-x-10 my-auto h-fit" id="nav-items">
+    <nav class="flex justify-end items-center md:gap-x-8 gap-x-4">
+      <ul
+        class="md:flex items-center hidden gap-x-10 my-auto h-fit"
+        id="nav-items"
+      >
         {
           i18n.HEADER.map((item) => (
             <li
@@ -61,14 +65,15 @@ const isPathAbsolute = ["/", "/en/"].includes(pathname);
           ))
         }
       </ul>
+      <ToggleTheme />
+      <button
+        id="mobile-menu-toggle"
+        aria-label="mobile menu toggle"
+        class="md:hidden flex"
+      >
+        <Icon name="menu" class="size-6" />
+      </button>
     </nav>
-    <button
-      id="mobile-menu-toggle"
-      aria-label="mobile menu toggle"
-      class="md:hidden flex"
-    >
-      <Icon name="menu" class="size-6" />
-    </button>
   </div>
   <MobileMenu />
 </header>

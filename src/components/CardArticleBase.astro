@@ -1,7 +1,7 @@
 ---
 import { formatDate } from "@/utils/format_date";
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog"> & {
   orientation?: "horizontal" | "vertical" | "minimal";
@@ -10,11 +10,13 @@ type Props = CollectionEntry<"blog"> & {
 const {
   orientation = "vertical",
 
-  data: { title, description, cover, createdAt },
+  data: { title, description, cover, tags, createdAt },
 } = Astro.props;
+
+const { remarkPluginFrontmatter } = await render(Astro.props);
 ---
 
-<article class="pb-8 border-b border-b-white/30">
+<article class="pb-8">
   <div
     class:list={[
       "flex",
@@ -27,8 +29,9 @@ const {
     {
       orientation !== "minimal" && (
         <div
+          style="background: var(--gradient-secondary);"
           class:list={[
-            "overflow-hidden rounded-lg grid place-content-center shadow-lg",
+            "rounded-lg grid place-content-center py-4",
             { "py-2": orientation == "horizontal" },
           ]}
         >
@@ -38,9 +41,9 @@ const {
             width={200}
             height={200}
             class:list={[
-              "object-cover rounded-lg",
+              "object-cover rounded-lg grayscale-100 shadow-2xl group-hover:grayscale-0 group-hover:-translate-y-8 transition-all",
               {
-                "aspect-video size-full min-h-42": orientation == "vertical",
+                "aspect-video w-full md:h-72 h-48": orientation == "vertical",
                 "aspect-video md:w-52 w-full md:h-32":
                   orientation == "horizontal",
               },
@@ -49,25 +52,68 @@ const {
         </div>
       )
     }
-    <div class="flex-1 flex flex-col relative">
-      <div class="mb-2 text-neutral-300">
-        <time
-          datetime={createdAt.toDateString()}
-          class="font-medium text-xs"
-          set:text={formatDate(createdAt)}
-        />
-      </div>
+    <div>
+      <div class="mb-2 text-sky-800 dark:text-sky-100 opacity-80">
+        <div class="flex justify-center items-center w-fit gap-x-4 mb-6">
+          <div class="flex items-center gap-x-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+              ></path>
+            </svg>
+            <time
+              datetime={createdAt.toDateString()}
+              class="font-medium"
+              set:text={formatDate(createdAt)}
+            />
+          </div>
 
-      <div class="mt-2">
+          <div class="flex items-center gap-x-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+
+            <span set:text={remarkPluginFrontmatter.minutesRead} />
+          </div>
+        </div>
         <h3
           transition:name={`article-${title}`}
-          class="text-xl text-pretty font-bold tracking-tight group-hover:text-secondary transition-colors ease-in-out duration-300"
+          class="block font-semibold leading-tight dark:text-white dark:group-hover:text-sky-500 group-hover:text-sky-950 md:text-3xl text-lg group-hover:brightness-[115%]"
           set:text={title}
         />
         <p
-          class="text-neutral-300 text-pretty mt-1 line-clamp-3"
+          class="dark:text-sky-50 text-sky-900 opacity-85 text-pretty mt-1"
           set:text={description}
         />
+        <div class="flex flex-wrap gap-2 mt-2">
+          {
+            tags.map((tag) => (
+              <span
+                class="text-sky-900 text-base capitalize bg-sky-100 px-2 py-1 rounded-lg mr-2"
+                set:text={tag}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

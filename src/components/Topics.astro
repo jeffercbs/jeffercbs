@@ -6,7 +6,7 @@ const entries = await getCollection("blog", (entry) => !entry.data.draft);
 const topics = filterUniqueTopics(entries);
 ---
 
-<div class="bg-primary mb-8 md:overflow-x-hidden overflow-x-auto">
+<div class="bg-primary text-white mb-8 md:overflow-x-hidden overflow-x-auto">
   <nav class="flex justify-between items-center py-2 gap-x-12 hero">
     {
       topics.map((topic) => (

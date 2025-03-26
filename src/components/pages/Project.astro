@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 import Because from "../partials/Because.astro";
 import Tools from "../partials/Tools.astro";
@@ -25,11 +24,13 @@ const {
         <aside
           class="flex flex-col gap-y-4 md:pr-4 md:h-dvh h-full md:border-r border-r-white/40 pt-8 md:sticky inset-y-0 left-0 md:w-1/3 w-full justify-start"
         >
-          <h1 class="text-5xl font-bold text-gray-200 leading-tight mb-6">
+          <h1
+            class="text-5xl font-bold dark:text-white text-black leading-tight"
+          >
             {title}
           </h1>
 
-          <p class="text-gray-300 mb-5">
+          <p class="dark:text-white text-black opacity-60 mb-5">
             {description}
           </p>
 
@@ -39,7 +40,7 @@ const {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="bg-gradient-to-br rounded-full py-3 text-lg text-center hover:scale-105 transition-transform ease-in-out hover:shadow-blue-600/30 shadow-2xl from-primary font-medium to-indigo-400 w-full"
+                class="bg-gradient-to-br rounded-full py-3 text-white text-lg text-center hover:scale-105 transition-transform ease-in-out hover:shadow-blue-600/30 shadow-2xl from-primary font-medium to-indigo-400 w-full"
               >
                 Visitar
               </a>
@@ -59,44 +60,59 @@ const {
           }
           <div class="space-y-4 mt-4">
             <div class="flex justify-between py-2">
-              <span class="text-gray-200 font-medium">Framework</span>
-              <span class="text-gray-400" set:text={framework} />
+              <span
+                class="text-primary dark:text-primary-forground font-medium"
+              >
+                Framework</span
+              >
+              <span class="dark:text-white text-black" set:text={framework} />
             </div>
             <div class="flex justify-between py-2">
-              <span class="text-gray-200 font-medium">Proyecto</span>
-              <span class="text-gray-400" set:text={useCase} />
+              <span
+                class="text-primary dark:text-primary-forground font-medium"
+              >
+                Proyecto
+              </span>
+              <span class="dark:text-white text-black" set:text={useCase} />
             </div>
             <div class="flex justify-between py-2">
-              <span class="text-gray-200 font-medium">CSS</span>
-              <span class="text-gray-400" set:text={css} />
+              <span
+                class="text-primary dark:text-primary-forground font-medium"
+              >
+                CSS
+              </span>
+              <span class="dark:text-white text-black" set:text={css} />
             </div>
             <div class="flex justify-between py-2">
-              <span class="text-gray-200 font-medium">Database</span>
-              <span class="text-gray-400" set:text={database} />
+              <span
+                class="text-primary dark:text-primary-forground font-medium"
+              >
+                Database
+              </span>
+              <span class="dark:text-white text-black" set:text={database} />
             </div>
             <div class="flex justify-between py-2">
-              <span class="text-gray-200 font-medium">Auth</span>
-              <span class="text-gray-400" set:text={auth} />
+              <span
+                class="text-primary dark:text-primary-forground font-medium"
+              >
+                Auth
+              </span>
+              <span class="dark:text-white text-black" set:text={auth} />
             </div>
             {
               others && (
                 <div class="flex justify-between py-2">
-                  <span class="text-gray-200 font-medium">Otros</span>
-                  <span class="text-gray-400" set:text={others} />
+                  <span class="text-gray-200 font-medium">Otros </span>
+                  <span class="dark:text-white text-black" set:text={others} />
                 </div>
               )
             }
           </div>
         </aside>
         <div class="flex-1 w-full">
-          <div class="prose prose-invert prose-lg *:text-pretty">
-            <Image
-              src={cover}
-              alt={title}
-              class="object-cover size-full aspect-video rounded-lg"
-              width={500}
-              height={200}
-            />
+          <div
+            class="prose dark:prose-invert md:prose-lg prose-base mx-auto *:text-pretty"
+          >
             <slot />
           </div>
         </div>

@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+type Props = CollectionEntry<"groupCollections">;
+const {
+  data: { title, description, cover },
+} = Astro.props;
+---
+
+<article class="relative size-full rounded-lg overflow-hidden aspect-square">
+  <Image
+    src={cover}
+    alt={title}
+    height={200}
+    width={200}
+    class="object-cover size-full"
+  />
+  <div
+    class="absolute inset-0 z-[1] bg-gradient-to-tr from-black/20 via-transparent p-3"
+  >
+    <div class="container flex items-end h-full">
+      <h2 class="text-3xl font-bold">{title}</h2>
+    </div>
+  </div>
+</article>

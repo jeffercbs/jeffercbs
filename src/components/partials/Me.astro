@@ -32,9 +32,11 @@ const i18n = getI18n({ currentLocale });
       </div>
       <div>
         <div
-          class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full inline-block mb-2"
+          class="dark:bg-white/20 bg-black/20 text-white backdrop-blur-md px-4 py-1 rounded-full inline-block mb-2"
         >
-          <span class="text-secondary font-semibold">{TOTAL_PROJECTS}+</span>
+          <span class="text-primary-forground font-semibold">
+            {TOTAL_PROJECTS}+
+          </span>
           <span class="text-sm ml-1">
             {i18n.PROJECTS_COMPLETED}
           </span>
@@ -42,18 +44,19 @@ const i18n = getI18n({ currentLocale });
       </div>
     </div>
 
-    <div class="md:text-7xl text-4xl *:text-balance">
-      <span class="bg-primary px-2 rounded-md">
-        {i18n.QUOTE_TITLE[0]}
-      </span>
+    <div class="*:text-balance">
+      <span
+        class="bg-primary w-full dark:bg-primary-forground text-primary-forground md:px-2 dark:text-primary rounded-lg font-bold md:text-6xl text-3xl"
+        set:text={i18n.QUOTE_TITLE[0]}
+      />
       <h1
-        class="text-blue-100 text-pretty font-bold animate-fade-in"
+        class="dark:text-blue-100 md:text-7xl text-4xl animate-fade-in"
         set:text={i18n.QUOTE_TITLE[1]}
       />
     </div>
 
     <blockquote
-      class="text-xl text-white/95 border-l-4 border-secondary pl-4 my-8"
+      class="text-base md:text-xl font-medium dark:text-sky-50 text-black opacity-80 border-l-4 border-sky-10 pl-4 my-8"
     >
       "{i18n.QUOTE_Q}"
     </blockquote>
@@ -69,7 +72,7 @@ const i18n = getI18n({ currentLocale });
           >
             <Icon
               name={item.name}
-              class="size-7 text-white/80 hover:scale-105 transition-transform ease-in-out"
+              class="size-7  hover:scale-105 transition-transform ease-in-out"
             />
           </a>
         ))
@@ -77,29 +80,29 @@ const i18n = getI18n({ currentLocale });
     </div>
 
     <div
-      class="grid grid-cols-3 bg-zinc-800/50 p-4 rounded-xl *:text-center mt-10"
+      class="grid grid-cols-3 animate-slide-up dark:bg-zinc-800/50 bg-zinc-800/60 text-white/80 p-4 rounded-xl *:text-center mt-10 md:px-20"
     >
-      <div class="flex flex-col items-center border-r-2 border-white/50">
+      <div class="flex flex-col items-center border-r-2 border-white/60">
         <h3 class="font-bold text-xl md:text-2xl mb-1">
           {i18n.YEAR_EXPERIENCE}
         </h3>
-        <small class="text-white/80">
+        <small>
           {i18n.YEAR_EXPERIENCE_DESC}
         </small>
       </div>
 
-      <div class="flex flex-col items-center border-r-2 border-white/50">
+      <div class="flex flex-col items-center border-r-2 border-white/60">
         <h3 class="font-bold text-xl md:text-2xl mb-1">
           {TOTAL_CLIENTS}+
         </h3>
-        <small class="text-white/80">
+        <small>
           {i18n.HAPPY_CLIENTS}
         </small>
       </div>
 
       <div class="flex flex-col items-center">
         <h3 class="font-bold text-xl md:text-2xl mb-1">100%</h3>
-        <small class="text-white/80">
+        <small>
           {i18n.SATISFACTION}
         </small>
       </div>
