@@ -177,19 +177,14 @@
     {
       "TITLE": "Desarrollo Web Profesional",
       "DESCRIPTION": "Te ayudo a crear el sitio web perfecto para tu marca o negocio. Diseño soluciones a medida que reflejan tu identidad y atraen a tus clientes ideales. ¿Listo para destacar en línea?",
-      "ICON": "code"
+      "ICON": "code",
+      "LINK": "/contact"
     },
     {
       "TITLE": "Mentorías",
       "DESCRIPTION": "¿Necesitas apoyo en tu proyecto TI o profundizar en temas específicos? Te brindo asesoría tanto para proyectos empresariales como para estudiantes universitarios que desean mejorar sus conocimientos. ¡Avanza con confianza!",
       "ICON": "lightbulb",
       "LINK": "/services/mentoring"
-    },
-    {
-      "TITLE": "Contacto Directo",
-      "DESCRIPTION": "¿Tienes un proyecto en mente o necesitas asesoría especializada? Déjame tus datos y conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos. ¡El primer paso es contactarme!",
-      "ICON": "handshake",
-      "LINK": "/contact"
     }
   ],
   "BECAUSE": [
