@@ -75,7 +75,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
             </div>
         </header>
     </article>
-    <div class="max-w-none prose sm:prose-lg">
+    <div class="max-w-none prose prose-lg">
         <Content />
     </div>
     <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between sm:mt-12 sm:text-base">
@@ -91,8 +91,6 @@ const { Content, remarkPluginFrontmatter } = await render(post);
             )
         }
     </div>
-</BaseLayout>
-<div class="md:max-w-5xl w-full mx-auto">
     {
         (prevPost || nextPost) && (
             <div class="my-16 sm:my-24">
@@ -103,4 +101,5 @@ const { Content, remarkPluginFrontmatter } = await render(post);
         )
     }
     <Subscribe class="my-16 sm:my-24" />
-</div>
+</BaseLayout>
+<div class="md:max-w-5xl w-full mx-auto"></div>
