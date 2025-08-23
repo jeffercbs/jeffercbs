@@ -1,0 +1,32 @@
+{
+    "name": "jeffercbs",
+    "type": "module",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^4.2.3",
+        "@astrojs/rss": "^4.0.11",
+        "@astrojs/sitemap": "^3.3.0",
+        "@astrojs/vercel": "^8.2.6",
+        "@fontsource-variable/newsreader": "^5.2.6",
+        "@fontsource-variable/onest": "^5.2.9",
+        "@tailwindcss/vite": "^4.0.17",
+        "astro": "^5.5.6",
+        "astro-icon": "^1.1.5",
+        "marked": "^16.2.0",
+        "tailwindcss": "^4.0.17"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.16",
+        "mdast-util-to-string": "^4.0.0",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "reading-time": "^1.5.0"
+    }
+}
