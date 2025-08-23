@@ -47,6 +47,7 @@ html.dark {
         --tw-prose-code: var(--text-color-main);
         --tw-prose-th-borders: var(--border-color-main);
         --tw-prose-td-borders: var(--border-color-main);
+    
     }
 
     .prose a {
@@ -57,7 +58,7 @@ html.dark {
         @apply font-serif font-medium;
     }
 
-    .prose :where(code, strong) {
+    .prose :where(code) {
         @apply font-medium;
     }
 
