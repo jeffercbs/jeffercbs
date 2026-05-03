@@ -4,9 +4,11 @@ import { defineCollection, z } from 'astro:content';
 const seoSchema = z.object({
     title: z.string().min(5).max(120).optional(),
     description: z.string().max(160).optional(),
-    video: z.object({
-        src: z.string().url(),
-    }).optional(),
+    video: z
+        .object({
+            src: z.string().url()
+        })
+        .optional(),
     image: z
         .object({
             src: z.string(),
@@ -21,7 +23,10 @@ const blog = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string().optional(),
-        publishDate: z.string().or(z.date()).transform((val) => new Date(val)),
+        publishDate: z
+            .string()
+            .or(z.date())
+            .transform((val) => new Date(val)),
         draft: z.boolean().default(false),
         tags: z.array(z.string()).default([]),
         medium: z.string().url().optional(),
@@ -44,6 +49,8 @@ const projects = defineCollection({
         description: z.string().optional(),
         publishDate: z.coerce.date(),
         isFeatured: z.boolean().default(true),
+        link: z.string().url().optional(),
+        repo: z.string().url().optional(),
         seo: seoSchema.optional()
     })
 });

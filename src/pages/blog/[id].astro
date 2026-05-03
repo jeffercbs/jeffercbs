@@ -47,7 +47,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
                     </h1>
                     <p class="font-light mt-2 md:text-xl text-lg opacity-80" set:text={description} />
                     <div class="flex md:flex-row flex-col justify-between md:items-center items-start mt-14">
-                        <Auth name="Jeferson Estiven Barrero" username="jeffercbs" medium={medium} readingTime={remarkPluginFrontmatter.minutesRead} />
+                        <Auth readingTime={remarkPluginFrontmatter.minutesRead} />
                         <div class="flex gap-x-2 md:justify-end justify-evenly items-center">
                             {
                                 medium && (

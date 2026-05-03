@@ -1,19 +1,19 @@
 ---
-title: "Argermiro Remodelaciones"
-description: "Sitio web desarrollado para Argemiro Remodelaciones, una empresa especializada en proyectos de construcción y remodelación. Diseñado para mostrar proyectos terminados y en proceso, optimizado para SEO, logrando más de 6,000 visitas mensuales y aumentando la captación de clientes."
+title: 'Argermiro Remodelaciones'
+description: 'Sitio web desarrollado para Argemiro Remodelaciones, una empresa especializada en proyectos de construcción y remodelación. Diseñado para mostrar proyectos terminados y en proceso, optimizado para SEO, logrando más de 6,000 visitas mensuales y aumentando la captación de clientes.'
 seo:
   image:
-    src: '/_thumbnails/argemiroremodelaciones.webp'
+    src: '/_thumbnails/argemiroremodelaciones.png'
     alt: Project preview
-link: "https://argermiroremodelaciones.vercel.app/"
+link: 'https://argermiroremodelaciones.vercel.app/'
 stack:
-    framework: "Astro.js"
-    case: "Negocio"
-    css: "TailwindCSS"
-    database: "No aplica"
-    auth: "No aplica"
-type: "Negocios"
-publishDate: "05/15/2024"
+  framework: 'Astro.js'
+  case: 'Negocio'
+  css: 'TailwindCSS'
+  database: 'No aplica'
+  auth: 'No aplica'
+type: 'Negocios'
+publishDate: '05/15/2024'
 ---
 
 ## Descripción del Proyecto

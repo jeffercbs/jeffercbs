@@ -40,9 +40,9 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://jeffercbs.tech',
-    title: 'Software Engineer | Consultor Tecnológico & Educador',
-    subtitle: 'Empezando a crear más contenido en Español sobre programación y tecnología.',
-    description: 'Ingeniero de Software en Bogotá con más de 3 años de experiencia en desarrollo web, arquitectura de software y soluciones digitales escalables. Consultor tecnológico y creador de contenido sobre programación y tecnología. Ayudo a empresas y startups a transformar ideas en productos digitales innovadores, optimizando sistemas y potenciando su crecimiento en el mundo digital.',
+    title: 'Blog',
+    subtitle: 'Artículos y proyectos sobre programación y tecnología.',
+    description: 'Artículos, tutoriales y proyectos sobre desarrollo web, arquitectura de software y tecnología en español.',
     image: {
         src: '',
         alt: ''
@@ -67,61 +67,36 @@ const siteConfig: SiteConfig = {
     ],
     footerNavLinks: [
         {
-            text: 'Sobre mi',
-            href: '/about'
-        },
-        {
-            text: 'Contactame',
+            text: 'Contacto',
             href: '/contact'
         },
         {
-            text: 'Terms',
+            text: 'Términos',
             href: '/terms'
         }
     ],
     socialLinks: [
         {
-            text: "github",
-            href: "https://github.com/jeffercbs",
+            text: 'github',
+            href: 'https://github.com/jeffercbs'
         },
         {
-            text: "platzi",
-            href: "https://platzi.com/p/jeffercbs/",
+            text: 'linkedin',
+            href: 'https://www.linkedin.com/in/jeffercbs'
         },
         {
-            text: "linkedin",
-            href: "https://www.linkedin.com/in/jeffercbs",
-        },
-        {
-            text: "twitch",
-            href: "https://www.twitch.tv/jeffercbs",
-        },
-        {
-            text: "instagram",
-            href: "https://www.instagram.com/jeffercbs.dev/",
-        },
-        {
-            text: "youtube",
-            href: "https://www.youtube.com/@jeffercbs",
-        },
+            text: 'youtube',
+            href: 'https://www.youtube.com/@jeffercbs'
+        }
     ],
     hero: {
-        title: 'Hola, bienvenido a mi rincon de la Web!',
-        text: "Soy Jeferson Barrero, Software Engineer con más de 3 años de experiencia desarrollando software. Originario de Ibagué, Tolima y actualmente en Bogotá D.C, mi pasión por la programación comenzó a los 14 años. He participado en eventos como Platzi Conf y Colombia Tech Fest, donde disfruto conectar con la comunidad tech y compartir conocimientos. Creo firmemente que el crecimiento viene del intercambio de ideas.",
-        image: {
-            src: '',
-            alt: ''
-        },
-        actions: [
-            {
-                text: 'Contactame',
-                href: '/contact'
-            }
-        ]
+        title: 'Artículos y proyectos',
+        text: 'Un espacio para explorar ideas sobre desarrollo de software, arquitectura y tecnología. Contenido en español.',
+        actions: []
     },
     subscribe: {
-        title: 'Subscribete a mi Newsletter',
-        text: 'Proximamente disponible.',
+        title: 'Newsletter',
+        text: 'Próximamente disponible.',
         formUrl: '#'
     },
     postsPerPage: 8,
